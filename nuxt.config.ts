@@ -1,6 +1,10 @@
 
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    dburl: process.env.MONGODB_URI,
+    dbName: process.env.MONGODB_NAME
+  },
   app: {
     head: {
       link: [
