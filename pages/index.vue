@@ -1,9 +1,9 @@
 <template>
-    <filter_slider />
+    <the4th_wall />
 </template>
 
 <script setup>
-import filter_slider from '~/pages/home/filter_slider/index.vue'
+import the4th_wall from '~/pages/home/the4th_wall/index.vue'
 </script>
 
 <style lang="scss" scoped></style>
