@@ -3,7 +3,6 @@ import { getAuth } from 'firebase/auth';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig().public;
-  console.log(config.apiKey)
   const firebaseConfig = {
     apiKey: config.apiKey,
     authDomain: config.authDomain,
@@ -18,6 +17,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   const auth = getAuth(app);
 
   console.log(auth)
-  nuxtApp.vueApp.use("auth",auth);
-
+  nuxtApp.vueApp.provide('auth', auth)
+  nuxtApp.provide('auth', auth)
 });

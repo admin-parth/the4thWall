@@ -48,7 +48,7 @@
                 <button type="submit" class="btn btn-gradient btn-pill color-2 me-sm-3 me-2">
                   Log in
                 </button>
-                <nuxt-link to="/page/otherpages/signup" class="btn btn-dashed btn-pill color-2">Create Account</nuxt-link>
+                <nuxt-link to="/signup" class="btn btn-dashed btn-pill color-2">Create Account</nuxt-link>
               </div>
               <ElementSocialaccount />
             </form>

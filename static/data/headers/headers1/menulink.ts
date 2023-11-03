@@ -651,11 +651,11 @@ interface item{
                     },
                     {
                         name:'Sign Up',
-                        path:'/page/otherpages/signup'
+                        path:'/signup'
                     },
                     {
                         name:'Sign Up Wizard',
-                        path:'/page/otherpages/signup-wizard',
+                        path:'/signup-wizard',
                         icon:'bx:bxs-bolt'
                     },
                     {

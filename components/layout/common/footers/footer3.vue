@@ -16,7 +16,7 @@
                                 <li><nuxt-link to="/contact/contact-3"><i class="fas fa-map-marker-alt"></i></nuxt-link>
                                 </li>
                                 <li><nuxt-link to="/contact/contact-3"><i class="fas fa-phone-alt"></i></nuxt-link></li>
-                                <li><nuxt-link to="/page/otherpages/signup"><i class="fas fa-envelope"></i></nuxt-link></li>
+                                <li><nuxt-link to="/signup"><i class="fas fa-envelope"></i></nuxt-link></li>
                                 <li><nuxt-link to="/contact/contact-3"><i class="fas fa-globe"></i></nuxt-link></li>
                                 <li><nuxt-link to="/contact/contact-3"><i class="fas fa-wifi"></i></nuxt-link></li>
                             </ul>
