@@ -13,7 +13,7 @@ let loader = ref<boolean>(true);
 onMounted(() => {
   setTimeout(() => {
     loader.value = false;
-  }, 300);
+  }, 0);
 })
 </script>
 

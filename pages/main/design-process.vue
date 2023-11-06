@@ -1,9 +1,8 @@
 <template>
-    <the4th_wall />
+    <h1>Our Design Process</h1>
 </template>
 
 <script setup>
-import the4th_wall from '~/pages/main/index.vue'
 </script>
 
 <style lang="scss" scoped></style>

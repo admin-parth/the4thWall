@@ -1,6 +1,6 @@
 <template>
     <slot/>
-    <ElementCustomizer/>
+    <!-- <ElementCustomizer/> -->
 </template>
 
 <script setup>

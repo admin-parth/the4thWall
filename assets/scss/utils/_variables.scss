@@ -1,7 +1,7 @@
 
 :root {
-    --theme-default: #6432b8;
-    --theme-default2: #9516d7;
+    --theme-default: #ED1F26;
+    --theme-default2: #ED1F26;
     --theme-gradient1: linear-gradient(to right, var(--theme-default) 0%, var(--theme-default2) 51%, var(--theme-default) 100%);
     --theme-gradient2: linear-gradient(to right, var(--theme-default) 0%, var(--theme-default2) 100%);
     --theme-gradient3: linear-gradient(48deg, var(--theme-default) 0%, var(--theme-default2) 100%);
@@ -28,6 +28,7 @@
     --theme-gradient13: linear-gradient(to right, var(--theme-default8) 25%, var(--theme-default9) 100%);
   
     --theme-default10: #00968a;
+    --color-grey: #00968a;
 }
 
 // fonts

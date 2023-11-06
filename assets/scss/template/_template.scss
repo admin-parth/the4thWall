@@ -52,10 +52,11 @@
 }
 .title-2 {
   h2 {
-    background: var(--theme-gradient7);
-    background-blend-mode: lighten;
+    background: unset;
+    background-blend-mode: unset;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: var(--theme-default);
+    color: var(--theme-default);
     margin-bottom: 16px;
     margin-top: -3px;
   }
@@ -140,6 +141,22 @@
       margin-bottom: -1px;
     }
   }
+}
+.about-main{
+  hr {
+    width: 240px;
+    margin: 0 auto;
+    height: 3px;
+    color: var(--theme-default);
+    opacity: 1;
+    transition: all 0.5s;
+  }
+
+    .hr:hover {
+      hr {
+        width: 450px;
+      }
+    }
 }
 .contact-3 {
   .title-3 {
@@ -622,7 +639,7 @@
     }
   }
   &.layout-5 {
-    background-image: url(/image/parallax/3.jpg);
+    background-image: url(/image/main/banner-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.8);

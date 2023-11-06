@@ -3,7 +3,7 @@
         <div class="footer footer-custom-col">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-2 col-md-6 order-xl">
+                    <div class="col-xl col-md order-xl">
                         <div class="footer-links footer-details">
                             <h5 class="footer-title d-md-none active" @click="toggle = !toggle">{{ 'Contact us' }} <span
                                     class="according-menu"><i
@@ -17,9 +17,9 @@
                             </div>
                         </div>
                     </div>
-                    <LayoutElementsFooterElementFooter2About :data="About_Data" />
+                    <!-- <LayoutElementsFooterElementFooter2About :data="About_Data" />
                     <LayoutElementsFooterElementFooter2Location title="Our Location" />
-                    <LayoutElementsFooterElementFooter2Tag :data="Tag_Data" />
+                    <LayoutElementsFooterElementFooter2Tag :data="Tag_Data" /> -->
                 </div>
             </div>
         </div>

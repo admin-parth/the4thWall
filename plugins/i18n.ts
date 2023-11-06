@@ -10,10 +10,10 @@ export default defineNuxtPlugin(({ vueApp }) => {
     globalInjection: true,
     locale: 'en',
     messages: {
-      en:en.data,
-      fr:fr.data,
-      es:es.data,
-      ar:ar.data,
+      en:en,
+      fr:fr,
+      es:es,
+      ar:ar,
     }
   })
   vueApp.use(i18n)
