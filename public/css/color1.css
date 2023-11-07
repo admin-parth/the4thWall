@@ -3849,7 +3849,8 @@ input[type='radio'].radio_animated {
       .service-section.service-2 .property-service > div .service-box .btn span {
         vertical-align: -3px; }
     .service-section.service-2 .property-service > div .service-box:hover {
-      background-color: rgba(255, 92, 65, 0.1); }
+      background-color: rgba(244, 237, 237, 0.5);
+      box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15); }
       .service-section.service-2 .property-service > div .service-box:hover .hover-line::before {
         opacity: 0.2;
         -webkit-transition: 0.5s;

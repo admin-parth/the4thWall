@@ -185,7 +185,7 @@
                     }
 
                     &:hover {
-                        background-color: rgba($theme-color3,0.1);
+                        // background-color: rgba($theme-color3,0.1);
                         .hover-line {
                             &::before {
                                 opacity: 0.2;
