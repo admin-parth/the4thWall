@@ -42,7 +42,7 @@
 }
 .service-section {
     position: relative;
-
+    padding: 50px 0;
     .property-service {
         >div {
             .service-box {
@@ -144,7 +144,7 @@
                     transition: 0.5s;
 
                     .hover-line {
-                        margin-bottom: 45px;
+                        margin-bottom: 25px;
                         position: relative;
                         display: inline-block;
 
@@ -228,12 +228,12 @@
 
                         .service-icon,
                         .icon-line-color {
-                            fill: var(--theme-default3);
+                            fill: var(--theme-default);
                         }
 
                         .hover-line {
                             &::before {
-                                background-color: var(--theme-default3);
+                                background-color: var(--theme-default);
                             }
                         }
 
@@ -256,7 +256,7 @@
                         &:hover {
                             .btn {
                                 background: none;
-                                border-color: var(--theme-default3);
+                                border-color: var(--theme-default);
                                 &::before,
                                 &::after {
                                     opacity: 0;

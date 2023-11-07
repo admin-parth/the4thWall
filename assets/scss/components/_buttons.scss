@@ -149,14 +149,15 @@
     }
 
     &.btn-light-bg {
-        background-color: transparent;
+        // background-color: transparent;
         border: 2px solid transparent;
         transition: all 0.5s ease;
         height: 43px;
+        color: var(--theme-default) !important;
 
         &::after {
             @extend %common-lightafter;
-            background-color: var(--theme-default3);
+            background-color: var(--theme-default);
             opacity: 0.1;
             height: 43px;
         }
@@ -169,7 +170,7 @@
         }
 
         &:hover {
-            border: 2px solid var(--theme-default3);
+            border: 2px solid var(--theme-default);
             background: $white;
             transition: all 0.5s ease;
 

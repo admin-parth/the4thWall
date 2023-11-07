@@ -3,11 +3,15 @@
 ==========================**/
 @use "sass:math";
 .title-svg {
-  fill: var(--theme-default5);
-  stroke: var(--theme-default5);
+  fill: var(--theme-default);
+  stroke: var(--theme-default);
   height: 85px;
   width: 85px;
   margin-bottom: -85px;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scaleX(1.5);
+  }
   &.color-7 {
     fill: var(--theme-default10);
     stroke: var(--theme-default10);
