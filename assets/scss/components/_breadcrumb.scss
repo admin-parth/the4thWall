@@ -108,6 +108,22 @@
         z-index: 1;
     }
 }
+.effect-cls-breadcrumb {
+    &.breadcrumb-section {
+        height: calc(300px + (580 - 300) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        background: url(/image/shape.png);
+        width: 100%;
+        height: 150px;
+        left: 0;
+        z-index: 1;
+        bottom: 0;
+    }
+}
 
 /**=====================
      breadcrumb css end
