@@ -26,7 +26,7 @@
                                     <h3>{{ item.title }}</h3>
                                 </nuxt-link>
                                 <p class="font-roboto three-lines-only">{{ item.details }}</p>
-                                <nuxt-link to="/" class="btn btn-light-bg"><span>{{ 'view more '}}</span></nuxt-link>
+                                <nuxt-link to="/main/design-process" class="btn btn-light-bg"><span>{{ 'view more '}}</span></nuxt-link>
                             </div>
                         </div>
                     </div>

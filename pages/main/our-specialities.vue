@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <Title>The 4th Wall</Title>
+        <Title>Our Specialities | The 4th Wall</Title>
     </Head>
     <LayoutLayoutsLayout2>
         <MainBannerBreadcrumb title="Our Specialities" first="Home" current="Our Specialities" />
