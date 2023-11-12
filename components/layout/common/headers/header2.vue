@@ -1,6 +1,6 @@
 <template>
-    <div class="top-bar">
-        <div class="container">
+    <div class="">
+        <div class="">
             <div class="row">
                 <div class="col-12">
                     <div class="top-content top-nav">

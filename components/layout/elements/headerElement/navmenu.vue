@@ -18,7 +18,7 @@
                 <span class="according-menu" v-if="toggle">{{ item.title == subtoogle && accordiontoggle ? '-' : '+'
                 }}</span>
             </a>
-            <ul class="nav-submenu menu-content"
+            <!-- <ul class="nav-submenu menu-content"
                 :class="toggle ? item.title == subtoogle && accordiontoggle ? 'd-block' : '' : ''"
                 v-if="item.magamenu == false">
                 <div v-if="item.children">
@@ -65,7 +65,7 @@
                         </nuxt-link>
                     </li>
                 </div>
-            </ul>
+            </ul> -->
             <LayoutElementsHeaderElementNavpagelink :data="item" :toggle="toggle" :accordion="accordiontoggle"
                 :subtoggle="subtoogle" />
         </li>
