@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-xl col-md order-xl">
                         <div class="footer-links footer-details">
-                            <h5 class="footer-title d-md-none active" @click="toggle = !toggle">{{ 'Contact us' }} <span
+                            <!-- <h5 class="footer-title d-md-none active" @click="toggle = !toggle">{{ 'Contact us' }} <span
                                     class="according-menu"><i
-                                        :class="toggle ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i></span></h5>
+                                        :class="toggle ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i></span></h5> -->
                             <div class="footer-content" :class="toggle ? 'd-block' : 'd-none d-md-block'">
                                 <nuxt-link to="/">
                                     <img src="/image/logo/3.png" alt="">
@@ -60,7 +60,7 @@ let { data }: FetchResponse = await useFetch(useurl + '/data/footer2.json')
 const Contact_Data: Contact[] = data.value.contact
 const About_Data: About[] = data.value.about
 const Tag_Data: Tag[] = data.value.tag
-let toggle = ref<boolean>(false)
+let toggle = ref<boolean>(true)
 </script>
 
 <style lang="scss" scoped></style>

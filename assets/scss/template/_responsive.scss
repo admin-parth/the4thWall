@@ -6446,6 +6446,10 @@
   }
 }
 @media (max-width: 767px) {
+  footer .footer-details .footer-contact ul{
+      flex-direction: column;
+      gap: 10px;
+  }
   .feature-1,
   .testimonial-2 {
     .swiper-button-prev, .swiper-button-next {
@@ -7774,6 +7778,7 @@
       }
       .footer-contact {
         ul {
+          flex-direction: column;
           li {
             + li {
               margin-top: 10px;
