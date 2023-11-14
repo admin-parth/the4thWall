@@ -68,11 +68,27 @@ interface item{
         children: undefined
     },
     {
+        title:'Our Specialities',
+        magamenu:false,
+        right:true,
+        name:'About us',
+        path:'/main/our-specialities',
+        children: undefined
+    },
+    {
+        title:'Design Process',
+        magamenu:false,
+        right:true,
+        name:'About us',
+        path:'/main/design-process',
+        children: undefined
+    },
+    {
         title:'About us',
         magamenu:false,
         right:true,
         name:'About us',
-        path:'/about-us',
+        path:'/main/about-us',
         children: undefined
     },
     {
@@ -80,7 +96,7 @@ interface item{
         magamenu:false,
         right:true,
         name:'Contect us',
-        path:'/contact',
+        path:'/main/contact',
         children: undefined
     }
 ];

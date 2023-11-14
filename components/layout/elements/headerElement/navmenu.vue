@@ -11,12 +11,8 @@
         </li>
         <li :class="item.magamenu ? 'mega-menu' : props.header ? item.right ? 'dropdown dropdown-right' : 'dropdown' : 'dropdown'"
             v-for="(item, index) in Nav_Data" :key="index" @click="toogleclass(item.title)">
-            <a href="javascript:void(0)" class="nav-link menu-title" @click="accordiontoggle = !accordiontoggle">
-                <Icon v-if="router.fullPath == '/home/corporate' || router.fullPath == '/home/parallaximage'"
-                    :name="item.icon" style="width:18px; height:" class="me-0" />
+            <a :href="item.path" class="nav-link menu-title">
                 {{ $t(item.title) }}
-                <span class="according-menu" v-if="toggle">{{ item.title == subtoogle && accordiontoggle ? '-' : '+'
-                }}</span>
             </a>
             <!-- <ul class="nav-submenu menu-content"
                 :class="toggle ? item.title == subtoogle && accordiontoggle ? 'd-block' : '' : ''"

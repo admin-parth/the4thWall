@@ -337,7 +337,7 @@ header {
 
   &.header-3 {
     position: relative;
-    background-color: $title-color;
+    background-color: var(--theme-default) !important;
 
     .main-navbar {
       text-align: left;
@@ -362,7 +362,7 @@ header {
 
           &.active {
             a {
-              background-color: var(--theme-default5) !important;
+              background-color: var(--theme-default) !important;
             }
           }
 
