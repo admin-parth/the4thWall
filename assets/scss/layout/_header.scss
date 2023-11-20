@@ -1640,6 +1640,10 @@ header,
 .header-layout-3 {
   @extend %flex-center;
   justify-content: space-between;
+  .webinfo-details{
+    display: flex;
+    gap: 20px;
+  }
 
   .contact-number {
     color: $white;
@@ -1664,7 +1668,33 @@ header,
       color: $white;
     }
   }
+  .signup {
+    color: $white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    &.color-7 {
+      i {
+        // background: var(--theme-default10);
+      }
+    }
+
+    span {
+      font-weight: 500;
+      color: $white;
+    }
+  }
+
 }
+
+
+
 
 // Responsive menu css start //
 @media (min-width: 1200px) {
