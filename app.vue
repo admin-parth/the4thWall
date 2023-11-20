@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="main-container">
     <NuxtLayout>
         <NuxtPage />
     </NuxtLayout>
@@ -10,3 +10,8 @@
 
 
 </script>
+<style scoped>
+.main-container{
+  overflow: hidden;
+}
+</style>
