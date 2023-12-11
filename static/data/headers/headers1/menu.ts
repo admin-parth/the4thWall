@@ -68,11 +68,11 @@ interface item{
         children: undefined
     },
     {
-        title:'Our Specialities',
+        title:'Gallery',
         magamenu:false,
         right:true,
-        name:'About us',
-        path:'/main/our-specialities',
+        name:'Gallery',
+        path:'/main/gallery',
         children: undefined
     },
     {

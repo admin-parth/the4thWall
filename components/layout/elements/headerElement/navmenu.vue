@@ -14,6 +14,11 @@
         <Icon name="ic:baseline-chevron-right" />
       </div>
     </li>
+    <li>
+      <RouterLink to="/" class="nav-link menu-title">
+        <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="30">
+      </RouterLink>
+    </li>
     <li
       :class="
         item.magamenu

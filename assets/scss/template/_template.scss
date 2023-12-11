@@ -468,9 +468,10 @@
     }
   }
   &.color-3 {
-    background: var(--theme-default5);
+    background: var(--theme-default);
+    box-shadow: 0px 0px 25px 5px rgba($black, 0.25);
     &::after {
-      box-shadow: 5.353px 5.945px 12px var(--theme-default5);
+      box-shadow: 5.353px 5.945px 12px var(--theme-default);
     }
   }
   &.color-4 {
