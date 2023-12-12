@@ -1,9 +1,4 @@
 <template>
-  <Head>
-    <Title>The 4th Wall</Title>
-  </Head>
-  <LayoutLayoutsLayout2>
-    <MainBanner />
     <section class="about-main">
         <div class="container">
             <div class="row">
@@ -14,18 +9,19 @@
                             <use xlink:href="/svg/icons.svg#title-line"></use>
                         </svg>
                     </div>
-                    <p> Some logos should be here. </p>
+                    <div>
+                        <img src="" alt="">
+                        <h3>Normal 3D</h3>
+                    </div>
+                    <div>
+                        <img src="" alt="">
+                        <h3>Fully Rendered 3D</h3>
+                    </div>
+                    <button> Book your design</button>
                 </div>
             </div>
         </div>
     </section>
-    <Main3dDesign />
-    <MainServices />
-    <ElementTaptopTapTop3 />
-  </LayoutLayoutsLayout2>
 </template>
-
-<script setup>
+<script>
 </script>
-
-<style lang="scss" scoped></style>
