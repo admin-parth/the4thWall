@@ -12,12 +12,12 @@
               </div>
             </nav>
             <div class="webinfo-details">
-              <div class="contact-number">
+              <!-- <div class="contact-number">
                 <i class="fas fa-phone-alt"></i>
                 <span class="font-roboto">{{
                   "(880)-123 789 / (800)- 561 456"
                 }}</span>
-              </div>
+              </div> -->
               <RouterLink class="signup" to="/main/signup">
                 <i class="fas fa-user-alt"></i>
                 <span class="font-roboto">Sign Up</span>

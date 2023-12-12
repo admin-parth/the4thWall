@@ -337,7 +337,7 @@ header {
 
   &.header-3 {
     position: relative;
-    background-color: var(--theme-default) !important;
+    background-color: #fff !important;
 
     .main-navbar {
       text-align: left;
@@ -348,6 +348,7 @@ header {
           padding: 10px 0;
           a {
             border-radius: 0;
+            color: var(--theme-default) !important;
 
             i, svg {
               margin-right: 8px;
@@ -927,7 +928,7 @@ header {
     text-align: center;
 
     .nav-menu {
-      display: inline-block;
+      display: inline-flex;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -935,7 +936,7 @@ header {
       direction: ltr;
       text-align: left;
       vertical-align: middle;
-
+      align-items: center;
       >li {
         position: relative;
         float: left;
@@ -1181,6 +1182,7 @@ header {
   }
   &.fixed {
     position: fixed;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.08);
   }
 }
 header{
@@ -1673,6 +1675,9 @@ header,
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: var(--theme-default) ;
+    padding-right: 15px;
+    border-radius: 5px;
 
     i {
       padding: 10px;
