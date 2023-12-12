@@ -15,7 +15,12 @@
                       <Icon name="material-symbols:person-2-outline" />
                     </div>
                   </div>
-                  <input type="email" class="form-control" placeholder="Enter Email" required />
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                    required
+                  />
                 </div>
               </div>
               <div class="form-group">
@@ -25,30 +30,57 @@
                       <Icon name="material-symbols:lock-outline" />
                     </div>
                   </div>
-                  <input :type="type" id="pwd-input" class="form-control" placeholder="Password" maxlength="8" required />
+                  <input
+                    :type="type"
+                    id="pwd-input"
+                    class="form-control"
+                    placeholder="Password"
+                    maxlength="8"
+                    required
+                  />
                   <div class="input-group-apend">
                     <div class="input-group-text">
-                      <i id="pwd-icon" :class="showpassword ? ' far fa-eye' : 'far fa-eye-slash'" @click="show()"></i>
+                      <i
+                        id="pwd-icon"
+                        :class="
+                          showpassword ? ' far fa-eye' : 'far fa-eye-slash'
+                        "
+                        @click="show()"
+                      ></i>
                     </div>
                   </div>
                 </div>
                 <div class="important-note">
-                  password should be a minimum of 8 characters and should contains letters and numbers
+                  password should be a minimum of 8 characters and should
+                  contains letters and numbers
                 </div>
               </div>
               <div class="d-flex">
                 <label class="d-block mb-0" for="chk-ani">
-                  <input class="checkbox_animated color-2" id="chk-ani" type="checkbox" />
+                  <input
+                    class="checkbox_animated color-2"
+                    id="chk-ani"
+                    type="checkbox"
+                  />
                   <span>Remember me</span>
                 </label>
-                <nuxt-link to="/page/otherpages/forgot-password" class="font-rubik text-color-2">Forgot password
-                  ?</nuxt-link>
+                <nuxt-link
+                  to="/page/otherpages/forgot-password"
+                  class="font-rubik text-color-2"
+                  >Forgot password ?</nuxt-link
+                >
               </div>
               <div>
-                <button type="submit" class="btn btn-gradient btn-pill color-2 me-sm-3 me-2">
+                <button
+                  type="submit"
+                  class="btn btn-gradient btn-pill color-2 me-sm-3 me-2"
+                >
                   Log in
                 </button>
-                <nuxt-link to="/signup" class="btn btn-dashed btn-pill color-2">Create Account</nuxt-link>
+                <!-- <nuxt-link to="/signup" class="btn btn-dashed btn-pill color-2">Create Account</nuxt-link> -->
+                <nuxt-link to="/" class="btn btn-dashed btn-pill color-2"
+                  >Create Account</nuxt-link
+                >
               </div>
               <ElementSocialaccount />
             </form>
@@ -61,14 +93,13 @@
 
 <script setup lang="ts">
 let showpassword = ref<boolean>(false);
-let type = ref<string>('password')
+let type = ref<string>("password");
 function show() {
-  showpassword.value = !showpassword.value
+  showpassword.value = !showpassword.value;
   if (showpassword.value == true) {
-    type.value = 'text'
-  }
-  else {
-    type.value = 'password'
+    type.value = "text";
+  } else {
+    type.value = "password";
   }
 }
 </script>
