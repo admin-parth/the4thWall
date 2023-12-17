@@ -264,7 +264,7 @@ section {
 .column-space {
   margin-bottom: -50px; }
   .column-space > div {
-    padding: 0 25px;
+    /* padding: 0 25px; */
     margin-bottom: 50px; }
 
 .shadow-cls {
