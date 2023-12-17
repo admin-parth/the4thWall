@@ -106,7 +106,7 @@
                         </div>
                         <button
                           type="submit"
-                          class="btn btn-gradient color-4 btn-flat"
+                          class="btn btn-gradient color-4"
                         >
                           {{ "Create account" }}
                         </button>
