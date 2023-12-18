@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="d-flex align-items-center justify-content-center">
-      <a class="book-session">Book Your Session</a>
+      <a class="btn btn-gradient btn-pill color-2 me-1">Book Your Session</a>
     </div>
   </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
-  <section class="about-main">
-    <div class="container">
+  <section class="">
+    <div class="">
       <div class="row">
         <div class="col">
           <div class="title-2 mb-5">
@@ -11,16 +11,20 @@
           </div>
           <div class="recent-work position-relative">
             <img src="/image/main/satisfaction1.jpg" alt="" width="100%" />
-            <a class="position-absolute top-50 start-50">View More</a>
+            <a
+              class="position-absolute top-50 start-50 translate-middle btn btn-white btn-pill color-1"
+              >View More</a
+            >
           </div>
         </div>
       </div>
     </div>
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center mt-3">
       <a class="btn btn-gradient btn-pill color-2 me-1">Book Your Session</a>
     </div>
   </section>
 </template>
+
 <script></script>
 <style scoped>
 .book-session {
