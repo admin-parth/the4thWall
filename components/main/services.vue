@@ -26,13 +26,13 @@
                     </svg>
                   </div>
                 </div>
-                <nuxt-link to="/">
+                <!-- <nuxt-link to="/"> -->
                   <h3>{{ item.title }}</h3>
-                </nuxt-link>
+                <!-- </nuxt-link> -->
                 <p class="font-roboto three-lines-only">{{ item.details }}</p>
-                <nuxt-link to="/main/design-process" class="btn btn-light-bg"
+                <!-- <nuxt-link to="/main/design-process" class="btn btn-light-bg"
                   ><span>{{ "view more " }}</span></nuxt-link
-                >
+                > -->
               </div>
               <div
                 v-if="index !== Services_data.length - 1"
