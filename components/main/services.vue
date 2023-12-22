@@ -27,7 +27,7 @@
                   </div>
                 </div>
                 <!-- <nuxt-link to="/"> -->
-                  <h3>{{ item.title }}</h3>
+                <h3>{{ item.title }}</h3>
                 <!-- </nuxt-link> -->
                 <p class="font-roboto three-lines-only">{{ item.details }}</p>
                 <!-- <nuxt-link to="/main/design-process" class="btn btn-light-bg"
