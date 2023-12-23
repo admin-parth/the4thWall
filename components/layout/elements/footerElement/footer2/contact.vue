@@ -2,7 +2,7 @@
     <div class="footer-contact">
         <ul>
             <li v-for="(item, index) in props.data" :key="index">
-                <i :class="item.icon"></i>
+                <i :class="item.icon"></i><br/>
                 {{ item.title }}
             </li>
         </ul>

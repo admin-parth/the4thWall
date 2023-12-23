@@ -8,12 +8,14 @@
                             <!-- <h5 class="footer-title d-md-none active" @click="toggle = !toggle">{{ 'Contact us' }} <span
                                     class="according-menu"><i
                                         :class="toggle ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i></span></h5> -->
-                            <div class="footer-content" :class="toggle ? 'd-block' : 'd-none d-md-block'">
-                                <nuxt-link to="/">
-                                    <img src="/image/logo/3.png" alt="">
-                                </nuxt-link>
-                                <p>{{ 'This home provides entertaining spaces with a kitchen opening...' }}</p>
-                                <LayoutElementsFooterElementFooter2Contact :data="Contact_Data" />
+                            <div class="footer-content row" :class="toggle ? 'd-block' : 'd-none d-md-block'">
+                                <div class="col-sm-12 col-md-4">
+                                    <img src="/image/logo/temp-logo.png" alt="" class="logo">
+                                </div>
+                                <div class="col-sm-12 col-md-8">
+                                    <p>{{ 'This home provides entertaining spaces with a kitchen opening...' }}</p>
+                                    <LayoutElementsFooterElementFooter2Contact :data="Contact_Data" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,10 +59,27 @@ interface FetchResponse {
     }
 }
 let { data }: FetchResponse = await useFetch(useurl + '/data/footer2.json')
-const Contact_Data: Contact[] = data.value.contact
 const About_Data: About[] = data.value.about
 const Tag_Data: Tag[] = data.value.tag
 let toggle = ref<boolean>(true)
+const Contact_Data: Contact[] = [
+    {
+      "icon": "fas fa-map-marker-alt",
+      "title": "Ahmedabad"
+    },
+    {
+      "icon": "fas fa-phone-alt",
+      "title": "+91 990 900 3044/45"
+    },
+    {
+      "icon": "fas fa-envelope",
+      "title": "Contact@gmail.com"
+    }
+  ]
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img.logo {
+    width: 150px;
+}
+</style>

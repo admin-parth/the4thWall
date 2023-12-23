@@ -131,11 +131,8 @@ const Services_data = [
     /*   animation: a1 1.5s infinite linear; */
   }
 }
-.book-session {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #ff5c41;
-  color: #000;
-  cursor: pointer;
-}
+/* .service-2 {
+  background-color: #eee;
+  box-shadow: inset 0px 4px 10px rgba(50, 50, 50, 0.1), inset 0px -4px 10px rgba(50, 50, 50, 0.1);
+} */
 </style>

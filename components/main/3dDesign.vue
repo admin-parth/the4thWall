@@ -9,24 +9,25 @@
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg>
           </div>
-          <div class="row gx-5">
-            <div class="col-6">
-              <img src="/image/main/service1.jpg" alt="" width="600" />
+          <div class="row gx-5 d-inline-flex flex-md-row flex-sm-column justify-content-center mb-5">
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 justify-content-center">
+              <img src="/image/main/service1.jpg" alt=""/>
               <h3>Normal 3D</h3>
             </div>
-            <div class="col-6">
-              <img src="/image/main/service2.jpg" alt="" width="600" />
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 justify-content-center">
+              <img src="/image/main/service2.jpg" alt=""/>
               <h3>Fully Rendered 3D</h3>
             </div>
           </div>
 
-          <video
-            src="/video/video.mp4"
-            controls
-            autoplay
-            loop
-            width="700"
-          ></video>
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-10">
+              <video controls autoplay loop>
+                <source src="/video/video.mp4">
+              </video>    
+            </div>
+          </div>
+          
           <br />
         </div>
       </div>
@@ -38,11 +39,20 @@
 </template>
 <script></script>
 <style scoped>
-.book-session {
-  padding: 10px;
+img {
   border-radius: 10px;
-  background-color: #ff5c41;
-  color: #000;
-  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width: 100%;
+}
+h3 {
+  text-align: center;
+}
+
+video {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  width: 100%;
 }
 </style>

@@ -18,11 +18,11 @@
             <template #default="{ item }">
               <div class="sale grid-item wow fadeInUp col-sm-12">
                 <div class="grid-box">
-                  <div class="overlay">
+                  <div class="overlay grid-item">
                     <div class="portfolio-image">
-                      <nuxt-link to="javascript:void(0)">
+                      <!-- <nuxt-link to="javascript:void(0)"> -->
                         <img :src="item.src" class="bg-img img-fluid" alt="" />
-                      </nuxt-link>
+                      <!-- </nuxt-link> -->
                     </div>
                   </div>
                 </div>
@@ -51,41 +51,41 @@
 import MasonryWall from "@yeger/vue-masonry-wall";
 const data = [
   {
-    src: "/image/property/13.jpg",
+    src: "/image/main/gallery/1.jpg",
     type: "sale",
   },
   {
-    src: "/image/property/12.jpg",
+    src: "/image/main/gallery/2.jpg",
     type: "rent",
   },
   {
-    src: "/image/property/16.jpg",
+    src: "/image/main/gallery/3.jpg",
     type: "trend",
   },
   {
-    src: "/image/property/11.jpg",
+    src: "/image/main/gallery/4.jpg",
     type: "rent",
   },
   {
-    src: "/image/property/8.jpg",
+    src: "/image/main/gallery/6.jpg",
     type: "sale",
   },
   {
-    src: "/image/property/17.jpg",
+    src: "/image/main/gallery/5.jpg",
     type: "trend",
   },
   {
-    src: "/image/property/18.jpg",
+    src: "/image/main/gallery/7.jpg",
     type: "trend",
   },
   {
-    src: "/image/property/19.jpg",
+    src: "/image/main/gallery/8.jpg",
     type: "trend",
   },
-  {
-    src: "/image/property/5.jpg",
-    type: "rent",
-  },
+  // {
+  //   src: "/image/main/gallery/1.jpg",
+  //   type: "rent",
+  // },
 ];
 </script>
 

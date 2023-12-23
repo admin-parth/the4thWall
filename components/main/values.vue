@@ -1,5 +1,5 @@
 <template>
-    <section class="about-main">
+    <section class="values">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -62,4 +62,8 @@ const Services_data = [
   color: black;
 }
 
+// .values{
+//    background-color: #eee;
+//   box-shadow: inset 0px 4px 10px rgba(50, 50, 50, 0.1), inset 0px -4px 10px rgba(50, 50, 50, 0.1);
+// }
 </style>

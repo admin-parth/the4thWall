@@ -18,10 +18,10 @@
                   "(880)-123 789 / (800)- 561 456"
                 }}</span>
               </div> -->
-              <RouterLink class="signup btn btn-gradient color-4" to="/main/signup">
+              <!-- <RouterLink class="signup btn btn-gradient color-4" to="/main/signup">
                 <i class="fas fa-user-alt"></i>
                 <span class="font-roboto">Sign Up</span>
-              </RouterLink>
+              </RouterLink> -->
               <!-- <nuxt-link
                   class="menu-title-level1"
                 
