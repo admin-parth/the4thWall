@@ -11,9 +11,12 @@
           </div>
           <div class="row property-service column-space about-service">
             <div
-              class="col-xl-3 fadeInUp d-flex flex-column flex-xl-row align-items-center gap-10"
+              class="col-xl-3 mx-auto fadeInUp d-flex flex-column flex-xl-row align-items-center"
               v-for="(item, index) in Services_data"
               :key="index"
+              :style="{
+                width: index === Services_data.length - 1 && 'fit-content',
+              }"
             >
               <div class="service-box">
                 <div class="hover-line">
@@ -39,7 +42,7 @@
                 class="arrow-1"
               ></div>
             </div>
-            <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center mt-3">
               <a class="btn btn-gradient btn-pill color-2 me-1"
                 >Book Your Session</a
               >
@@ -131,8 +134,10 @@ const Services_data = [
     /*   animation: a1 1.5s infinite linear; */
   }
 }
-/* .service-2 {
-  background-color: #eee;
-  box-shadow: inset 0px 4px 10px rgba(50, 50, 50, 0.1), inset 0px -4px 10px rgba(50, 50, 50, 0.1);
-} */
+@media (min-width: 1024px) {
+  .service-box {
+    width: 250px;
+    text-align: center;
+  }
+}
 </style>
