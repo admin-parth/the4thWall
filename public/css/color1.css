@@ -8346,6 +8346,7 @@ header .dropdown.input-group-text .dropdown-menu,
   header.header-4 .main-navbar .nav-menu > li {
     padding: 0; }
   header .main-navbar .nav-menu {
+    flex-direction: column;
     position: fixed;
     background-color: #ffffff;
     width: 300px;

@@ -104,10 +104,7 @@
                             />
                           </div>
                         </div>
-                        <button
-                          type="submit"
-                          class="btn btn-gradient color-4"
-                        >
+                        <button type="submit" class="btn btn-gradient color-4">
                           {{ "Create account" }}
                         </button>
                         <span class="d-block mt-3 font-rubik"

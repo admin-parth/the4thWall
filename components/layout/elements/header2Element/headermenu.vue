@@ -7,7 +7,7 @@
             <nav>
               <div class="main-navbar">
                 <div id="mainnav">
-                  <LayoutElementsHeaderElementNavmenu />
+                  <LayoutElementsHeaderElementNavmenu color="#ED1F26" />
                 </div>
               </div>
             </nav>
@@ -18,10 +18,13 @@
                   "(880)-123 789 / (800)- 561 456"
                 }}</span>
               </div> -->
-              <!-- <RouterLink class="signup btn btn-gradient color-4" to="/main/signup">
-                <i class="fas fa-user-alt"></i>
+              <RouterLink
+                class="signup btn btn-gradient color-4 p-2"
+                to="/main/signup"
+              >
+                <i class="fas fa-user-alt p-0" style="margin-right: 10px"></i>
                 <span class="font-roboto">Sign Up</span>
-              </RouterLink> -->
+              </RouterLink>
               <!-- <nuxt-link
                   class="menu-title-level1"
                 

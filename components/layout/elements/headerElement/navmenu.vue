@@ -11,12 +11,15 @@
     <li class="back-btn">
       <div class="mobile-back text-end" @click="toggle = false">
         <span>{{ "Back" }}</span>
-        <Icon name="ic:baseline-chevron-right" />
+        <Icon
+          name="ic:baseline-chevron-right"
+          :class="color ? color : 'text-black'"
+        />
       </div>
     </li>
     <li>
       <RouterLink to="/" class="nav-link menu-title">
-        <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="30">
+        <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="30" />
       </RouterLink>
     </li>
     <li
@@ -100,6 +103,7 @@
 <script lang="ts" setup>
 import Header_Type from "~/static/data/types/header";
 import menulink from "~/static/data/headers/headers1/menu";
+console.log(menulink);
 let props = defineProps({
   header: String,
   color: String,
