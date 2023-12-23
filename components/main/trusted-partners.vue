@@ -9,7 +9,7 @@
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg>
           </div>
-          <div class="swiper-container">
+          <div class="swiper-container overflow-hidden">
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div
@@ -134,7 +134,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+@media (max-width: 481px) {
+  .slide-content img {
+    width: 100px;
+  }
+}
 .slide-content {
   margin-right: 20px; /* Adjust the spacing between images */
 }
