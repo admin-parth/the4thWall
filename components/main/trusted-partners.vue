@@ -1,9 +1,9 @@
 <template>
-  <section class="about-main">
+  <section class="about-main pb-4">
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="title-2 mb-5">
+          <div class="title-2 mb-4">
             <h2>Our Trusted Partner</h2>
             <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>

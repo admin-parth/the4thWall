@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="title-2 mb-5">
+          <div class="title-2 mb-4">
             <h2>Recent Work</h2>
             <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
@@ -21,7 +21,7 @@
                   <div class="overlay grid-item">
                     <div class="portfolio-image">
                       <!-- <nuxt-link to="javascript:void(0)"> -->
-                        <img :src="item.src" class="bg-img img-fluid" alt="" />
+                      <img :src="item.src" class="bg-img img-fluid" alt="" />
                       <!-- </nuxt-link> -->
                     </div>
                   </div>
@@ -55,7 +55,7 @@ const data = [
     type: "sale",
   },
   {
-    src: "/image/main/gallery/2.jpg",
+    src: "/image/main/gallery/2nd.jpg",
     type: "rent",
   },
   {
