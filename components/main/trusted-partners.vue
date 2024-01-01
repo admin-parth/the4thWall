@@ -9,21 +9,10 @@
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg>
           </div>
-          <div class="swiper-container overflow-hidden">
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div
-                v-for="group in slideGroups"
-                :key="group.id"
-                class="swiper-slide"
-              >
-                <div
-                  v-for="slide in group.slides"
-                  :key="slide.id"
-                  class="slide-content"
-                >
-                  <img :src="slide.image" :alt="slide.title" class="img-row" />
-                </div>
+          <div class="slider">
+            <div class="slide-track">
+              <div class="slide" v-for="(item, index) in slides" :key="index">
+                <img :src="item.image" alt="" />
               </div>
             </div>
           </div>
@@ -34,11 +23,6 @@
 </template>
 
 <script>
-import SwiperCore, { Autoplay } from "swiper/core";
-import "swiper/swiper-bundle.css";
-
-SwiperCore.use([Autoplay]);
-
 export default {
   data() {
     return {
@@ -66,68 +50,13 @@ export default {
           image:
             "https://static.asianpaints.com/content/dam/asianpaints/home-page/header-icons/asian-paint-logo.png",
         },
-        {
-          id: 4,
-          title1: "Favicol",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image: "https://super.homelane.com/fev02.jpg",
-        },
-        {
-          id: 5,
-          title1: "Jaguar",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://www.jaquar.com/Themes/Jaquar2022/Content/images/logo.svg",
-        },
-        {
-          id: 6,
-          title1: "Asian Paints",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://static.asianpaints.com/content/dam/asianpaints/home-page/header-icons/asian-paint-logo.png",
-        },
       ],
     };
-  },
-  computed: {
-    slideGroups() {
-      // Split the slides into groups of 3
-      const groups = [];
-      for (let i = 0; i < this.slides.length; i += 3) {
-        groups.push({
-          id: i / 3 + 1,
-          slides: this.slides.slice(i, i + 3),
-        });
-      }
-      return groups;
-    },
-  },
-  mounted() {
-    const swiper = new SwiperCore(".swiper-container", {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      centeredSlides: true,
-      touchEventsTarget: "wrapper",
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        type: "bullets",
-      },
-    });
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* Center the Swiper container */
 .swiper-slide {
   display: flex;
@@ -144,4 +73,90 @@ export default {
 }
 
 /* Add your custom styles here */
+
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+$animationSpeed: 20s;
+
+// Animation
+@keyframes scroll {
+  0% {
+    transform: translateX(250px * 3.5);
+  }
+  100% {
+    transform: translateX(calc(-250px * 3.5));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(250px * 2);
+    }
+    100% {
+      transform: translateX(calc(-250px * 3.5));
+    }
+  }
+}
+// Styling
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 760px;
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(250px * 4);
+  }
+
+  .slide {
+    height: 100px;
+    width: 300px;
+    img {
+      height: 80px;
+      margin-top: 10px;
+      width: 250px;
+    }
+  }
+  // @media screen and (max-width: 768px) {
+  //   .slider {
+  //     width: 90vw;
+  //   }
+  //   .slide-track {
+  //     width: 50vw;
+  //   }
+  // }
+}
 </style>
