@@ -9,7 +9,7 @@
             style="width: 100%"
           >
             <div class="video-size">
-              <video width="100%" height="100%" loop muted autoplay>
+              <video width="100%" height="564px" loop muted autoplay>
                 <source src="/video/video2.mp4" type="video/mp4" />
                 <source src="/video/video2.mp4" type="video/mp4" />
                 <source src="/video/video2.mp4" type="video/mp4" />

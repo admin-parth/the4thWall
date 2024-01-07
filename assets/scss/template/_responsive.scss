@@ -80,7 +80,9 @@
   .layout-home2 {
     .feature-section {
       .feature-content {
-        margin-left: 100px;
+        margin-right: 100px;
+        float: right;
+        box-shadow:  0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);;
       }
     }
   }
@@ -10425,9 +10427,12 @@
       padding: 40px 0;
     }
   }
+  .video-size{
+    height: 564px !important;
+  }
   .layout-home2 {
     .home-main {
-      padding-top: 90px;
+      padding-top: 590px;
     }
     .arrow-light {
       .slick-arrow {
