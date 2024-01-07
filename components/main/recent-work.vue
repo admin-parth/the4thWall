@@ -20,9 +20,9 @@
                 <div class="grid-box">
                   <div class="overlay grid-item">
                     <div class="portfolio-image">
-                      <!-- <nuxt-link to="javascript:void(0)"> -->
-                      <img :src="item.src" class="bg-img img-fluid" alt="" />
-                      <!-- </nuxt-link> -->
+                      <nuxt-link to="/main/gallery">
+                        <img :src="item.src" class="bg-img img-fluid" alt="" />
+                      </nuxt-link>
                     </div>
                   </div>
                 </div>
