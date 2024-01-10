@@ -18,39 +18,41 @@
                 width: index === Services_data.length - 1 && 'fit-content',
               }"
             >
-            <div class="flip-card-click">
-              <div class="flip-card-inner" tab-index="0">
-                <div class="flip-card-front">
-                  <div class="service-box">
-                    <div class="hover-line">
-                      <svg class="service-icon">
-                        <use :xlink:href="item.svg"></use>
-                      </svg>
-                      <div>
-                        <svg class="icon-line-color">
-                          <use :xlink:href="item.svg1"></use>
+              <div class="flip-card-click">
+                <div class="flip-card-inner" tab-index="0">
+                  <div class="flip-card-front">
+                    <div class="service-box">
+                      <div class="hover-line">
+                        <svg class="service-icon">
+                          <use :xlink:href="item.svg"></use>
                         </svg>
+                        <div>
+                          <svg class="icon-line-color">
+                            <use :xlink:href="item.svg1"></use>
+                          </svg>
+                        </div>
                       </div>
+                      <h3>{{ index + 1 }}. {{ item.title }}</h3>
+                      <button class="btn btn-light-bg">Learn more</button>
                     </div>
-                    <h3>{{ index + 1 }}. {{ item.title }}</h3>
-                    <button class="btn btn-light-bg">Learn more</button>
                   </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="service-box">
-                    <h3>{{ item.title }}</h3>
-                    <p class="font-roboto">{{ item.details }}</p>
+                  <div class="flip-card-back">
+                    <div class="service-box">
+                      <h3>{{ item.title }}</h3>
+                      <p class="font-roboto">{{ item.details }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
               <div
                 v-if="index !== Services_data.length - 1"
                 class="arrow-1"
               ></div>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-3">
-              <a class="btn btn-gradient btn-pill color-2 me-1">Book Your Session</a>
+              <a class="btn btn-gradient btn-pill color-2 me-1"
+                >Book Your Session</a
+              >
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 const { t } = useI18n();
 const Services_data = [
   {
@@ -90,21 +92,28 @@ const Services_data = [
   },
 ];
 onMounted(() => {
-  document.querySelectorAll('.flip-card-click .flip-card-inner').forEach(function(item) {  
-    item.addEventListener('keypress', function(evt) { if (evt.keyCode == 13 || evt.keyCode == 32) { item.click(); } });
-  });
+  document
+    .querySelectorAll(".flip-card-click .flip-card-inner")
+    .forEach(function (item) {
+      item.addEventListener("keypress", function (evt) {
+        if (evt.keyCode == 13 || evt.keyCode == 32) {
+          item.click();
+        }
+      });
+    });
   // click to flip
-  document.querySelectorAll('.flip-card-click').forEach(function(item) { 
-      item.addEventListener('click', function () { this.classList.toggle('flipped');  });
+  document.querySelectorAll(".flip-card-click").forEach(function (item) {
+    item.addEventListener("click", function () {
+      this.classList.toggle("flipped");
+    });
   });
-})
-
+});
 </script>
 <style scoped>
 .flip-card-click {
   display: inline-block;
   background-color: transparent;
-  width: 300px;
+  width: 250px;
   height: 350px;
   margin-right: 12px;
   margin-bottom: 12px;
@@ -125,7 +134,8 @@ onMounted(() => {
   transform: rotateY(180deg);
   cursor: pointer;
 }
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -140,7 +150,8 @@ onMounted(() => {
   display: block;
 }
 @media (max-width: 575px) {
-  .flip-card-front, .flip-card-back {
+  .flip-card-front,
+  .flip-card-back {
     display: block;
   }
 
@@ -148,23 +159,24 @@ onMounted(() => {
     height: 200px !important;
   }
 }
-.flip-card-back .service-box{ 
+.flip-card-back .service-box {
   padding: 30px 10px !important;
   justify-content: flex-start !important;
 }
-.flip-card-back .service-box h3{
+.flip-card-back .service-box h3 {
   font-size: 16px;
-  text-align: center; 
+  text-align: center;
 }
-.flip-card-front p, .flip-card-back p {
+.flip-card-front p,
+.flip-card-back p {
   padding: 10px;
   font-size: 12px;
   color: black;
   -webkit-line-clamp: initial !important;
 }
-@media (max-width: 1460px){
-  .service-section.service-2 .property-service>div .service-box p {
-      -webkit-line-clamp: initial !important;
+@media (max-width: 1460px) {
+  .service-section.service-2 .property-service > div .service-box p {
+    -webkit-line-clamp: initial !important;
   }
 }
 .flip-card-back {
