@@ -162,6 +162,11 @@ onMounted(() => {
   color: black;
   -webkit-line-clamp: initial !important;
 }
+@media (max-width: 1460px){
+  .service-section.service-2 .property-service>div .service-box p {
+      -webkit-line-clamp: initial !important;
+  }
+}
 .flip-card-back {
   transform: rotateY(180deg);
 }
