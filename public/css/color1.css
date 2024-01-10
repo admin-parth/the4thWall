@@ -16386,9 +16386,10 @@ ol {
     padding: 20px 8px; }
   .footer-custom-col .row > div {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 33.33%;
-            flex: 0 0 33.33%;
-    max-width: 33.33%; }
+        /* -ms-flex: 0 0 33.33%; */
+            /* flex: 0 0 33.33%; */
+    /* max-width: 33.33%;  */
+  }
     .footer-custom-col .row > div:nth-child(4), .footer-custom-col .row > div:last-child {
       margin-top: 30px; }
       .footer-custom-col .row > div:nth-child(4) .footer-left-space, .footer-custom-col .row > div:last-child .footer-left-space {

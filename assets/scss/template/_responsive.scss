@@ -80,9 +80,9 @@
   .layout-home2 {
     .feature-section {
       .feature-content {
-        margin-right: 100px;
-        float: right;
-        box-shadow:  0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);;
+        // margin-right: 100px;
+        // float: right;
+        // box-shadow:  0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);;
       }
     }
   }
@@ -386,8 +386,8 @@
   .footer-custom-col {
     .row {
       > div {
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
+        // flex: 0 0 33.33%;
+        // max-width: 33.33%;
         &:nth-child(4),
         &:last-child {
           margin-top: 30px;
