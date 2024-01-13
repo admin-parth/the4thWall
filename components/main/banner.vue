@@ -1,5 +1,5 @@
 <template>
-  <section class="layout-home2 banner-section p-0">
+  <section id="home" class="layout-home2 banner-section p-0">
     <div class="container-fluid p-0">
       <div class="row m-0">
         <div class="col-lg-12 p-0">

@@ -1,5 +1,5 @@
 <template>
-  <section class="service-section service-2">
+  <section id="design-process" class="service-section service-2">
     <div class="container">
       <div class="row">
         <div class="col">

@@ -32,6 +32,7 @@
     "bootstrap": "^5.2.3",
     "dropzone-vue": "^0.1.11",
     "firebase": "^9.15.0",
+    "jump.js": "^1.0.2",
     "mongoose": "^7.6.2",
     "nuxt-icon": "^0.3.3",
     "pinia": "^2.1.4",

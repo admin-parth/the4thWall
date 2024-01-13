@@ -64,7 +64,7 @@ interface item{
         magamenu:false,
         right:false,
         name: 'Home',
-        path: '/',
+        path: '#home',
         children: undefined
     },
     {
@@ -72,7 +72,7 @@ interface item{
         magamenu:false,
         right:true,
         name:'Gallery',
-        path:'/main/gallery',
+        path:'#gallery',
         children: undefined
     },
     {
@@ -80,7 +80,7 @@ interface item{
         magamenu:false,
         right:true,
         name:'About us',
-        path:'/main/design-process',
+        path:'#design-process',
         children: undefined
     },
     {
@@ -88,7 +88,7 @@ interface item{
         magamenu:false,
         right:true,
         name:'About us',
-        path:'/main/about-us',
+        path:'#about-us',
         children: undefined
     },
     {
@@ -96,7 +96,7 @@ interface item{
         magamenu:false,
         right:true,
         name:'Contect us',
-        path:'/main/contact',
+        path:'#contact',
         children: undefined
     }
 ];

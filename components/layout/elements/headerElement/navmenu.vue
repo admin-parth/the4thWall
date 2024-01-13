@@ -39,9 +39,9 @@
       <!-- <a :href="item.path" class="nav-link menu-title">
         {{ $t(item.title) }}
       </a> -->
-      <RouterLink :to="item.path" class="nav-link menu-title">
+      <a @click="jumpTo(item.path)" class="nav-link menu-title">
         {{ $t(item.title) }}
-      </RouterLink>
+      </a>
       <!-- <ul class="nav-submenu menu-content"
                 :class="toggle ? item.title == subtoogle && accordiontoggle ? 'd-block' : '' : ''"
                 v-if="item.magamenu == false">
@@ -103,11 +103,14 @@
 <script lang="ts" setup>
 import Header_Type from "~/static/data/types/header";
 import menulink from "~/static/data/headers/headers1/menu";
+import jump from "jump.js";
+
 console.log(menulink);
 let props = defineProps({
   header: String,
   color: String,
 });
+
 const Nav_Data: Header_Type[] = menulink;
 let accordiontoggle = ref<boolean>(false);
 let subaccordiontoggle = ref<boolean>(false);
@@ -117,6 +120,9 @@ let subtoogle = ref<string>("");
 let subname = ref<string>("");
 let childname = ref<string>("");
 let router = useRoute();
+function jumpTo(element: string) {
+  jump(element);
+}
 function toogleclass(title: string) {
   subtoogle.value = title;
 }
@@ -128,4 +134,4 @@ function togglechildclass(name: string) {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
