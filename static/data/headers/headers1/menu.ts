@@ -83,22 +83,22 @@ interface item{
         path:'#design-process',
         children: undefined
     },
-    {
-        title:'About us',
-        magamenu:false,
-        right:true,
-        name:'About us',
-        path:'#about-us',
-        children: undefined
-    },
-    {
-        title:'Contact',
-        magamenu:false,
-        right:true,
-        name:'Contect us',
-        path:'#contact',
-        children: undefined
-    }
+    // {
+    //     title:'About us',
+    //     magamenu:false,
+    //     right:true,
+    //     name:'About us',
+    //     path:'#about-us',
+    //     children: undefined
+    // },
+    // {
+    //     title:'Contact',
+    //     magamenu:false,
+    //     right:true,
+    //     name:'Contect us',
+    //     path:'#contact',
+    //     children: undefined
+    // }
 ];
 
 export default navlink

@@ -1887,17 +1887,17 @@ header,
         border: 1px solid $light-border;
         top: 0;
         height: 100vh;
-        right: -300px;
+        left: -300px;
         z-index: 99;
         transition: all 0.3s ease;
         overflow: scroll;
         overflow-x: hidden;
         &.open {
-          right: 0;
+          left: 0;
         }
 
         &.opennav {
-          right: 0;
+          left: 0;
         }
 
         .back-btn {
