@@ -39,11 +39,25 @@
       </div>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-5">
-      <a class="btn btn-gradient btn-pill color-2 me-1">Book Your Session</a>
+      <a
+        class="btn btn-gradient btn-pill color-2 me-1"
+        @click="handleBookSession"
+      >
+        Book Your Session
+      </a>
     </div>
   </section>
 </template>
-<script></script>
+<script lang="ts" setup>
+let route = useRoute();
+let router = useRouter();
+
+function handleBookSession(e: any) {
+  e.preventDefault();
+  console.log("clicked");
+  router.push({ path: "/main/signup" });
+}
+</script>
 <style scoped>
 img {
   border-radius: 10px;

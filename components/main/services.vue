@@ -50,7 +50,9 @@
               ></div>
             </div>
             <div class="d-flex align-items-center justify-content-center mt-3">
-              <a class="btn btn-gradient btn-pill color-2 me-1"
+              <a
+                class="btn btn-gradient btn-pill color-2 me-1"
+                @click="handleBookSession"
                 >Book Your Session</a
               >
             </div>
@@ -61,10 +63,18 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import { onMounted } from "vue";
 const { t } = useI18n();
+
+let route = useRoute();
+let router = useRouter();
+function handleBookSession(e: any) {
+  e.preventDefault();
+  console.log("clicked");
+  router.push({ path: "/main/signup" });
+}
 const Services_data = [
   {
     svg: "/svg/icons.svg#home-heart",

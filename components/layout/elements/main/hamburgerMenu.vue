@@ -62,8 +62,12 @@ let toggle = ref<boolean>(false);
 let subtoogle = ref<string>("");
 let subname = ref<string>("");
 let childname = ref<string>("");
-let router = useRoute();
+let route = useRoute();
+let router = useRouter();
 function jumpTo(element: string) {
+  if (this.route.path !== "/") {
+    this.router.push({ path: "/" });
+  }
   jump(element);
 }
 function toogleclass(title: string) {

@@ -44,8 +44,15 @@
       </div>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-3">
-      <a class="btn btn-gradient btn-pill color-2 me-1">Book Your Session</a>
-      <a href="javascript:void(0)" class="btn btn-light-bg btn-pill color-2"
+      <a
+        class="btn btn-gradient btn-pill color-2 me-1"
+        @click="handleBookSession"
+        >Book Your Session</a
+      >
+      <a
+        href="javascript:void(0)"
+        class="btn btn-light-bg btn-pill color-2"
+        @click="handleGalleryPage"
         ><span>View More</span></a
       >
     </div>
@@ -58,8 +65,19 @@
   ></vue-easy-lightbox>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import MasonryWall from "@yeger/vue-masonry-wall";
+
+let route = useRoute();
+let router = useRouter();
+function handleBookSession(e: any) {
+  e.preventDefault();
+  router.push({ path: "/main/signup" });
+}
+function handleGalleryPage(e: any) {
+  e.preventDefault();
+  router.push({ path: "/main/gallery" });
+}
 const data = [
   {
     src: "/image/main/gallery/1.jpg",
