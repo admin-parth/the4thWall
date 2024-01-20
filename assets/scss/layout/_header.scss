@@ -307,7 +307,8 @@ header {
             li {
               a {
                 &:hover {
-                  color: var(--theme-default4) !important;
+                  text-decoration: underline;
+                  transition: all 0.5s;
                 }
               }
             }
@@ -348,8 +349,23 @@ header {
           a {
             border-radius: 0;
             color: var(--theme-default) !important;
-            &:hover {
-              color: var(--theme-default5) !important;
+            display: inline-block;
+            position: relative;
+            &:after{
+              content: '';
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: var(--theme-default);
+              transform-origin: bottom right;
+              transition: transform 0.25s ease-out;
+            }
+            &:hover:after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
             }
             i, svg {
               margin-right: 8px;
@@ -514,9 +530,11 @@ header {
         >li {
           >a {
             font-family: $font_2, $font_3;
+            font-size: 18px !important;
             text-transform: capitalize;
             font-size: 15px;
             margin-right: 20px;
+            cursor: pointer;
           }
 
           .nav-submenu {

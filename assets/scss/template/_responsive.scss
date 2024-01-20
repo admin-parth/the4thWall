@@ -2471,7 +2471,7 @@
       .nav-menu {
         > li {
           > a {
-            padding: 7px 15px 5px;
+            padding: 7px 0px 5px;
           }
         }
       }
@@ -3035,7 +3035,7 @@
             .nav-link {
               &.active,
               &:hover {
-                color: var(--theme-default5) !important;
+                color: var(--theme-default) !important;
               }
             }
           }

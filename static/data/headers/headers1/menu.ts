@@ -68,7 +68,7 @@ interface item{
         children: undefined
     },
     {
-        title:'Gallery',
+        title:'Recent Work',
         magamenu:false,
         right:true,
         name:'Gallery',

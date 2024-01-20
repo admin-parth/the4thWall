@@ -20,7 +20,7 @@
                 <div class="grid-box">
                   <div class="overlay grid-item">
                     <div class="portfolio-image">
-                      <nuxt-link to="/main/gallery">
+                      <nuxt-link to="/main/recent-work">
                         <img :src="item.src" class="bg-img img-fluid" alt="" />
                       </nuxt-link>
                     </div>
@@ -47,14 +47,16 @@
       <a
         class="btn btn-gradient btn-pill color-2 me-1"
         @click="handleBookSession"
-        >Book Your Session</a
       >
+        Book Your Session
+      </a>
       <a
         href="javascript:void(0)"
-        class="btn btn-light-bg btn-pill color-2"
+        class="btn btn-gradient btn-pill color-6"
         @click="handleGalleryPage"
-        ><span>View More</span></a
       >
+        <span>View More</span>
+      </a>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-3"></div>
   </section>
@@ -76,7 +78,7 @@ function handleBookSession(e: any) {
 }
 function handleGalleryPage(e: any) {
   e.preventDefault();
-  router.push({ path: "/main/gallery" });
+  router.push({ path: "/main/recent-work" });
 }
 const data = [
   {

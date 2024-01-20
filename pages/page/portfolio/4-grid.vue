@@ -24,7 +24,7 @@ useHead({
     title: 'Sheltos- portfolio 4-grid page'
 })
 let { data }: FetchResponse = useFetch(useurl + '/data/grid.json')
-const Grid_Img: Img[] = data.value.img4
+const Grid_Img: Img[] = data.value?.img4
 </script>
 
 <style scoped></style>
