@@ -65,8 +65,8 @@ let childname = ref<string>("");
 let route = useRoute();
 let router = useRouter();
 function jumpTo(element: string) {
-  if (this.route.path !== "/") {
-    this.router.push({ path: "/" });
+  if (route.path !== "/") {
+    router.push({ path: "/" });
   }
   jump(element);
 }
