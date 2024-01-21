@@ -33,8 +33,9 @@
           class="form-control"
           v-model="store.phone"
           name="mobnumber"
-          type="number"
+          type="tel"
           maxlength="10"
+          pattern="[0-9]{10}"
           placeholder="Enter your phone number"
           required
         />

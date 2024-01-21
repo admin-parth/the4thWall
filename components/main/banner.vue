@@ -100,10 +100,12 @@
                               </div>
                             </div>
                             <input
-                              type="email"
+                              type="tel"
                               class="form-control"
                               v-model="store.phone"
-                              placeholder="Enter Phone Number"
+                              placeholder="eg.1234567890"
+                              maxlength="10"
+                              pattern="[0-9]{10}"
                               required
                             />
                           </div>
