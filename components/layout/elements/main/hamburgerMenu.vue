@@ -29,7 +29,7 @@
       "
       v-for="(item, index) in Nav_Data"
       :key="index"
-      @click="toogleclass(item.title)"
+      @click="toggle = false"
     >
       <a @click="jumpTo(item.path)" class="nav-link menu-title">
         {{ $t(item.title) }}
