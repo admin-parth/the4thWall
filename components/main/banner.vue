@@ -37,6 +37,7 @@
                             <input
                               type="text"
                               class="form-control"
+                              v-model="store.name"
                               placeholder="Enter your name"
                               required
                             />
@@ -55,6 +56,7 @@
                               type="email"
                               class="form-control"
                               placeholder="Enter email address"
+                              v-model="store.email"
                               required
                             />
                           </div>
@@ -71,6 +73,7 @@
                               id="pwd-input1"
                               class="form-control"
                               placeholder="Password"
+                              v-model="store.password"
                               required
                             />
                             <div class="input-group-apend">
@@ -99,6 +102,7 @@
                             <input
                               type="email"
                               class="form-control"
+                              v-model="store.phone"
                               placeholder="Enter Phone Number"
                               required
                             />
@@ -162,6 +166,9 @@
 </template>
 
 <script lang="ts" setup>
+import { usewizaredStore } from "~/store/wizard";
+let store = usewizaredStore();
+
 const heading = "The 4th Wall";
 const data = ref([]);
 let showpassword = ref<boolean>(false);

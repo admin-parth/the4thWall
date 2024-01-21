@@ -2316,7 +2316,8 @@ form .form-control::-webkit-input-placeholder {
   text-transform: capitalize; }
 
 form .form-control::-moz-placeholder {
-  text-transform: capitalize; }
+  /* text-transform: capitalize;  */
+}
 
 form .form-control:-ms-input-placeholder {
   text-transform: capitalize; }
@@ -2325,7 +2326,8 @@ form .form-control::-ms-input-placeholder {
   text-transform: capitalize; }
 
 form .form-control::placeholder {
-  text-transform: capitalize; }
+  /* text-transform: capitalize;  */
+}
 
 form .form-control:focus {
   -webkit-box-shadow: none;

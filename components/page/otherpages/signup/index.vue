@@ -16,16 +16,20 @@
                   separator="-"
                   :num-inputs="6"
                   input-type="tel"
-                  :placeholder="['*', '*', '*', '*','*','*']"
+                  :placeholder="['*', '*', '*', '*', '*', '*']"
                   @on-change="handleOnChange"
                   @on-complete="handleOnComplete"
                 />
-                <button class="w-100 text-center" @click="verifyPhoneNumber">Verify Code</button>
+                <button class="w-100 text-center" @click="verifyPhoneNumber">
+                  Verify Code
+                </button>
               </div>
               <div v-else>
                 <h1>Phone Number Authentication</h1>
                 <vue-tel-input v-model="phoneNumber" mode="international" />
-                <button class="w-100 text-center" @click="sendVerificationCode">Send Verification Code</button>
+                <button class="w-100 text-center" @click="sendVerificationCode">
+                  Send Verification Code
+                </button>
               </div>
               <div id="recaptcha-container"></div>
             </div>
@@ -42,8 +46,8 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import "vue-tel-input/vue-tel-input.css";
 export default {
   setup() {
-    const auth = inject('auth');
-    
+    const auth = inject("auth");
+
     const showOtpInput = ref(false);
 
     const phoneNumber = ref("");
@@ -84,9 +88,13 @@ export default {
 
     const verifyPhoneNumber = () => {
       if (confirmationResult) {
-        confirmationResult.confirm(verificationCode.value)
+        confirmationResult
+          .confirm(verificationCode.value)
           .then((result) => {
-            console.log("Phone number verified:", {uid, phoneNumber}= result.user);
+            console.log(
+              "Phone number verified:",
+              ({ uid, phoneNumber } = result.user)
+            );
           })
           .catch((error) => {
             console.error(error);
@@ -106,7 +114,6 @@ export default {
   },
 };
 </script>
-
 
 <style>
 .otp-input {
@@ -130,16 +137,15 @@ export default {
   margin: 0;
 }
 input::placeholder {
-  font-size: 15px;
-  text-align: center;
-  font-weight: 600;
+  /* font-size: 15px; */
+  /* text-align: center; */
+  /* font-weight: 600; */
 }
 
-button{
+button {
   margin-top: 18px;
   padding: 10px;
   background-color: #635c5c;
   color: white;
 }
-
 </style>
