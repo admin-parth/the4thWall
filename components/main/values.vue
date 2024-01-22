@@ -9,16 +9,26 @@
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg>
           </div>
+
           <div class="row property-service column-space about-service">
-            <div
-              class="col-xl-3 fadeInUp d-flex flex-column align-items-center gap-3 p-3"
-              v-for="(item, index) in Services_data"
-              :key="index"
+            <swiper
+              :breakpoints="breakpoints"
+              :loop="true"
+              navigation
+              :pagination="{ clickable: true }"
+              :modules="setting"
+              class="about-1 about-wrap"
             >
-              <img :src="item.img" alt="" class="svg-image" />
-              <h2 class="title">{{ item.title }}</h2>
-              <p class="text">{{ item.desc }}</p>
-            </div>
+              <swiper-slide
+                v-for="(item, index) in Services_data"
+                :key="index"
+                class="col-xl-3 fadeInUp d-flex flex-column align-items-center gap-3 p-3"
+              >
+                <img :src="item.img" alt="" class="svg-image" />
+                <h2 class="title">{{ item.title }}</h2>
+                <p class="text">{{ item.desc }}</p>
+              </swiper-slide>
+            </swiper>
           </div>
         </div>
       </div>
@@ -26,7 +36,44 @@
   </section>
 </template>
 <script setup lang="ts">
+import { Navigation, Pagination } from "swiper";
+let setting = [Navigation, Pagination];
+
+let breakpoints = {
+  320: {
+    slidesPerView: 1,
+  },
+  768: {
+    slidesPerView: 2,
+  },
+  992: {
+    slidesPerView: 3,
+  },
+  1200: {
+    slidesPerView: 4,
+  },
+};
 const Services_data = [
+  {
+    title: "Flat 10 year warranty",
+    desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
+    img: "/image/main/t1.svg",
+  },
+  {
+    title: "45-day delivery",
+    desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
+    img: "/image/main/t2.svg",
+  },
+  {
+    title: "600+ design experts",
+    desc: "Explore design ideas and co-create your dream home with our experienced designers.",
+    img: "/image/main/t3.svg",
+  },
+  {
+    title: "Post-installation service",
+    desc: "Complete your design journey and get unwavering support from our dedicated care team.",
+    img: "/image/main/t4.svg",
+  },
   {
     title: "Flat 10 year warranty",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
@@ -65,9 +112,4 @@ const Services_data = [
   text-align: center;
   color: black;
 }
-
-// .values{
-//    background-color: #eee;
-//   box-shadow: inset 0px 4px 10px rgba(50, 50, 50, 0.1), inset 0px -4px 10px rgba(50, 50, 50, 0.1);
-// }
 </style>
