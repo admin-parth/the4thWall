@@ -1,6 +1,6 @@
 <template>
   <div class="loader-wrapper img-gif" v-if="loader">
-    <img src="/image/loader/loader-4.gif" class="img-fluid" alt="">
+    <img src="/image/loader/loader1.gif" class="img-fluid" alt="">
   </div>
   <LayoutCommonHeadersHeader2 />
   <slot />
@@ -13,7 +13,7 @@ let loader = ref<boolean>(true);
 onMounted(() => {
   setTimeout(() => {
     loader.value = false;
-  }, 0);
+  }, 2200);
 })
 </script>
 
