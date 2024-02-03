@@ -7,10 +7,10 @@
                         <div class="top-panel tab-icon">
                             <div class="filters respon-filter-content filter-button-group">
                                 <ul>
-                                    <li :class="active == 'all' ? 'active' : ''" @click="getvalue('all')">
+                                    <!-- <li :class="active == 'all' ? 'active' : ''" @click="getvalue('all')"> -->
                                         <!-- <Icon name="ic:round-house" class="fs-1" /> -->
-                                        <span>All</span>
-                                    </li>
+                                        <!-- <span>All</span>
+                                    </li> -->
                                     <li :class="active == 'bedroom' ? 'active' : ''" @click="getvalue('bedroom')">
                                         <!-- <Icon name="solar:sale-linear" class="fs-1" /> -->
                                         <span>Bedroom</span>
@@ -67,11 +67,11 @@ let props = defineProps<MyProps>()
 let visible = ref<boolean>(false)
 let index = ref<number>(0)
 let imgs = ref<string[]>([])
-let active = ref<string>('all')
+let active = ref<string>('bedroom')
 let getdata = computed(() => {
-    if (active.value == 'all') {
-        return props.data
-    }
+    // if (active.value == 'all') {
+    //     return props.data
+    // }
     return props.data.filter((item: img) => item.type == active.value)
 })
 function showsingle(i: number) {
