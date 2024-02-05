@@ -8,6 +8,7 @@
     <Main3dDesign />
     <MainServices />
     <MainRecentWork />
+    <MainHowItWorks />
     <MainTrustedPartners />
     <ElementTaptopTapTop3 />
   </LayoutLayoutsLayout2>

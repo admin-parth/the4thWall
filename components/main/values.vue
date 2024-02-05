@@ -10,14 +10,17 @@
             </svg>
           </div>
 
-          <div class="row property-service column-space about-service">
+          <div
+            class="small-section row property-service column-space about-service"
+          >
             <swiper
               :breakpoints="breakpoints"
+              :slidesPerView="4"
               :loop="true"
               navigation
               :pagination="{ clickable: true }"
               :modules="setting"
-              class="about-1 about-wrap"
+              class="slide-3 brand-slider"
             >
               <swiper-slide
                 v-for="(item, index) in Services_data"
