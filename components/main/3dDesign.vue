@@ -27,7 +27,9 @@
           </div>
 
           <div class="row justify-content-center" id="jsv-holder">
-            <div class="col-sm-12 col-md-10">
+            <div
+              class="col-md-10 col-sm-12 d-flex flex-column gap-3 justify-content-center"
+            >
               <iframe
                 width="100%"
                 height="414px"
