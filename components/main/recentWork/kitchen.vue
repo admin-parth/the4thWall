@@ -57,7 +57,7 @@
                       to="javascript:void(0)"
                       :style="'background-image:url(' + item.src + ')'"
                       class="bg-size background"
-                      @click="showsingle(index, 'item')"
+                      @click="showsingle(index, 'simple')"
                     >
                       <img :src="item.src" class="bg-img d-none" alt="" />
                     </nuxt-link>
@@ -92,42 +92,38 @@
       </div>
     </div>
   </section>
-  <div
-    class="modal fade edit-profile-modal"
-    id="customModal"
-    tabindex="-1"
-    aria-labelledby="customModalLabel"
-    aria-hidden="true"
-    @keydown.esc="closeModal"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            @click="closeModal"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <iframe
-            v-if="is360Image"
-            :src="itemSrc"
-            width="100%"
-            height="414px"
-            allowfullscreen
-          ></iframe>
-          <img v-else :src="itemSrc" class="img-fluid gallary-img" alt="" />
-        </div>
-        <div class="modal-footer">
-          <div @click="prevImage">&lt;</div>
-          <div @click="nextImage">&gt;</div>
-        </div>
+  <template v-if="is360 && visible">
+    <div class="vel-modal">
+      <div class="vel-img-wrapper">
+        <iframe
+          class="vel-img panellum-img"
+          width="100%"
+          height="414px"
+          allowfullscreen
+          style="
+            border-radius: 10px;
+            box-shadow: 0px 10px 13px -7px #000000,
+              5px 5px 15px 5px rgba(0, 0, 0, 0);
+          "
+          :src="imgs[0]"
+        ></iframe>
+      </div>
+      <div class="vel-btns-wrapper">
+        <button class="close" @click="handleHide">&times;</button>
       </div>
     </div>
-  </div>
+  </template>
+  <template v-else>
+    <vue-easy-lightbox
+      scrollDisabled
+      escDisabled
+      moveDisabled
+      :visible="visible"
+      :imgs="imgs"
+      :index="index"
+      @hide="handleHide"
+    ></vue-easy-lightbox>
+  </template>
 </template>
 
 <script setup lang="ts">
@@ -141,84 +137,58 @@ interface img {
 }
 let props = defineProps<MyProps>();
 let visible = ref<boolean>(false);
+let is360 = ref<boolean>(false);
 let index = ref<number>(0);
-let is360Image = ref(false);
-let itemSrc = ref("");
+let imgs = ref<string[]>([]);
+
 let active = ref<string>("bedroom");
-let currentIndex = ref(0);
 let getdata = computed(() => {
-  // if (active.value == 'all') {
-  //     return props.data
-  // }
   return props.data.filter((item: img) => item.type == active.value);
 });
-function showsingle(i: any, type: string) {
-  currentIndex.value = i;
-  if (type === "360") {
-    is360Image.value = true;
-    itemSrc.value =
-      "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://t3.ftcdn.net/jpg/03/85/07/52/360_F_385075210_PehsaPu4a2NaxfX5nvxnJvBPRzhNTfMi.jpg&autoLoad=true&autoRotate=-2";
-
-    console.log(itemSrc, "itemSrc");
+function showsingle(i: number, type: string) {
+  index.value = i;
+  imgs.value = [];
+  if (type === "simple") {
+    props.data.forEach((element: img) => {
+      imgs.value.push(element.src);
+    });
+    is360.value = false;
   } else {
-    is360Image.value = false;
-    index.value = i;
-    console.log(props.data[i].src);
-    itemSrc.value = props.data[i].src;
+    imgs.value.push(
+      "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://t3.ftcdn.net/jpg/03/85/07/52/360_F_385075210_PehsaPu4a2NaxfX5nvxnJvBPRzhNTfMi.jpg&autoLoad=true&autoRotate=-2"
+    );
+    is360.value = true;
   }
-  const modal = document.getElementById("customModal");
-  modal?.classList.add("show");
-  modal?.setAttribute("aria-modal", "true");
-  modal?.setAttribute(
-    "style",
-    "display: flex;justify-content: center;align-items:center;height: 700px"
-  );
-  document.body.classList.add("modal-open");
+  visible.value = true;
+}
+function handleHide() {
+  visible.value = false;
+  console.log(visible.value);
 }
 
-function closeModal() {
-  const modal = document.getElementById("customModal");
-  modal?.classList.remove("show");
-  modal?.setAttribute("aria-modal", "false");
-  modal?.setAttribute("style", "display: none");
-  document.body.classList.remove("modal-open");
-}
-
-function nextImage() {
-  currentIndex.value = (currentIndex.value + 1) % props.data.length;
-  showsingle(currentIndex.value, props.data[currentIndex.value].type);
-}
-
-function prevImage() {
-  currentIndex.value =
-    (currentIndex.value - 1 + props.data.length) % props.data.length;
-  showsingle(currentIndex.value, props.data[currentIndex.value].type);
-}
 function getvalue(value: string) {
   active.value = value;
 }
 </script>
 
 <style scoped>
-.gallary-img {
-  height: 400px;
-  width: 100%;
+.vel-img-wrapper {
+  left: 52%;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
-.modal-dialog {
-  max-width: 90vw;
+
+.panellum-img {
+  width: 80vw;
+  max-height: 80vh;
 }
-.modal-body {
-  max-height: calc(100vh - 200px);
+.vel-btns-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
-.modal-content {
-  max-height: calc(100vh - 400px);
-}
-.modal-footer {
-  justify-content: space-between;
-  position: relative;
-  top: -300px;
+.close {
+  background: transparent;
   border: none;
-  font-size: 40px;
-  cursor: pointer;
+  font-size: 32px;
+  color: #fff;
 }
 </style>
