@@ -2,6 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12 pt45 pb20">
+        <div class="title-2 mb-4">
+          <h2>How it works</h2>
+          <svg class="title-svg">
+            <use xlink:href="/svg/icons.svg#title-line"></use>
+          </svg>
+        </div>
         <div class="row inner-row">
           <div
             v-for="(step, index) in steps"
@@ -77,7 +83,7 @@ export default {
     position: absolute;
     height: 40px;
     top: -40px;
-    left: calc(10% + 40px);
+    left: 49%;
     display: block;
   }
   .order-tracking:first-child:after {
@@ -90,9 +96,9 @@ export default {
     visibility: hidden;
   }
 }
-@media screen and (max-width: 350px) {
-  .order-tracking::after {
-    left: calc(10% + 45px);
+@media screen and (min-width: 550px) {
+  .order-tracking {
+    width: 20%;
   }
 }
 .pt45 {
@@ -100,7 +106,7 @@ export default {
 }
 .order-tracking {
   text-align: center;
-  width: 20%;
+  /* width: 20%; */
   position: relative;
   display: block;
 }
