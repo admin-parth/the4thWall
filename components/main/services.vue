@@ -1,7 +1,7 @@
 <template>
   <section id="design-process" class="service-section service-2">
     <div class="container">
-      <div class="row">
+      <div class="row design-process-row">
         <div class="col">
           <div class="title-2 mb-4">
             <h2>{{ $t("ourDesignProcess.title") }}</h2>
@@ -11,7 +11,7 @@
           </div>
           <div class="row property-service column-space about-service">
             <div
-              class="col-xl-3 mx-auto fadeInUp d-flex flex-column flex-xl-row align-items-center"
+              class="mx-auto fadeInUp d-flex flex-column align-items-center justify-content-center service-data-wrapper"
               v-for="(item, index) in Services_data"
               :key="index"
               :style="{
@@ -21,7 +21,7 @@
               <div class="flip-card-click">
                 <div class="flip-card-inner" tab-index="0">
                   <div class="flip-card-front">
-                    <div class="service-box">
+                    <div class="service-box" style="padding: 40px">
                       <div class="hover-line">
                         <svg class="service-icon">
                           <use :xlink:href="item.svg"></use>
@@ -32,14 +32,27 @@
                           </svg>
                         </div>
                       </div>
-                      <h3>{{ index + 1 }}. {{ item.title }}</h3>
-                      <button class="btn btn-light-bg">Learn more</button>
+                      <h3 style="font-size: medium; text-align: center">
+                        {{ index + 1 }}. {{ item.title }}
+                      </h3>
+                      <button class="btn btn-light-bg h-auto learn-more-btn">
+                        Learn more
+                      </button>
                     </div>
                   </div>
                   <div class="flip-card-back">
                     <div class="service-box">
                       <h3>{{ item.title }}</h3>
-                      <p class="font-roboto">{{ item.details }}</p>
+                      <p
+                        class="font-roboto"
+                        style="
+                          line-height: inherit;
+                          padding: 0;
+                          letter-spacing: inherit;
+                        "
+                      >
+                        {{ item.details }}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -49,7 +62,9 @@
                 class="arrow-1"
               ></div>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-3">
+            <div
+              class="d-flex align-items-center justify-content-center mt-3 m-auto"
+            >
               <a
                 class="btn btn-gradient btn-pill color-2 me-1"
                 @click="handleBookSession"
@@ -100,6 +115,12 @@ const Services_data = [
     title: "Review process",
     details: t("ourDesignProcess.para4"),
   },
+  {
+    svg: "/svg/icons.svg#shield",
+    svg1: "/svg/icons.svg#line-straight",
+    title: "Review process",
+    details: t("ourDesignProcess.para4"),
+  },
 ];
 onMounted(() => {
   document
@@ -120,10 +141,15 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+#design-process .row > * {
+  width: auto;
+  max-width: auto;
+}
+
 .flip-card-click {
   display: inline-block;
   background-color: transparent;
-  width: 250px;
+  width: 188px;
   height: 350px;
   margin-right: 12px;
   margin-bottom: 12px;
@@ -159,6 +185,9 @@ onMounted(() => {
   flex-direction: column;
   display: block;
 }
+.learn-more-btn::after {
+  height: auto;
+}
 @media (max-width: 575px) {
   .flip-card-front,
   .flip-card-back {
@@ -166,12 +195,13 @@ onMounted(() => {
   }
 
   .flip-card-click:not(.flipped) {
-    height: 200px !important;
+    height: 230px !important;
   }
 }
 .flip-card-back .service-box {
   padding: 30px 10px !important;
   justify-content: flex-start !important;
+  width: inherit;
 }
 .flip-card-back .service-box h3 {
   font-size: 16px;
@@ -188,7 +218,12 @@ onMounted(() => {
   .service-section.service-2 .property-service > div .service-box p {
     -webkit-line-clamp: initial !important;
   }
+
+  #design-process .row > * {
+    width: 100%;
+  }
 }
+
 .flip-card-back {
   transform: rotateY(180deg);
 }
@@ -218,7 +253,7 @@ onMounted(() => {
   );
   /* animation: a1 1.5s infinite linear; */
 }
-@media (min-width: 1200px) {
+@media (min-width: 1461px) {
   .arrow-1 {
     margin-left: 20px;
     width: clamp(20px, 50px, 100px);
@@ -240,6 +275,9 @@ onMounted(() => {
       0 calc(100% - 10px)
     );
     /*   animation: a1 1.5s infinite linear; */
+  }
+  .property-service .service-data-wrapper {
+    flex-direction: row !important;
   }
 }
 @media (min-width: 1024px) {

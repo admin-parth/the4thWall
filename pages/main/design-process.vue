@@ -1,40 +1,44 @@
 <template>
-    <Head>
-        <Title>Our Design Process | The 4th Wall</Title>
-    </Head>
-    <LayoutLayoutsLayout2>
-    <MainBannerBreadcrumb title="Our Design Process" first="Home" current="Our Design Process" />
+  <Head>
+    <Title>Our Design Process | The 4th Wall</Title>
+  </Head>
+  <LayoutLayoutsLayout2>
+    <MainBannerBreadcrumb
+      title="Our Design Process"
+      first="Home"
+      current="Our Design Process"
+    />
 
     <section class="property-wizard">
-        <div class="container">
+      <div class="container">
         <div class="row wizard-box">
-            <div class="col-md-10 offset-md-1">
+          <div class="col-md-10 offset-md-1">
             <form-wizard>
-                <div class="wizard-form-details">
+              <div class="wizard-form-details">
                 <tab-content title="Get your vision">
-                        <h2 class="mb-3">Get your vision</h2>
-                        <p>{{ $t('ourDesignProcess.para1') }}</p>
+                  <h2 class="mb-3">Get your vision</h2>
+                  <p>{{ $t("ourDesignProcess.para1") }}</p>
                 </tab-content>
                 <tab-content title="Design your idea">
-                    <h2 class="mb-3">Design your idea</h2>
-                    <p>{{ $t('ourDesignProcess.para2') }}</p>
+                  <h2 class="mb-3">Design your idea</h2>
+                  <p>{{ $t("ourDesignProcess.para2") }}</p>
                 </tab-content>
                 <tab-content title="Worry-free installiation">
-                    <h2 class="mb-3">Worry-free installiation</h2>
-                    <p>{{ $t('ourDesignProcess.para3') }}</p>
+                  <h2 class="mb-3">Worry-free installiation</h2>
+                  <p>{{ $t("ourDesignProcess.para3") }}</p>
                 </tab-content>
                 <tab-content title="Review process">
-                    <h2 class="mb-3">Review process</h2>
-                    <p>{{ $t('ourDesignProcess.para4') }}</p>
+                  <h2 class="mb-3">Review process</h2>
+                  <p>{{ $t("ourDesignProcess.para4") }}</p>
                 </tab-content>
-                </div>
+              </div>
             </form-wizard>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
     <ElementTaptopTapTop3 />
-    </LayoutLayoutsLayout2>
+  </LayoutLayoutsLayout2>
 </template>
 
 <script setup>

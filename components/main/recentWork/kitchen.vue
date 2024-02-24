@@ -155,7 +155,7 @@ function showsingle(i: number, type: string) {
     is360.value = false;
   } else {
     imgs.value.push(
-      "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://t3.ftcdn.net/jpg/03/85/07/52/360_F_385075210_PehsaPu4a2NaxfX5nvxnJvBPRzhNTfMi.jpg&autoLoad=true&autoRotate=-2"
+      "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/XiWNDdQ.jpg&autoLoad=true&autoRotate=-2"
     );
     is360.value = true;
   }
@@ -179,7 +179,7 @@ function getvalue(value: string) {
 
 .panellum-img {
   width: 80vw;
-  max-height: 80vh;
+  height: 80vh;
 }
 .vel-btns-wrapper {
   display: flex;
