@@ -195,7 +195,7 @@ onMounted(() => {
   }
 
   .flip-card-click:not(.flipped) {
-    height: 230px !important;
+    height: 250px !important;
   }
 }
 .flip-card-back .service-box {
