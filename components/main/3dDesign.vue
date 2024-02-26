@@ -39,7 +39,7 @@
                   box-shadow: 0px 10px 13px -7px #000000,
                     5px 5px 15px 5px rgba(0, 0, 0, 0);
                 "
-                src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/GoQvNDC.jpg&amp;autoLoad=true&amp;autoRotate=-2"
+                src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Pr85CEZ.jpg&amp;autoLoad=true&amp;autoRotate=-2"
               ></iframe>
             </div>
           </div>
