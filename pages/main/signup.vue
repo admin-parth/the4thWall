@@ -12,8 +12,7 @@
   </Head>
   <LayoutLayoutsLayout2>
     <MainBannerBreadcrumb title="Sign Up" first="Home" current="Sign Up" />
-    <!-- <PageOtherpagesSignup /> -->
-    <PageOtherpagesSignupWizard />
+    <MainSignupWizard />
 
     <ElementTaptopTapTop3 />
   </LayoutLayoutsLayout2>

@@ -37,7 +37,7 @@
                             <input
                               type="text"
                               class="form-control"
-                              v-model="store.name"
+                              v-model="user.name"
                               placeholder="Enter your name"
                               required
                             />
@@ -56,7 +56,7 @@
                               type="email"
                               class="form-control"
                               placeholder="Enter email address"
-                              v-model="store.email"
+                              v-model="user.email"
                               required
                             />
                           </div>
@@ -73,7 +73,7 @@
                               id="pwd-input1"
                               class="form-control"
                               placeholder="Password"
-                              v-model="store.password"
+                              v-model="user.password"
                               required
                             />
                             <div class="input-group-apend">
@@ -102,7 +102,7 @@
                             <input
                               type="tel"
                               class="form-control"
-                              v-model="store.phone"
+                              v-model="user.phone"
                               placeholder="eg.1234567890"
                               maxlength="10"
                               pattern="[0-9]{10}"
@@ -110,51 +110,18 @@
                             />
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-gradient color-4">
+                        <button class="btn btn-gradient color-4" @click.prevent="createAccount">
                           {{ "Create account" }}
                         </button>
-                        <span class="d-block mt-3 font-rubik"
+                        <!-- <span class="d-block mt-3 font-rubik"
                           >{{ "Already have an acoount ?"
                           }}<nuxt-link
                             to="/page/otherpages/login"
                             class="float-end text-color-4"
                             >{{ " Login here" }}</nuxt-link
                           ></span
-                        >
+                        > -->
                       </form>
-                      <div class="col-md-6">
-                        <!-- <ElementFilteroptionStatus label="Property Status" :data="data" /> -->
-                      </div>
-                      <div class="col-md-6">
-                        <!-- <ElementFilteroptionType label="Property-Type" :data="data" /> -->
-                      </div>
-                      <!-- <ElementFilteroptionRooms label="Max Rooms" :data="data" /> -->
-
-                      <!-- <ElementFilteroptionBed label="Bed" :data="data" /> -->
-
-                      <!-- <ElementFilteroptionBath label="Bath" :data="data" /> -->
-
-                      <div class="col-md-6">
-                        <!-- <ElementFilteroptionAgencies label="Agencies" :data="data" /> -->
-                      </div>
-                      <div class="col-lg-12">
-                        <div class="price-range">
-                          <!-- <ElementFilteroptionPrice label="price" /> -->
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="price-range">
-                          <!-- <ElementFilteroptionArea label="Area" /> -->
-                        </div>
-                      </div>
-                      <div class="col-lg-12">
-                        <!-- <button
-                          type="button"
-                          class="btn btn-gradient color-4 mt-2"
-                        >
-                          Search
-                        </button> -->
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -168,8 +135,8 @@
 </template>
 
 <script lang="ts" setup>
-import { usewizaredStore } from "~/store/wizard";
-let store = usewizaredStore();
+import { useUserStore } from "~/store/user";
+let user = useUserStore();
 
 const heading = "The 4th Wall";
 const data = ref([]);
@@ -182,5 +149,11 @@ function show() {
   } else {
     type.value = "password";
   }
+}
+
+const createAccount = () => {
+  console.log("Create account")
+  user.setBuildingDetails(true);
+  navigateTo('/main/signup')
 }
 </script>
