@@ -65,7 +65,7 @@
           v-model="store.password"
           class="form-control"
           placeholder="Password"
-          maxlength="8"
+          minlength="8"
           required
         />
         <div class="input-group-text">

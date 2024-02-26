@@ -32,11 +32,11 @@
           <div class="d-block d-md-none">
             <div class="pic-ctn">
               <img
+                class="recent-work-image"
                 v-for="(item, index) in data"
                 :key="index"
                 :src="item.src"
                 :alt="item.type"
-                height="300px"
               />
             </div>
           </div>
@@ -121,6 +121,9 @@ const data = [
 </script>
 
 <style scoped>
+.recent-work-image {
+  height: 300px;
+}
 .pic-ctn {
   width: 100vw;
   height: 200px;

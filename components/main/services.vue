@@ -62,15 +62,15 @@
                 class="arrow-1"
               ></div>
             </div>
-            <div
-              class="d-flex align-items-center justify-content-center mt-3 m-auto"
+          </div>
+          <div
+            class="d-flex align-items-center justify-content-center mt-3 m-auto"
+          >
+            <a
+              class="btn btn-gradient btn-pill color-2 me-1"
+              @click="handleBookSession"
+              >Book Your Session</a
             >
-              <a
-                class="btn btn-gradient btn-pill color-2 me-1"
-                @click="handleBookSession"
-                >Book Your Session</a
-              >
-            </div>
           </div>
         </div>
       </div>
