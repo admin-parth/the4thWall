@@ -110,9 +110,15 @@
                             />
                           </div>
                         </div>
-                        <button class="btn btn-gradient color-4" @click.prevent="createAccount">
+                        <button
+                          class="btn btn-gradient color-4"
+                          @click.prevent="createAccount"
+                        >
                           {{ "Create account" }}
                         </button>
+                        <div v-if="error" class="alert alert-danger">
+                          {{ error }}
+                        </div>
                         <!-- <span class="d-block mt-3 font-rubik"
                           >{{ "Already have an acoount ?"
                           }}<nuxt-link
@@ -137,9 +143,9 @@
 <script lang="ts" setup>
 import { useUserStore } from "~/store/user";
 let user = useUserStore();
-
 const heading = "The 4th Wall";
 const data = ref([]);
+const error = ref("");
 let showpassword = ref<boolean>(false);
 let type = ref<string>("password");
 function show() {
@@ -150,10 +156,35 @@ function show() {
     type.value = "password";
   }
 }
+const validateEmail = (email: string) => {
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+};
+
+const validatePhone = (phone: any) => {
+  const phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+};
 
 const createAccount = () => {
-  console.log("Create account")
-  user.setBuildingDetails(true);
-  navigateTo('/main/signup')
-}
+  console.log("Create account");
+  if (!user.name || !user.email || !user.password) {
+    error.value = "Please fill in all required fields.";
+  } else if (user.name.length < 2) {
+    error.value = "Name should be more then 1 character";
+  } else if (!validateEmail(user.email)) {
+    error.value = "Please enter a valid email address.";
+  } else if (!validatePhone(user.phone)) {
+    error.value = "Please enter a valid 10 digit number";
+  } else if (user.password.length < 8) {
+    error.value = "Password length should be 8 or more than that";
+  } else {
+    user.setBuildingDetails(true);
+    navigateTo("/main/signup");
+  }
+  setTimeout(() => {
+    error.value = "";
+  }, 3000);
+};
 </script>
