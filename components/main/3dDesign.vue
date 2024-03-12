@@ -4,10 +4,10 @@
       <div class="row">
         <div class="col">
           <div class="title-2 mb-4">
-            <h2>What is fully rendered 3D-Design?</h2>
-            <svg class="title-svg">
+            <h2>360 & VR Experience</h2>
+            <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
-            </svg>
+            </svg> -->
           </div>
           <div
             class="row gx-5 d-inline-flex flex-md-row flex-sm-column justify-content-center mb-5"

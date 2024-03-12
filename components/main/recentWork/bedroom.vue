@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="title-2 py-4">
                     <h2>{{ props.title }}</h2>
-                    <svg class="title-svg">
+                    <!-- <svg class="title-svg">
                         <use xlink:href="/svg/icons.svg#title-line"></use>
-                    </svg>
+                    </svg> -->
                 </div>
                 <div class="column-sm row grid ratio2_3  zoom-gallery-multiple">
                     <div class="sale grid-item wow fadeInUp col-lg-3 col-sm-6" v-for="(item, index) in getdata"

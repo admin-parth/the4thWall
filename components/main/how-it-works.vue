@@ -4,9 +4,9 @@
       <div class="col-12 pt45 pb20">
         <div class="title-2 mb-4">
           <h2>How it works</h2>
-          <svg class="title-svg">
+          <!-- <svg class="title-svg">
             <use xlink:href="/svg/icons.svg#title-line"></use>
-          </svg>
+          </svg> -->
         </div>
         <div class="row inner-row">
           <div
@@ -34,26 +34,26 @@ export default {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
-          description: "Meet a designer",
+          description: "Get your first 3Ds & quote",
         },
         {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
           description:
-            "Book a <span>renovation</span><br/>(*5% payment<sup></sup>)",
+            "5% payment & book your service",
         },
         {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
-          description: "<span>Execution begins</span><br/>(50% payment)",
+          description: "45% payment for starting work",
         },
         {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
-          description: "<span>Final installations</span><br/>(100% payment)",
+          description: "100% payment before installion",
         },
         {
           completed: true,

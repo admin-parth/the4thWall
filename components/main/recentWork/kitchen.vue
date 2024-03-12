@@ -65,7 +65,9 @@
                 </div>
               </div>
             </div>
-            <h2>360 view</h2>
+            <div class="title-2 mb-4">
+              <h2>3D Designs</h2>
+            </div>
             <div
               class="sale grid-item wow fadeInUp"
               :class="classes"

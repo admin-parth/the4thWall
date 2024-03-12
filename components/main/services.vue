@@ -5,9 +5,9 @@
         <div class="col">
           <div class="title-2 mb-4">
             <h2>{{ $t("ourDesignProcess.title") }}</h2>
-            <svg class="title-svg">
+            <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
-            </svg>
+            </svg> -->
           </div>
           <div class="row property-service column-space about-service">
             <div

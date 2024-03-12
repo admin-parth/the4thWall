@@ -4,10 +4,10 @@
       <div class="row">
         <div class="col-12">
           <div class="title-2 mb-4">
-            <h2>Recent Work</h2>
-            <svg class="title-svg">
+            <h2>Our Designs</h2>
+            <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
-            </svg>
+            </svg> -->
           </div>
           <masonry-wall
             :items="data"

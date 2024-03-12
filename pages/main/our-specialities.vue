@@ -15,9 +15,9 @@
           <div class="col">
             <div class="title-2 mb-4">
               <h2>{{ $t("whyChooseTheFourthWall.title") }}</h2>
-              <svg class="title-svg">
+              <!-- <svg class="title-svg">
                 <use xlink:href="/svg/icons.svg#title-line"></use>
-              </svg>
+              </svg> -->
             </div>
             <MainContentWithImage
               :title="$t('whyChooseTheFourthWall.subTitle1')"
