@@ -15,6 +15,7 @@ interface val {
     children:val[] | undefined,
     path?:string
     name?:string | undefined,
+    section?: string,
 }
  interface value{
     name:string;
@@ -64,7 +65,8 @@ interface item{
         magamenu:false,
         right:false,
         name: 'Home',
-        path: '#home',
+        path: '/',
+        section: '#home',
         children: undefined
     },
     {
@@ -72,33 +74,43 @@ interface item{
         magamenu:false,
         right:true,
         name:'Gallery',
-        path:'#gallery',
+        path:'/',
+        section:'#gallery',
         children: undefined
     },
     {
-        title:'Design Process',
+        title:'Design process',
         magamenu:false,
         right:true,
         name:'About us',
-        path:'#design-process',
+        path:'/',
+        section:'#design-process',
         children: undefined
     },
-    // {
-    //     title:'About us',
-    //     magamenu:false,
-    //     right:true,
-    //     name:'About us',
-    //     path:'#about-us',
-    //     children: undefined
-    // },
-    // {
-    //     title:'Contact',
-    //     magamenu:false,
-    //     right:true,
-    //     name:'Contect us',
-    //     path:'#contact',
-    //     children: undefined
-    // }
+    {
+        title:'Our services',
+        magamenu:false,
+        right:true,
+        name:'About us',
+        path:'/main/our-services',
+        children: undefined
+    },
+    {
+        title:'About us',
+        magamenu:false,
+        right:true,
+        name:'About us',
+        path:'/main/about-us',
+        children: undefined
+    },
+    {
+        title:'Contact us',
+        magamenu:false,
+        right:true,
+        name:'Contect us',
+        path:'/main/contact-us',
+        children: undefined
+    }
 ];
 
 export default navlink

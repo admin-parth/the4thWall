@@ -16,7 +16,7 @@
             <swiper
               :breakpoints="breakpoints"
               :slidesPerView="4"
-              :loop="true"
+              :loop="false"
               navigation
               :pagination="{ clickable: true }"
               :modules="setting"
@@ -58,19 +58,19 @@ let breakpoints = {
 };
 const Services_data = [
   {
-    title: "Flat 10 year warranty",
+    title: "Fully rendered 3D before booking",
+    desc: "",
+    img: "/image/main/t1.svg",
+  },
+  {
+    title: "10 year warranty",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
     img: "/image/main/t1.svg",
   },
   {
-    title: "45-day delivery",
+    title: "60 day delivery",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
     img: "/image/main/t2.svg",
-  },
-  {
-    title: "600+ design experts",
-    desc: "Explore design ideas and co-create your dream home with our experienced designers.",
-    img: "/image/main/t3.svg",
   },
   {
     title: "Post-installation service",
@@ -78,25 +78,15 @@ const Services_data = [
     img: "/image/main/t4.svg",
   },
   {
-    title: "Flat 10 year warranty",
-    desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
-    img: "/image/main/t1.svg",
-  },
-  {
-    title: "45-day delivery",
-    desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
-    img: "/image/main/t2.svg",
-  },
-  {
-    title: "600+ design experts",
-    desc: "Explore design ideas and co-create your dream home with our experienced designers.",
+    title: "No hidden cost",
+    desc: "",
     img: "/image/main/t3.svg",
   },
   {
-    title: "Post-installation service",
-    desc: "Complete your design journey and get unwavering support from our dedicated care team.",
-    img: "/image/main/t4.svg",
-  },
+    title: "Personalised designs",
+    desc: "",
+    img: "/image/main/t2.svg",
+  }
 ];
 </script>
 

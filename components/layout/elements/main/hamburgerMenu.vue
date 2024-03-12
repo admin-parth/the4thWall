@@ -31,7 +31,7 @@
       :key="index"
       @click="toggle = false"
     >
-      <a @click="jumpTo(item.path)" class="nav-link menu-title">
+      <a @click="navigate(item)" class="nav-link menu-title">
         {{ $t(item.title) }}
       </a>
       <LayoutElementsHeaderElementNavpagelink
@@ -64,12 +64,24 @@ let subname = ref<string>("");
 let childname = ref<string>("");
 let route = useRoute();
 let router = useRouter();
+
+const navigate = (item: object) => {
+  if(item.path == route.path) {
+    if(Object.prototype.hasOwnProperty.call(item, 'section')) {
+      jumpTo(item.section)
+    }
+  } else {
+    router.push({ path: item.path})
+  }
+}
+
 function jumpTo(element: string) {
   if (route.path !== "/") {
     router.push({ path: "/" });
   }
   jump(element);
 }
+
 function toogleclass(title: string) {
   subtoogle.value = title;
 }

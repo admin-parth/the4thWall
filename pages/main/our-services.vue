@@ -1,9 +1,9 @@
 <template>
     <Head>
-        <Title>About us | The 4th Wall</Title>
+        <Title>Our Services | The 4th Wall</Title>
     </Head>
     <LayoutLayoutsLayout2>
-        <MainBannerBreadcrumb title="About us" first="Home" current="About us" />
+        <MainBannerBreadcrumb title="Our services" first="Home" current="Our services" />
         <MainComingSoon />
         <ElementTaptopTapTop3 />
     </LayoutLayoutsLayout2>
