@@ -7,19 +7,30 @@
         <div class="account-content">
             <h3>Account information</h3>
             <ul>
-                <li>Name : <span class="first_name">{{ store.name }}</span></li>
-                <li>phone number : <span class="phone_number">{{ store.phone }}</span></li>
-                <li>Email : <span class="email_add">{{ store.email }}</span></li>
+                <li>Name : <span class="first_name">{{ user.name }}</span></li>
+                <li>phone number : <span class="phone_number">{{ user.phone }}</span></li>
+                <li>Email : <span class="email_add">{{ user.email }}</span></li>
             </ul>
         </div>
         <div class="account-content">
             <h3>Location Details</h3>
             <ul>
-                <li>Address : <span class="address-type">{{ store.address }}</span></li>
-                <li>city : <span class="city-name">{{ store.city }}</span></li>
-                <li>state : <span class="state-name">{{ store.state }}</span></li>
-                <li>country : <span class="country-name">{{ store.country }}</span></li>
-                <li>pincode : <span class="pin-code">{{ store.pincode }}</span></li>
+                <li>Property Name : <span class="address-type">{{ property.property_name }}</span></li>
+                <li>Property Type : <span class="city-name">{{ property.property_type }}</span></li>
+                <li>Sq. Ft. or BHK : <span class="state-name">{{ property.property_bhk }}</span></li>
+                <!-- <li>Area : <span class="country-name">{{ property.property_area }}</span></li>
+                <li>City : <span class="pin-code">{{ property.property_city }}</span></li>
+                <li>State : <span class="pin-code">{{ property.property_state }}</span></li>
+                <li>Pincode : <span class="pin-code">{{ property.property_pincode }}</span></li> -->
+            </ul>
+        </div>
+        <div class="account-content">
+            <h3>Address</h3>
+            <ul>
+                <li>Area : <span class="country-name">{{ property.property_area }}</span></li>
+                <li>City : <span class="pin-code">{{ property.property_city }}</span></li>
+                <li>State : <span class="pin-code">{{ property.property_state }}</span></li>
+                <li>Pincode : <span class="pin-code">{{ property.property_pincode }}</span></li>
             </ul>
         </div>
     </div>
@@ -28,6 +39,12 @@
 
 <script setup lang="ts">
 import { usewizaredStore } from '~/store/wizard'
+import { useUserStore } from "~/store/user";
+import { usePropertyStore } from "~/store/property";
+
+let user = useUserStore();
+let property = usePropertyStore();
+
 defineProps([
 
 ])

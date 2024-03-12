@@ -41,19 +41,19 @@ export default {
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
           description:
-            "(5% payment<sup>4</sup>)Book a<br><span>renovation</span>",
+            "Book a <span>renovation</span><br/>(*5% payment<sup></sup>)",
         },
         {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
-          description: "(50% payment)<br><span>Execution begins</span>",
+          description: "<span>Execution begins</span><br/>(50% payment)",
         },
         {
           completed: true,
           image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
-          description: "(100% payment) Final<br><span>installations</span>",
+          description: "<span>Final installations</span><br/>(100% payment)",
         },
         {
           completed: true,

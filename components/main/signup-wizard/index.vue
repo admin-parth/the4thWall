@@ -30,9 +30,12 @@ import { FormWizard, TabContent } from "vue3-form-wizard";
 import "vue3-form-wizard/dist/style.css";
 import { usewizaredStore } from "~/store/wizard";
 import { useUserStore } from "~/store/user";
+import { usePropertyStore } from "~/store/property";
+
 const validationclass = ref<string>("");
 let store = usewizaredStore();
 let user = useUserStore();
+let property = usePropertyStore();
 let activeStep = user.getBuildingDetails ? 1 : 0
 function beforeTabSwitch() {
   if (
@@ -49,11 +52,13 @@ function beforeTabSwitch() {
 }
 function beforeTabSwitch2() {
   if (
-    store.address !== "" &&
-    store.city !== "" &&
-    store.country !== "" &&
-    store.state !== "" &&
-    store.pincode !== ""
+    property.property_name !== "" &&
+    property.property_type !== "" &&
+    property.property_bhk !== "" &&
+    property.property_area !== "" &&
+    property.property_city !== "" && 
+    property.property_state !== "" && 
+    property.property_pincode !== ""
   ) {
     validationclass.value = "was-validated";
     return true;

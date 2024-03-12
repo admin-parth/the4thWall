@@ -1,6 +1,6 @@
 <template>
   <div class="loader-wrapper img-gif" v-if="loader">
-    <img src="/image/loader/loader1.gif" class="img-fluid" alt="">
+    <img src="/image/loader/loader.gif" class="img-fluid" alt="">
   </div>
   <LayoutCommonHeadersHeader2 />
   <slot />

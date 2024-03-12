@@ -12,14 +12,14 @@
         <input
           type="text"
           class="form-control"
-          v-model="store.address"
-          id="address"
-          placeholder="Enter your Address"
+          v-model="property.property_name"
+          id="property_name"
+          placeholder="Property name"
           required
         />
       </div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <div class="input-group">
         <div class="input-group-text">
           <Icon name="ph:map-pin" />
@@ -27,14 +27,14 @@
         <input
           type="text"
           class="form-control"
-          v-model="store.city"
-          id="city_name"
-          placeholder="Enter your city"
+          v-model="property.property_type"
+          id="property_type"
+          placeholder="Property type"
           required
         />
       </div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <div class="input-group">
         <div class="input-group-text">
           <Icon name="ph:map-pin" />
@@ -42,14 +42,14 @@
         <input
           type="text"
           class="form-control"
-          v-model="store.state"
-          id="state_name"
-          placeholder="Enter your state"
+          v-model="property.property_bhk"
+          id="property_bhk"
+          placeholder="Sq. ft. or BHK"
           required
         />
       </div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <div class="input-group">
         <div class="input-group-text">
           <Icon name="material-symbols:map-outline" />
@@ -57,14 +57,43 @@
         <input
           type="text"
           class="form-control"
-          v-model="store.country"
-          id="country_name"
-          placeholder="Enter your country"
+          v-model="property.property_area"
+          id="property_area"
+          placeholder="Property location & area"
           required
         />
       </div>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
+      <div class="input-group">
+        <div class="input-group-text">
+          <Icon name="material-symbols:map-outline" />
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          v-model="property.property_city"
+          id="city"
+          placeholder="City"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <div class="input-group">
+        <div class="input-group-text">
+          <Icon name="ph:map-pin" />
+        </div>
+        <input
+          class="form-control"
+          v-model="property.property_state"
+          id="state"
+          placeholder="State"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group col-md-4">
       <div class="input-group">
         <div class="input-group-text">
           <Icon name="ph:map-pin" />
@@ -72,9 +101,9 @@
         <input
           type="number"
           class="form-control"
-          v-model="store.pincode"
+          v-model="property.property_pincode"
           id="pin_code"
-          placeholder="Enter your pin code"
+          placeholder="Pincode"
           required
         />
       </div>
@@ -84,11 +113,11 @@
 </template>
 
 <script setup lang="ts">
-import { usewizaredStore } from "~/store/wizard";
+import { usePropertyStore } from "~/store/property";
 defineProps({
   classes: String,
 });
-let store = usewizaredStore();
+let property = usePropertyStore();
 </script>
 
 <style scoped></style>
