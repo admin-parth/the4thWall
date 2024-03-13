@@ -108,16 +108,39 @@
         />
       </div>
     </div>
+    <div class="form-group offset-md-2 col-md-8 justify-self-center">
+      <div class="input-group">
+        <div class="input-group-text">
+          <Icon name="ph:map-pin" />
+           <label class="mb-0" for="floor-plan">Upload brochure or floorplan</label>
+        </div>
+        <input
+          type="file"
+          class="form-control"
+          id="floor-plan"
+          @change="handleUpload($event)"
+        />
+      </div>
+    </div>
   </form>
   <!-- </div> -->
 </template>
 
 <script setup lang="ts">
 import { usePropertyStore } from "~/store/property";
+import Swal from "sweetalert2";
+
 defineProps({
   classes: String,
 });
 let property = usePropertyStore();
+
+const handleUpload = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  if (target && target.files) {
+      property.SET_floorPlan(target.files[0]);
+  }
+}
 </script>
 
 <style scoped></style>

@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     dburl: process.env.MONGODB_URI,
     dbName: process.env.MONGODB_NAME,
     public:{
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
       apiKey: process.env.FIREBASE_API_KEY,
       authDomain: process.env.FIREBASE_AUTH_DOMAIN,
       projectId: process.env.FIREBASE_PROJECT_ID,
@@ -65,6 +67,10 @@ export default defineNuxtConfig({
     },
     {
       src:'~/plugins/firebase.client.ts',
+      mode:'client'
+    },
+    {
+      src:'~/plugins/supabase.ts',
       mode:'client'
     }
   ]

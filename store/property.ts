@@ -6,9 +6,12 @@ export const usePropertyStore = defineStore('property' , {
         property_area: '',
         property_city: '',
         property_state: '',
-        property_pincode: ''
+        property_pincode: '',
+        floor_plan: null
     }),
     actions: {
-        
+        SET_floorPlan(value: any) {
+            this.floor_plan = value
+        }
     }
 })

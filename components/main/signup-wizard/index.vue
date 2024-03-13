@@ -4,15 +4,15 @@
       <div class="row wizard-box">
         <div class="col-lg-8 col-sm-10">
           <div class="theme-card">
-            <form-wizard @on-complete="onComplete" :start-index="activeStep">
+            <form-wizard @on-complete="onComplete" :start-index="activeStep" finish-button-text="Submit details">
               <div class="wizard-form-details log-in">
                 <tab-content title="Account information" :before-change="beforeTabSwitch">
                   <MainSignupWizardAccountInfo :classes="validationclass" />
                 </tab-content>
-                <tab-content title="Location" :before-change="beforeTabSwitch2">
+                <tab-content title="Property information" :before-change="beforeTabSwitch2">
                   <MainSignupWizardLocation :classes="validationclass" />
                 </tab-content>
-                <tab-content title="Successfully submitted">
+                <tab-content title="Verify details">
                   <MainSignupWizardSubmitted />
                 </tab-content>
               </div>
@@ -20,6 +20,13 @@
           </div>
         </div>
       </div>
+      <!-- <MainLoading v-if="loading"/> -->
+      <div class='modal-container' v-if="loading">
+        <div class="modal-content">
+        <span class='modal-loader'></span>
+            <p>Processing your request</p>
+        </div>
+      </div>  
     </div>
   </section>
 </template>
@@ -32,7 +39,9 @@ import { usewizaredStore } from "~/store/wizard";
 import { useUserStore } from "~/store/user";
 import { usePropertyStore } from "~/store/property";
 
+const supabase = inject('supabase')
 const validationclass = ref<string>("");
+let loading = ref(false);
 let store = usewizaredStore();
 let user = useUserStore();
 let property = usePropertyStore();
@@ -66,9 +75,57 @@ function beforeTabSwitch2() {
     return false;
   }
 }
-function onComplete() {
-  store.submit()
+async function onComplete() {
+  loading = ref(true);
+
+  const { data, error } = await supabase.storage
+  .from('floor-plan')
+  .upload(property.floor_plan.name, property.floor_plan)
+
+  console.log(data)
+
+  loading = ref(false)
+  // store.submit()
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+*{box-sizing: border-box;}
+
+.modal-container {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+	position: fixed;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+.modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+
+.modal-loader {
+  display: block;
+  border: 5px solid #d3d3d380;
+  border-left-color: #a9a9a994;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1.25s linear infinite;
+}
+
+@keyframes spin {
+    to{transform: rotate(360deg);}
+}
+</style>
