@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col">
           <div class="title-2 mb-4">
-            <h2>{{ $t("whyChooseTheFourthWall.title") }}</h2>
+            <h2>Our Services</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg> -->
@@ -54,39 +54,34 @@ let breakpoints = {
     slidesPerView: 3,
   },
   1200: {
-    slidesPerView: 6,
+    slidesPerView: 5,
   },
 };
 const Services_data = [
   {
-    title: "Fully rendered 3D before booking",
+    title: "End to end services",
     desc: "",
     img: "/image/main/t1.svg",
   },
   {
-    title: "10 year warranty",
+    title: "Interior designing",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
     img: "/image/main/t1.svg",
   },
   {
-    title: "60 day delivery",
+    title: "Civil structure",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
     img: "/image/main/t2.svg",
   },
   {
-    title: "Post-installation service",
+    title: "Architecture",
     desc: "Complete your design journey and get unwavering support from our dedicated care team.",
     img: "/image/main/t4.svg",
   },
   {
-    title: "No hidden cost",
+    title: "Art consulting",
     desc: "",
     img: "/image/main/t3.svg",
-  },
-  {
-    title: "Personalised designs",
-    desc: "",
-    img: "/image/main/t2.svg",
   }
 ];
 </script>

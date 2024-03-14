@@ -18,19 +18,27 @@
             <div class="home-main feature-section new-property video-bg">
               <div class="container">
                 <div
-                  class="feature-content video-details text-start p-0 vertical-search mt-0"
+                  class="feature-content video-details text-start p-0 vertical-search mt-0 width-350"
                 >
                   <span class="label-cross">{{ "New !" }}</span>
                   <div class="left-sidebar">
-                    <nuxt-link to="/">
+                    <!-- <nuxt-link to="/">
                       <h2>{{ heading }}</h2>
-                    </nuxt-link>
-                    <div class="row gx-2">
-                      <form>
+                    </nuxt-link> -->
+                    <div class="row mb-2 text-center">
+                      <div class="col-12">
+                        <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
+                      </div>
+                      <div class="col">
+                        <p class="mb-0 ">Where Inspiration Meets Possibility</p>
+                      </div>
+                    </div>
+                    <div class="row gx-2 justify-content-center">
+                      <!-- <form> -->
                         <div class="form-group">
                           <div class="input-group">
                             <div class="input-group-prepend">
-                              <div class="input-group-text">
+                              <div class="input-group-text height-38">
                                 <Icon name="material-symbols:person" />
                               </div>
                             </div>
@@ -46,7 +54,7 @@
                         <div class="form-group">
                           <div class="input-group">
                             <div class="input-group-prepend">
-                              <div class="input-group-text">
+                              <div class="input-group-text height-38">
                                 <Icon
                                   name="material-symbols:mail-outline-rounded"
                                 />
@@ -64,7 +72,7 @@
                         <div class="form-group">
                           <div class="input-group">
                             <div class="input-group-prepend">
-                              <div class="input-group-text">
+                              <div class="input-group-text height-38">
                                 <Icon name="ic:outline-lock" />
                               </div>
                             </div>
@@ -77,7 +85,7 @@
                               required
                             />
                             <div class="input-group-apend">
-                              <div class="input-group-text">
+                              <div class="input-group-text height-38">
                                 <Icon
                                   :name="
                                     showpassword
@@ -93,7 +101,7 @@
                         <div class="form-group">
                           <div class="input-group">
                             <div class="input-group-prepend">
-                              <div class="input-group-text">
+                              <div class="input-group-text height-38">
                                 <Icon
                                   name="material-symbols:call-outline-rounded"
                                 />
@@ -111,7 +119,8 @@
                           </div>
                         </div>
                         <button
-                          class="btn btn-gradient color-4"
+                          class="btn btn-gradient color-4 col-6"
+                          id="create-account"
                           @click.prevent="createAccount"
                         >
                           {{ "Create account" }}
@@ -127,7 +136,7 @@
                             >{{ " Login here" }}</nuxt-link
                           ></span
                         > -->
-                      </form>
+                      <!-- </form> -->
                     </div>
                   </div>
                 </div>
@@ -188,3 +197,14 @@ const createAccount = () => {
   }, 3000);
 };
 </script>
+<style scoped>
+.height-38 {
+  height: 38px;
+}
+.width-350 {
+  width: 350px;
+}
+#create-account {
+  padding: 7px 15px 8px;
+}
+</style>

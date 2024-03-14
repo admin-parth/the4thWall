@@ -43,6 +43,8 @@ import { useurl } from "~/composable/apiurl";
 interface Contact {
   icon: string;
   title: string;
+  desc?: string;
+  title2?: string;
 }
 interface About {
   title: string;
@@ -75,14 +77,18 @@ const Contact_Data: Contact[] = [
   {
     icon: "fas fa-map-marker-alt",
     title: "Ahmedabad",
+    desc: "location"
   },
   {
     icon: "fas fa-phone-alt",
-    title: "+91 990 900 3044/45",
+    title: "+91 990 900 3044",
+    desc: "phone",
+    title2:"+91 990 900 3045"
   },
   {
     icon: "fas fa-envelope",
-    title: "Contact@gmail.com",
+    title: "contact@gmail.com",
+    desc: "email"
   },
 ];
 </script>

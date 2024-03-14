@@ -9,6 +9,7 @@
     <MainServices />
     <MainRecentWork />
     <MainHowItWorks />
+    <MainOurServices />
     <MainTrustedPartners />
     <ElementTaptopTapTop3 />
   </LayoutLayoutsLayout2>

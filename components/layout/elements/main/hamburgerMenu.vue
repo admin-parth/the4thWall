@@ -10,11 +10,11 @@
   <ul class="nav-menu" :class="toggle ? 'open' : ''">
     <li class="back-btn">
       <div class="mobile-back text-end" @click="toggle = false">
-        <span>{{ "Back" }}</span>
         <Icon
-          name="ic:baseline-chevron-right"
+          name="ic:baseline-chevron-left"
           :class="color ? color : 'text-black'"
         />
+        <span>{{ "Back" }}</span>
       </div>
     </li>
     <li
