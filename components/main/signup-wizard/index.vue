@@ -31,7 +31,7 @@
         </div>
       </div>
       <!-- <MainLoading v-if="loading"/> -->
-      <template v-if="showLoader"> <loading /> </template>
+      <template v-if="loading"> <MainLoading /> </template>
     </div>
   </section>
 </template>
@@ -43,15 +43,17 @@ import "vue3-form-wizard/dist/style.css";
 import { usewizaredStore } from "~/store/wizard";
 import { useUserStore } from "~/store/user";
 import { usePropertyStore } from "~/store/property";
-import loading from "../loading.vue";
+// import loading from "../loading.vue";
 const showLoader = ref(false);
-
+const loading = ref(false);
 const supabase = inject("supabase");
 const validationclass = ref<string>("");
 let store = usewizaredStore();
 let user = useUserStore();
 let property = usePropertyStore();
 let activeStep = user.getBuildingDetails ? 1 : 0;
+let router = useRouter();
+
 function beforeTabSwitch() {
   if (
     user.name !== "" &&
@@ -81,16 +83,52 @@ function beforeTabSwitch2() {
     return false;
   }
 }
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success ms-1',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
 async function onComplete() {
   showLoader.value = true;
+  loading.value = true;
+  let uploadInfo =  { data: '', error: '' }
+  let uploadUrl;
+  if(property.floor_plan) {
+    uploadInfo = await supabase.storage
+    .from('floor-plan')
+    .upload(property.floor_plan.name, property.floor_plan)
 
-  const { data, error } = await supabase.storage
-    .from("floor-plan")
-    .upload(property.floor_plan.name, property.floor_plan);
+    uploadUrl = await supabase.storage.from('floor-plan').getPublicUrl(uploadInfo.data.path)
+  }
 
-  showLoader.value = false;
-  console.log(data);
+  let query_info = {
+    name: user.name,
+    phone: user.phone,
+    email: user.email,
+    password: user.password,
+    property_name: property.property_name,
+    property_type: property.property_type,
+    property_bhk: property.property_bhk,
+    property_area: property.property_area,
+    property_city: property.property_city,
+    property_state: property.property_state,
+    property_pincode: property.property_pincode,
+    floor_plan: uploadUrl?.data.publicUrl
+  }
+  const { data, error } = await supabase.from('query').insert(query_info)
 
+  loading.value = false
+  swalWithBootstrapButtons.fire({
+    icon: 'success',
+    title: 'Your request has been Submitted.',
+    text: 'We will contact you soon.'
+  }).then(() => {
+    property.$reset();
+    router.push({ path: "/" });
+  })
   // store.submit()
 }
 </script>

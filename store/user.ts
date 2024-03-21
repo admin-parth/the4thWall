@@ -15,9 +15,7 @@ export const useUserStore = defineStore('user' , {
             this.getBuildingDetails = false
         },
         setBuildingDetails(val: boolean) {
-            console.log(1)
             this.getBuildingDetails = val
-            console.log(this.getBuildingDetails)
         }
     }
 })

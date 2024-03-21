@@ -37,12 +37,18 @@ export default {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: fit-content;
+  flex-direction: row;
+}
+
+.modal-content p {
+    margin-bottom: 0;
 }
 
 .modal-loader {
   display: block;
-  border: 5px solid #d3d3d380;
-  border-left-color: #a9a9a994;
+  border: 5px solid #E74B3B50;
+  border-left-color: #E74B3B;
   border-radius: 100%;
   width: 40px;
   height: 40px;

@@ -92,7 +92,8 @@ interface item{
         magamenu:false,
         right:true,
         name:'About us',
-        path:'/main/our-services',
+        path:'/',
+        section:'#our-services',
         children: undefined
     },
     {
