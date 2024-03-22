@@ -97,9 +97,11 @@ async function onComplete() {
   let uploadInfo =  { data: '', error: '' }
   let uploadUrl;
   if(property.floor_plan) {
+    const fileExtension = property.floor_plan.name.split('.').pop()
+    const filename = window.crypto.randomUUID()+'.'+fileExtension
     uploadInfo = await supabase.storage
     .from('floor-plan')
-    .upload(property.floor_plan.name, property.floor_plan)
+    .upload(filename, property.floor_plan)
 
     uploadUrl = await supabase.storage.from('floor-plan').getPublicUrl(uploadInfo.data.path)
   }

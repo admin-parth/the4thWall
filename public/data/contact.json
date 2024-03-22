@@ -3,13 +3,11 @@
         {
             "icon":"octicon:location",
             "title":"Where ?",
-            "add":"549 Sulphur Springs Road",
-            "add2":"Downers Grove, IL 60515",
-            "phone":"+91 361264100"
+            "add":"Ahmedabad, Gujarat, India"
         },
         {
-            "icon":"octicon:location",
-            "title":"Second branch",
+            "icon":"octicon:file-media",
+            "title":"Connect on social media",
             "add":"5415 Spring garden Road ",
             "add2":"Halifax, IL 97230",
             "phone":"+91 187230014"

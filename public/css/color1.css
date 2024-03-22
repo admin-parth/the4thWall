@@ -64,6 +64,21 @@ Author URI: https://themeforest.net/user/pixelstrap
   --theme-gradient13: linear-gradient(to right, var(--theme-default8) 25%, var(--theme-default9) 100%);
   --theme-default10: #00968a; }
 
+.social-card{
+  display: flex !important;
+  gap: 15px;
+  justify-content: center;
+  a {
+    color: #DE280F;
+  }
+}
+.color-red {
+  color: #DE280F !important;
+}
+.property-type-dropdown{
+  width: 100%;
+  padding-left: 0;
+}
 .breadcrumb-section .breadcrumb-content, .label-heart, .about-section .about-wrap .about-content .about-image .overlay-content ul li a, .about-box .agent-image .overlay-agent .agent-details ul li a, .service-section .property-service > div .service-box .icon-round, .service-slider .service-wrapper .top-img-box > div, .feature-section .feature-1 .feature-wrapper .property-details .round-half, .feature-section .feature-1 .feature-wrapper .feature-image, .feature-section .feature-image .feature-overlay, .property-section .property-box .property-image .overlay-property-box, .property-section .property-box .property-image .overlay-property-box .effect-round,
 .property-section .property-box .property-image .overlay-property-box .effect-round1, .property-section .property-box .property-image .overlay-plus, .property-section .property-box .property-details .icon-property li .d-flex .property-icon, .play-bg-image .icon-video, .modern-dot .slick-dots, .client-slider .user-list li .heart-bg, .coming-soon .coming-soon-detail .timer li > div, .coming-soon .coming-soon-detail .timer li + li::before, .customizer-links, .header-layout-3, .footer-bg .footer-details .icon-list li a, .my-gallery .find-cities .citi-overlay, .offer-section .offer-wrapper .media .offer-icon, .video-section .play-icon, .icon-video a, .agent-social li a, .agent-section .agent-image .overlay-content ul li a, .agent-section .our-agent-details ul li .media .icons-square, .property-wizard .wizard-box .wizard-step-container .wizard-steps li .media .step-icon, .property-wizard .wizard-box .wizard-form-details .complete-details, .card-payment .payment-card .card-details .valid-detail, .card-payment .payment-card .edit-card, .card-payment .payment-card.add-card .card-details, .tap-top > div, .home-section, .layout-home2 .home-main, .layout-home3 .bg-layout-3, .layout-home4 .slider-image, .layout-home4 .sync-slider .home-nav .slider-image, .layout-map .withmap-horizontal .search-panel .filter .media .icon-square {
   display: -webkit-box;

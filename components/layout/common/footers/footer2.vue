@@ -1,37 +1,8 @@
 <template>
-  <footer id="contact" class="footer-dark">
+  <footer id="contact" class="footer">
     <div class="footer footer-custom-col">
       <div class="container">
-        <div class="row">
-          <div class="col-xl col-md order-xl">
-            <div class="footer-links footer-details">
-              <!-- <h5 class="footer-title d-md-none active" @click="toggle = !toggle">{{ 'Contact us' }} <span
-                                    class="according-menu"><i
-                                        :class="toggle ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i></span></h5> -->
-              <div
-                class="footer-content row"
-                :class="toggle ? 'd-block' : 'd-none d-md-block'"
-              >
-                <div class="col-sm-12 col-md-4">
-                  <img src="/image/logo/temp-logo.png" alt="" class="logo" />
-                </div>
-                <div class="col-sm-12 col-md-12">
-                  <p>
-                    {{
-                      "This home provides entertaining spaces with a kitchen opening..."
-                    }}
-                  </p>
-                  <LayoutElementsFooterElementFooter2Contact
-                    :data="Contact_Data"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <LayoutElementsFooterElementFooter2About :data="About_Data" />
-                    <LayoutElementsFooterElementFooter2Location title="Our Location" />
-                    <LayoutElementsFooterElementFooter2Tag :data="Tag_Data" /> -->
-        </div>
+        <MainContact />
       </div>
     </div>
     <LayoutElementsFooterElementSubfooter1 classname="sub-footer-dark" />

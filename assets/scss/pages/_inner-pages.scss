@@ -2443,6 +2443,23 @@
     }
 
     .dropdown {
+        &.property-type-dropdown{
+            width: 100%;
+            border: none;
+            padding-left: 0;
+            .dropdown-toggle {
+                padding-left: 0;
+                display: flex;
+                .dropdown-text{
+                    border-bottom: 1px solid $light-border;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 12px 20px 10px;
+                    padding-top: 0;
+                }
+            }
+        }
         border: 1px solid $light-border;
         border-radius: 4px;
         color: rgba($title-color, 0.6);

@@ -21,17 +21,31 @@
     </div>
     <div class="form-group col-md-4">
       <div class="input-group">
-        <div class="input-group-text">
-          <Icon name="ph:map-pin" />
-        </div>
-        <input
+        
+        <!-- <input
           type="text"
           class="form-control"
           v-model="property.property_type"
           id="property_type"
           placeholder="Property type"
           required
-        />
+        /> -->
+        <div class="dropdown property-type-dropdown">
+          <span class="dropdown-toggle font-rubik align-items-center"
+              data-bs-toggle="dropdown" @click="openPropertyType">
+              <div class="input-group-text">
+                <Icon name="ph:map-pin" />
+              </div>
+              <div class="dropdown-text">
+                <span>{{ propertyType }}</span>
+                <Icon name="material-symbols:keyboard-arrow-down" class="fs-5" />
+              </div>
+          </span>
+          <div class="dropdown-menu text-start" :class="showPropertyType ? 'show' : ''">
+              <p class="dropdown-item" v-for="(property, index) in properyTypeData" :key="index"
+                  @click.prevent="setPropertyType(property)">{{ property }}</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group col-md-4">
@@ -135,6 +149,21 @@ defineProps({
   classes: String,
 });
 let property = usePropertyStore();
+let showPropertyType = ref<boolean>(false);
+let propertyType = ref<string>('Property type');
+const properyTypeData = [
+  'Residential',
+  'Commercial',
+  'Other'
+]
+const openPropertyType = () => {
+  showPropertyType.value = true
+}
+const setPropertyType = (value: string) => {
+  propertyType.value = value
+  showPropertyType.value = false
+  property.property_type = value
+}
 
 const handleUpload = (event: Event) => {
   const target = event.target as HTMLInputElement;
