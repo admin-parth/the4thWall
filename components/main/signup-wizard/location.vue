@@ -58,12 +58,55 @@
           class="form-control"
           v-model="property.property_bhk"
           id="property_bhk"
-          placeholder="Sq. ft. or BHK"
+          :placeholder="propertyBHKplaceholder"
           required
         />
       </div>
     </div>
     <div class="form-group col-md-4">
+      <div class="input-group">
+        <div class="input-group-text">
+          <Icon name="material-symbols:map-outline" />
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          v-model="property.property_purpose"
+          id="property_purpose"
+          placeholder="Purpose (eg. Stay, Rent)"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <div class="input-group">
+        <!-- <input
+          type="text"
+          class="form-control"
+          v-model="property.property_work"
+          id="property_work"
+          placeholder="Work type"
+          required
+        /> -->
+        <div class="dropdown property-type-dropdown">
+          <span class="dropdown-toggle font-rubik align-items-center"
+              data-bs-toggle="dropdown" @click="openWorkType">
+              <div class="input-group-text">
+                <Icon name="material-symbols:map-outline" />
+              </div>
+              <div class="dropdown-text">
+                <span>{{ workType }}</span>
+                <Icon name="material-symbols:keyboard-arrow-down" class="fs-5" />
+              </div>
+          </span>
+          <div class="dropdown-menu text-start" :class="showWorkType ? 'show' : ''">
+              <p class="dropdown-item" v-for="(work, index) in workTypeData" :key="index"
+                  @click.prevent="setWorkType(work)">{{ work }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-8">
       <div class="input-group">
         <div class="input-group-text">
           <Icon name="material-symbols:map-outline" />
@@ -164,6 +207,28 @@ const setPropertyType = (value: string) => {
   showPropertyType.value = false
   property.property_type = value
 }
+
+let showWorkType = ref<boolean>(false);
+let workType = ref<string>('Work type');
+const workTypeData = [
+  'New',
+  'Renovation',
+  'Other'
+]
+const openWorkType = () => {
+  showWorkType.value = true
+}
+const setWorkType = (value: string) => {
+  workType.value = value
+  showWorkType.value = false
+  property.work_type = value
+}
+
+const propertyBHKplaceholder = computed(() => {
+  if(property.property_type == 'Residential') return 'BHK'
+  else if (property.property_type == 'Commercial') return 'Square feet'
+  else return 'Specify additional information'
+})
 
 const handleUpload = (event: Event) => {
   const target = event.target as HTMLInputElement;

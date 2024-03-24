@@ -7,6 +7,8 @@ export const usePropertyStore = defineStore('property' , {
         property_city: '',
         property_state: '',
         property_pincode: '',
+        property_purpose: '',
+        work_type: '',
         floor_plan: null
     }),
     actions: {
