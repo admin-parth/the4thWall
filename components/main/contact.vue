@@ -1,5 +1,5 @@
 <template>
-   <section class="small-section get-in-touch">
+   <section class="py-0 get-in-touch">
     <div class="title-2 mb-4">
         <h2>Contact us</h2>
         <!-- <svg class="title-svg">
@@ -80,7 +80,7 @@
                     </ul>
                     <ul v-if="item.type == 'contact'">
                         <li>Email: <a class="color-red" :href="`maito:${item.email}`">{{ item.email }}</a></li>
-                        <li>Phone: <a class="color-red" :href="`maito:${item.phone}`">{{ item.phone }}</a> / <a class="color-red" :href="`maito:${item.phone2}`">{{ item.phone2 }}</a></li>
+                        <li>Phone: <a class="color-red" :href="`tel:${item.phone}`">{{ item.phone }}</a> / <a class="color-red" :href="`tel:${item.phone2}`">{{ item.phone2 }}</a></li>
                     </ul>
                 </div>
             </div>

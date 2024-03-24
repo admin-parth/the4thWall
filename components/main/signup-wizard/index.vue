@@ -1,5 +1,5 @@
 <template>
-  <section class="property-wizard horizontal-wizard">
+  <section class="property-wizard horizontal-wizard mb-3">
     <div class="container">
       <div class="row wizard-box">
         <div class="col-lg-8 col-sm-10">
