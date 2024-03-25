@@ -123,19 +123,15 @@ const Services_data = [
   },
 ];
 onMounted(() => {
-  document
-    .querySelectorAll(".flip-card-click .flip-card-inner")
-    .forEach(function (item) {
-      item.addEventListener("keypress", function (evt) {
-        if (evt.keyCode == 13 || evt.keyCode == 32) {
-          item.click();
-        }
-      });
-    });
-  // click to flip
+  // hover to flip
   document.querySelectorAll(".flip-card-click").forEach(function (item) {
-    item.addEventListener("click", function () {
-      this.classList.toggle("flipped");
+    item.addEventListener("mouseover", function () {
+      this.classList.add("flipped");
+    });
+  });
+  document.querySelectorAll(".flip-card-click").forEach(function (item) {
+    item.addEventListener("mouseout", function () {
+      this.classList.remove("flipped");
     });
   });
 });
@@ -285,5 +281,24 @@ onMounted(() => {
     width: 250px;
     text-align: center;
   }
+}
+
+.service-box:hover {
+  background-color: #fff !important;
+}
+.flip-card-front .service-box:hover .hover-line::before {
+  opacity: 0 !important;
+}
+.flip-card-front .service-box:hover .hover-line .icon-line-color {
+  width: 0 !important;
+}
+.flip-card-front .service-box:hover .service-icon {
+  opacity: 0 !important;
+}
+.flip-card-front .service-box:hover h3 {
+  opacity: 0 !important;
+}
+.flip-card-front .service-box:hover button {
+  opacity: 0 !important;
 }
 </style>
