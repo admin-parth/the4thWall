@@ -1,28 +1,17 @@
 <template>
-  <section class="ratio2_1 bg-light blog-inner">
+  <section class="ratio2_1 blog-inner">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <swiper
-            :breakpoints="breakpoints"
-            :slidesPerView="4"
-            :loop="true"
-            :spaceBetween="40"
-            class="blog-2 blog-grid"
-          >
-            <swiper-slide v-for="(item, index) in Services_data" :key="index">
-              <div class="blog-wrap">
-                <div class="blog-details">
-                  <!-- <h3>
-                    <nuxt-link to="/page/blog_details/left-sidebar">{{
-                      item.title
-                    }}</nuxt-link>
-                  </h3> -->
-                  <p class="font-roboto">{{ item.desc }}</p>
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="blog-details">
+            <div v-for="(item, index) in Services_data" :key="index">
+              {{ item.desc }}
+              <hr
+                v-if="Services_data.length - 1 !== index"
+                style="height: 1px"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,17 +40,6 @@ const Services_data = [
     img: "/image/main/t4.svg",
   },
 ];
-let breakpoints = {
-  0: {
-    slidesPerView: 1,
-  },
-  768: {
-    slidesPerView: 2,
-  },
-  1200: {
-    slidesPerView: 4,
-  },
-};
 </script>
 
 <style scoped></style>
