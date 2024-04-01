@@ -82,35 +82,36 @@ function handleGalleryPage(e: any) {
 }
 const data = [
   {
-    src: "/image/main/gallery/1.jpg",
+    src: "/image/main/recent-work/bedroom-1.jpg",
     type: "sale",
   },
   {
-    src: "/image/main/gallery/2nd.jpg",
+    src: "/image/main/recent-work/livingroom-10.jpg",
     type: "rent",
   },
   {
-    src: "/image/main/gallery/3.jpg",
+    src: "/image/main/recent-work/office-2.jpg",
     type: "trend",
   },
   {
-    src: "/image/main/gallery/4.jpg",
+    src: "/image/main/recent-work/bedroom-5.jpg",
     type: "rent",
   },
   {
-    src: "/image/main/gallery/6.jpg",
+    src: "/image/main/recent-work/kitchen-3.jpg",
+    type: "trend",
+  },
+  {
+    src: "/image/main/recent-work/kitchen-1.jpg",
     type: "sale",
   },
   {
-    src: "/image/main/gallery/5.jpg",
+    src: "/image/main/recent-work/livingroom-8.jpg",
     type: "trend",
   },
+
   {
-    src: "/image/main/gallery/7.jpg",
-    type: "trend",
-  },
-  {
-    src: "/image/main/gallery/8.jpg",
+    src: "/image/main/recent-work/office-3.jpg",
     type: "trend",
   },
   // {
