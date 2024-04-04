@@ -22,7 +22,7 @@
               class="col-md-5 col-sm-12 d-flex flex-column gap-3 justify-content-center"
             >
               <img src="/image/main/service2.jpg" alt="" />
-              <h3>Fully Rendered 3D</h3>
+              <h3>RealVision 3D</h3>
             </div>
           </div>
 
