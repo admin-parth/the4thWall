@@ -4,6 +4,9 @@
       <div class="row wizard-box">
         <div class="col-lg-8 col-sm-10">
           <div class="theme-card">
+            <div class="logo-flex">
+                <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
+            </div>
             <form-wizard
               @on-complete="onComplete"
               :start-index="activeStep"
@@ -176,5 +179,11 @@ async function onComplete() {
   to {
     transform: rotate(360deg);
   }
+}
+.logo-flex{
+display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 </style>

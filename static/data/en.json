@@ -194,6 +194,7 @@
     },
     "whyChooseTheFourthWall": {
         "title": "Why Choose The Fourth Wall?",
+        "titleAboutus" : "Our Core Beliefs",
         "subTitle1": "Punctuality Assured",
         "para1": "We respect the significance of your time. At The Fourth Wall, we pledge that your project will be executed with precision and delivered right on schedule.",
         "subTitle2": "Satisfaction Unquestioned",
@@ -207,7 +208,9 @@
         "para6": "The Fourth Wall - Where Timeless Elegance Meets Unparalleled Functionality. Choose us for an interior design experience that is both artful and practical."
     },
     "ourDesignProcess":{
-        "title":"Our Design Process",
+        "titlePart1":"Our ",
+        "titlePart2":"Step Design Process ",
+        "titleAboutUs" : "steps of happy interiors",
         "para1": "At The Fourth Wall, our design journey commences with a thorough understanding of you, your requirements, and your vision. We engage in an in-depth discussion about your lifestyle, budget, and aesthetic preferences. This essential dialogue serves as the foundation upon which we craft a design plan that not only aligns with your needs but also surpasses your expectations.",
         "para2": "Upon your approval of the design plan, we embark on the meticulous implementation phase. Collaboratively, we make informed choices regarding furniture, fixtures, and finishes. Our responsibilities extend to overseeing the procurement and delivery of all materials, ensuring a seamless and hassle-free experience.",
         "para3": "On the day of installation, our adept team of professionals, enriched with experience, will efficiently transform your space. Our goal is to carry out the installation with precision, minimizing any disruptions to your daily routine.",

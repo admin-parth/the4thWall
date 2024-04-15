@@ -3,11 +3,12 @@
     <div class="container">
       <div class="row design-process-row">
         <div class="col">
-          <div class="title-2 mb-4">
-            <h2>{{ $t("ourDesignProcess.title") }}</h2>
+          <div class="title-2 mb-4 title-flex">
+             <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="50" />
+            <h2>{{ $t("ourDesignProcess.titleAboutUs") }}</h2>
           </div>
           <div class="row inner-row">
-            <div
+            <div class="data-align"
               v-for="(step, index) in Services_data"
               :key="index"
               :class="{ 'order-tracking': true, completed: true }"
@@ -177,5 +178,20 @@ const Services_data = [
   .order-tracking p {
     text-align: center;
   }
+  .title-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+}
+.title-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.data-align{
+  text-align: justify;
 }
 </style>

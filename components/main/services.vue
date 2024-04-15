@@ -3,8 +3,10 @@
     <div class="container">
       <div class="row design-process-row">
         <div class="col">
-          <div class="title-2 mb-4">
-            <h2>{{ $t("ourDesignProcess.title") }}</h2>
+          <div class="title-2 mb-4 title-flex">
+            <h2>{{ $t("ourDesignProcess.titlePart1") }}</h2>
+           <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="40" />          
+            <h2>{{ $t("ourDesignProcess.titlePart2") }}</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg> -->
@@ -108,12 +110,6 @@ const Services_data = [
     svg1: "/svg/icons.svg#line-straight",
     title: "Worry-free installation",
     details: t("ourDesignProcess.para3"),
-  },
-  {
-    svg: "/svg/icons.svg#shield",
-    svg1: "/svg/icons.svg#line-straight",
-    title: "Review process",
-    details: t("ourDesignProcess.para4"),
   },
   {
     svg: "/svg/icons.svg#shield",
@@ -300,5 +296,11 @@ onMounted(() => {
 }
 .flip-card-front .service-box:hover button {
   opacity: 0 !important;
+}
+.title-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 </style>

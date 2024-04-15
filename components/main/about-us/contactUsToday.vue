@@ -8,12 +8,12 @@
           </div>
           <hr style="height: 1px" />
           <p>
-            ```If you seek the expertise of an interior design firm committed to
+            If you seek the expertise of an interior design firm committed to
             punctuality and backed by an unwavering satisfaction guarantee, then
             don't hesitate to reach out to The Fourth Wall. We cordially invite
             you to initiate a consultation, allowing us to delve into the
             intricacies of your project requirements. Your vision, our passion -
-            together, we'll craft your dream space. Contact us today.```
+            together, we'll craft your dream space. Contact us today.
           </p>
         </div>
       </div>

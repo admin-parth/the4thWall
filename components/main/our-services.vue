@@ -54,7 +54,7 @@ let breakpoints = {
     slidesPerView: 3,
   },
   1200: {
-    slidesPerView: 5,
+    slidesPerView: 6,
   },
 };
 const Services_data = [

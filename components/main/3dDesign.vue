@@ -17,12 +17,14 @@
             >
               <img src="/image/main/service1.jpg" alt="" />
               <h3>Normal 3D</h3>
+              <h6>Gives you a rough idea about 3d object placement and basic design concepts.</h6>
             </div>
             <div
               class="col-md-5 col-sm-12 d-flex flex-column gap-3 justify-content-center"
             >
               <img src="/image/main/service2.jpg" alt="" />
               <h3>RealVision 3D</h3>
+              <h6>Gives you the exact look & feel of materials which you will get after execution.</h6>
             </div>
           </div>
 

@@ -4,7 +4,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="title-2 mb-4">
-            <h2>{{ $t("whyChooseTheFourthWall.title") }}</h2>
+            <h2>{{ $t("whyChooseTheFourthWall.titleAboutus") }}</h2>
           </div>
 
           <ol>
