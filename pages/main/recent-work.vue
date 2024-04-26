@@ -1,9 +1,9 @@
 <template>
     <Head>
-        <Title>Recent Work | The 4th Wall</Title>
+        <Title>Design Gallery | The 4th Wall</Title>
     </Head>
     <LayoutLayoutsLayout2>
-        <MainBannerBreadcrumb title="Recent work" first="Home" current="Recent work" />
+        <MainBannerBreadcrumb title="Design Gallery" first="Home" current="Design gallery" />
         <MainRecentWorkKitchen :data="Grid_Img" classes="col-lg-3 col-sm-6" />
         <ElementTaptopTapTop3 />
     </LayoutLayoutsLayout2>

@@ -70,7 +70,7 @@ interface item{
         children: undefined
     },
     {
-        title:'Recent Work',
+        title:'Design gallery',
         magamenu:false,
         right:true,
         name:'Gallery',

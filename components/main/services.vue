@@ -5,7 +5,7 @@
         <div class="col">
           <div class="title-2 mb-4 title-flex">
             <h2>{{ $t("ourDesignProcess.titlePart1") }}</h2>
-           <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="40" />          
+           <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="30" />          
             <h2>{{ $t("ourDesignProcess.titlePart2") }}</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
@@ -141,7 +141,7 @@ onMounted(() => {
 .flip-card-click {
   display: inline-block;
   background-color: transparent;
-  width: 188px;
+  width: 250px;
   height: 350px;
   margin-right: 12px;
   margin-bottom: 12px;

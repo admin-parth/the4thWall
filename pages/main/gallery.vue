@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <Title>Recent Work | The 4th Wall</Title>
+    <Title>Design Gallery | The 4th Wall</Title>
   </Head>
   <LayoutLayoutsLayout2>
     <MainBannerBreadcrumb title="Gallery" first="Home" current="Gallery" />

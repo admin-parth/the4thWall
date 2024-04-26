@@ -59,17 +59,17 @@ let breakpoints = {
 };
 const Services_data = [
   {
-    title: "Fully rendered RealVision 3D before booking",
+    title: "RealVision 3D before booking",
     desc: "",
     img: "/image/main/t1.svg",
   },
   {
-    title: "*10 year warranty",
+    title: "10 year warranty*",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
     img: "/image/main/t1.svg",
   },
   {
-    title: "*60 day delivery",
+    title: "60 day delivery*",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
     img: "/image/main/t2.svg",
   },

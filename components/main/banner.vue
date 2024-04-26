@@ -30,7 +30,7 @@
                         <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
                       </div>
                       <div class="col">
-                        <p class="mb-0 ">Inspiring Interiors, Unveiling Opportunities</p>
+                        <p class="mb-0 ">Inspiring Interiors, Unveiling Possibilities</p>
                       </div>
                     </div>
                     <div class="row gx-2 justify-content-center">

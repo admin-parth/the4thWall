@@ -66,7 +66,7 @@
               </div>
             </div>
             <div class="title-2 mb-4">
-              <h2>3D Designs</h2>
+              <h2>RealVision 3D</h2>
             </div>
             <div
               class="sale grid-item wow fadeInUp"

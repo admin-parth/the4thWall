@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col">
           <div class="title-2 mb-4">
-            <h2>360 & VR Experience</h2>
+            <h2>What is RealVision 3D</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg> -->
@@ -32,6 +32,7 @@
             <div
               class="col-md-10 col-sm-12 d-flex flex-column gap-3 justify-content-center"
             >
+            <h3>360 & VR Experience</h3>
               <iframe
                 width="100%"
                 height="414px"

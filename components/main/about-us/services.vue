@@ -4,7 +4,7 @@
       <div class="row design-process-row">
         <div class="col">
           <div class="title-2 mb-4 title-flex">
-             <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="50" />
+             <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="30" />
             <h2>{{ $t("ourDesignProcess.titleAboutUs") }}</h2>
           </div>
           <div class="row inner-row">
