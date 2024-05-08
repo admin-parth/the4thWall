@@ -1,5 +1,5 @@
 <template>
-  <section class="py-0 get-in-touch">
+  <section class="py-0 get-in-touch" id="contact-us">
    <div class="title-2 mb-4">
        <!-- <h2>Contact us</h2> -->
        <!-- <svg class="title-svg">
@@ -24,7 +24,7 @@
                                            <Icon name="material-symbols:person-2-outline" />
                                        </div>
                                    </div>
-                                   <input type="text" class="form-control" placeholder="Enter your name" required>
+                                   <input v-model.trim="name" type="text" class="form-control" placeholder="Enter your name" required>
                                </div>
                            </div>
                            <div class="form-group col-md-6">
@@ -34,7 +34,7 @@
                                            <Icon name="ph:phone" />
                                        </div>
                                    </div>
-                                   <input placeholder="phone number" class="form-control" name="mobnumber" id="tbNumbers" type="tel" maxlength="10" required>
+                                   <input v-model.trim="phonenumber" placeholder="phone number" class="form-control" name="mobnumber" id="tbNumbers" type="tel" maxlength="10" required>
                                </div>
                            </div>
                            <div class="form-group col-md-6">
@@ -44,15 +44,15 @@
                                            <Icon name="material-symbols:mail-outline" />
                                        </div>
                                    </div>
-                                   <input type="email" class="form-control" placeholder="email address" required>
+                                   <input v-model.trim="email" type="email" class="form-control" placeholder="email address" required>
                                </div>
                            </div>
                            <div class="form-group col-md-12">
-                               <textarea class="form-control" id="exampleFormControlTextarea1" rows="6">Write here something
+                               <textarea v-model.trim="message" class="form-control" id="exampleFormControlTextarea1" rows="6">Write here something
                                </textarea>
                            </div>
                            <div class="col-md-12 submit-btn">
-                               <button class="btn btn-gradient color-2 btn-pill" type="submit">Send Your Message</button>
+                               <button class="btn btn-gradient color-2 btn-pill" type="submit" @click.prevent="sendEmail">Send Your Message</button>
                            </div>
                        </form>
                    </div>
@@ -74,8 +74,11 @@
                        <div class="footer-social sub-footer-link social-card">
                            <nuxt-link to="https://www.facebook.com/"><i class="fab fa-facebook-f fa-lg"></i></nuxt-link>
                            <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></nuxt-link>
-                           <nuxt-link to="https://twitter.com/"><i class="fab fa-twitter fa-lg"></i></nuxt-link>
-                           <nuxt-link to="https://accounts.google.com/"><i class="fab fa-google fa-lg"></i></nuxt-link>
+                           <nuxt-link to="https://x.com/">
+                            <img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19">
+                           </nuxt-link>
+                            <!-- <i class="fab fa-twitter fa-lg"></i></nuxt-link> -->
+                           <nuxt-link to="https://linkedin.com/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
                        </div>
                    </ul>
                    <ul v-if="item.type == 'contact'">
@@ -131,6 +134,26 @@ let contactData = [
        phone: "+91 99 09 003044",
        phone2: "+91 99 09 003045"
    }
-
 ]
+let name = defineModel();
+let email = defineModel();
+let phonenumber = defineModel();
+let message = defineModel();
+
+const sendEmail = async () => {
+    console.log("Send Email method")
+    const payload = {
+        subject: 'New inquiry from website',
+        message: message,
+        name: name,
+        phonenumber: phonenumber,
+        email: email,
+        type: 'contact-us'
+    }
+    const res = await useFetch('/api/mail', {
+        method: 'post',
+        body: payload
+    })
+}
+
 </script>

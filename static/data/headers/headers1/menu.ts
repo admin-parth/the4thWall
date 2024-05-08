@@ -109,7 +109,8 @@ interface item{
         magamenu:false,
         right:true,
         name:'Contect us',
-        path:'/main/contact-us',
+        path:'/',
+        section:'#contact-us',
         children: undefined
     }
 ];
