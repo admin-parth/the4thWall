@@ -94,6 +94,25 @@ const swalWithBootstrapButtons = Swal.mixin({
   },
   buttonsStyling: false
 })
+const toBase64 = (file: any) =>
+  new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+          let encoded = reader.result
+              .toString()
+              .replace(/^data:(.*,)?/, "");
+          if (encoded.length % 4 > 0) {
+              encoded += "=".repeat(
+                  4 - (encoded.length % 4)
+              );
+          }
+          resolve(encoded);
+      };
+      reader.onerror = reject;
+  });
+
+
 async function onComplete() {
   showLoader.value = true;
   loading.value = true;
@@ -124,6 +143,26 @@ async function onComplete() {
     floor_plan: uploadUrl?.data.publicUrl
   }
   const { data, error } = await supabase.from('query').insert(query_info)
+  const fileBase64 = await toBase64(property.floor_plan);
+  let payload = {
+    ...query_info,
+    subject: 'New inquiry from website',
+    type: 'Inquiry'
+  }
+  if(property.floor_plan) {
+    payload.attachments = [
+        {
+            content: fileBase64,
+            filename: property.floor_plan.name,
+            type: property.floor_plan?.name.split('.').pop(),
+            disposition: "attachment",
+        },
+    ]
+  }
+  const res = await useFetch('/api/mail', {
+    method: 'post',
+    body: payload
+  })
 
   loading.value = false
   swalWithBootstrapButtons.fire({

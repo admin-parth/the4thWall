@@ -61,32 +61,32 @@ const Services_data = [
   {
     title: "RealVision 3D before booking",
     desc: "",
-    img: "/image/main/t1.svg",
+    img: "/svg/g.svg",
   },
   {
     title: "10 year warranty*",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
-    img: "/image/main/t1.svg",
+    img: "/svg/b.svg",
   },
   {
     title: "60 day delivery*",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
-    img: "/image/main/t2.svg",
+    img: "/svg/d.svg",
   },
   {
     title: "Post-installation service",
     desc: "Complete your design journey and get unwavering support from our dedicated care team.",
-    img: "/image/main/t4.svg",
+    img: "/svg/e.svg",
   },
   {
     title: "No hidden cost",
     desc: "",
-    img: "/image/main/t3.svg",
+    img: "/svg/h.svg",
   },
   {
     title: "Personalised designs",
     desc: "",
-    img: "/image/main/t2.svg",
+    img: "/svg/f.svg",
   }
 ];
 </script>

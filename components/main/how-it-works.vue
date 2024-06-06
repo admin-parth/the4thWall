@@ -33,32 +33,32 @@ export default {
         {
           completed: true,
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
+            "/svg/1.svg",
           description: "Get your first 3Ds & quote",
         },
         {
           completed: true,
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
+            "/svg/2.svg",
           description:
             "5% payment & book your service",
         },
         {
           completed: true,
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
+            "/svg/3.svg",
           description: "45% payment for starting work",
         },
         {
           completed: true,
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
+            "/svg/4.svg",
           description: "100% payment before installion",
         },
         {
           completed: true,
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUhV2CDxDfe-0PpGCPJjA678hwoC56alxLw&usqp=CAU",
+            "/svg/5.svg",
           description: "Move in and enjoy!",
         },
       ],

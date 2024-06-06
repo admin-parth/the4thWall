@@ -6,7 +6,6 @@ export default async() => {
             dbName: config.dbName
         }
         await mongoose.connect(config.dburl, DB_OPTIONS);
-        console.log("MongoDB Connected");
     } catch (error) {
         console.log(error);
     }

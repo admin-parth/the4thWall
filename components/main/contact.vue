@@ -48,7 +48,7 @@
                                </div>
                            </div>
                            <div class="form-group col-md-12">
-                               <textarea v-model.trim="message" class="form-control" id="exampleFormControlTextarea1" rows="6">Write here something
+                               <textarea v-model.trim="message" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Write your message">
                                </textarea>
                            </div>
                            <div class="col-md-12 submit-btn">
@@ -93,6 +93,7 @@
 </section>
 </template>
 <script setup lang="ts">
+import Swal from "sweetalert2";
 import {useurl} from '~/composable/apiurl'
 interface contact{
    icon:string,
@@ -140,10 +141,17 @@ let email = defineModel();
 let phonenumber = defineModel();
 let message = defineModel();
 
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success ms-1',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
 const sendEmail = async () => {
-    console.log("Send Email method")
     const payload = {
-        subject: 'New inquiry from website',
+        subject: 'New message from website',
         message: message,
         name: name,
         phonenumber: phonenumber,
@@ -153,6 +161,12 @@ const sendEmail = async () => {
     const res = await useFetch('/api/mail', {
         method: 'post',
         body: payload
+    })
+
+    swalWithBootstrapButtons.fire({
+        icon: 'success',
+        title: 'Your request has been Submitted.',
+        text: 'We will contact you soon.'
     })
 }
 

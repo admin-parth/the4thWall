@@ -89,32 +89,31 @@ let route = useRoute();
 let router = useRouter();
 function handleBookSession(e: any) {
   e.preventDefault();
-  console.log("clicked");
   router.push({ path: "/main/signup" });
 }
 const Services_data = [
   {
     svg: "/svg/icons.svg#home-heart",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Get your vision",
+    title: "Meet with us and know us",
     details: t("ourDesignProcess.para1"),
   },
   {
     svg: "/svg/icons.svg#customer-service",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Design your idea",
+    title: "Enroll for your free Realvisiom 3D",
     details: t("ourDesignProcess.para2"),
   },
   {
     svg: "/svg/icons.svg#key",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Worry-free installation",
+    title: "Get exact quote",
     details: t("ourDesignProcess.para3"),
   },
   {
     svg: "/svg/icons.svg#shield",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Review process",
+    title: "Experience your home's Real vision 3D in our Experience center",
     details: t("ourDesignProcess.para4"),
   },
 ];
