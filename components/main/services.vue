@@ -107,7 +107,7 @@ const Services_data = [
   {
     svg: "/svg/icons.svg#key",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Get exact quote",
+    title: "Get exact estimate",
     details: t("ourDesignProcess.para3"),
   },
   {
