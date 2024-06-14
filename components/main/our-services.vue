@@ -61,32 +61,32 @@ const Services_data = [
   {
     title: "End to End Interior Services",
     desc: "",
-    img: "/image/main/t1.svg",
+    img: "/svg/End To End Interior Services.svg",
   },
   {
     title: "Interior Designing & PMC",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
-    img: "/image/main/t1.svg",
+    img: "/svg/Interior Designing & PMC.svg",
   },
   {
     title: "Properly Buying Consultation",
     desc: "",
-    img: "/image/main/t3.svg",
+    img: "/svg/Property Buying Consultation.svg",
   },
   {
     title: "Architecture Consulting",
     desc: "Complete your design journey and get unwavering support from our dedicated care team.",
-    img: "/image/main/t4.svg",
+    img: "/svg/Architecture Consulting.svg",
   },
   {
     title: "Structure & Civil Consulting",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
-    img: "/image/main/t2.svg",
+    img: "/svg/Structure & Civil Consulting.svg",
   },
   {
     title: "Art Curation & Construction",
     desc: "",
-    img: "/image/main/t3.svg",
+    img: "/svg/Art Curation & Consulting.svg",
   },
 ];
 </script>
