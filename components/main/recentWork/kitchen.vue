@@ -47,7 +47,7 @@
             <div
               class="sale grid-item wow fadeInUp"
               :class="classes"
-              v-for="(item, index) in getdata"
+              v-for="(item, index) in filteredImages"
               :key="index"
             >
               <div class="grid-box">
@@ -55,11 +55,11 @@
                   <div class="portfolio-image">
                     <nuxt-link
                       to="javascript:void(0)"
-                      :style="'background-image:url(' + item.src + ')'"
+                      :style="{ backgroundImage: `url(/image/${active}/${item})` }"
                       class="bg-size background"
                       @click="showsingle(index, 'simple')"
                     >
-                      <img :src="item.src" class="bg-img d-none" alt="" />
+                      <img :src="`/image/${active}/${item}`" class="bg-img d-none" alt="" />
                     </nuxt-link>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
             <div
               class="sale grid-item wow fadeInUp"
               :class="classes"
-              v-for="(item, index) in getdata"
+              v-for="(item, index) in filtered360Images"
               :key="index"
             >
               <div class="grid-box">
@@ -79,11 +79,11 @@
                   <div class="portfolio-image">
                     <nuxt-link
                       to="javascript:void(0)"
-                      :style="'background-image:url(' + item.src + ')'"
+                      :style="{ backgroundImage: `url(/image/360-${active}/${item})` }"
                       class="bg-size background"
                       @click="showsingle(index, '360')"
                     >
-                      <img :src="item.src" class="bg-img d-none" alt="" />
+                      <img :src="`/image/360-${active}/${item}`" class="bg-img d-none" alt="" />
                     </nuxt-link>
                   </div>
                 </div>
@@ -129,6 +129,15 @@
 </template>
 
 <script setup lang="ts">
+let active = ref<string>("bedroom");
+let props = defineProps<MyProps>();
+let visible = ref<boolean>(false);
+let is360 = ref<boolean>(false);
+let index = ref<number>(0);
+let imgs = ref<string[]>([]);
+
+const imageCategories = useState('imageCategories');
+
 interface MyProps {
   classes: string;
   data: img[];
@@ -137,22 +146,22 @@ interface img {
   src: string;
   type: string;
 }
-let props = defineProps<MyProps>();
-let visible = ref<boolean>(false);
-let is360 = ref<boolean>(false);
-let index = ref<number>(0);
-let imgs = ref<string[]>([]);
 
-let active = ref<string>("bedroom");
-let getdata = computed(() => {
-  return props.data.filter((item: img) => item.type == active.value);
+const filteredImages = computed(() => {
+  const category = imageCategories.value.find(cat => cat.name === active.value);
+  return category ? category.images : [];
 });
+const filtered360Images = computed(() => {
+  const category = imageCategories.value.find(cat => cat.name === `360-${active.value}`);
+  return category ? category.images : [];
+});
+
 function showsingle(i: number, type: string) {
   index.value = i;
   imgs.value = [];
   if (type === "simple") {
-    props.data.forEach((element: img) => {
-      imgs.value.push(element.src);
+    filteredImages.value.forEach((element: img) => {
+      imgs.value.push(`/image/${active.value}/${element}`);
     });
     is360.value = false;
   } else {
@@ -165,7 +174,6 @@ function showsingle(i: number, type: string) {
 }
 function handleHide() {
   visible.value = false;
-  console.log(visible.value);
 }
 
 function getvalue(value: string) {
