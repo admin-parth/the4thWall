@@ -146,7 +146,7 @@ interface img {
   src: string;
   type: string;
 }
-
+console.log(imageCategories, 'from client ');
 const filteredImages = computed(() => {
   const category = imageCategories.value.find(cat => cat.name === active.value);
   return category ? category.images : [];
