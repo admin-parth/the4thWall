@@ -25,13 +25,13 @@ export default defineNuxtPlugin((nuxtApp) => {
         });
       }
     });
-
+    console.log(categories, 'from plugins function return');
     return categories;
   };
 
   try {
     const categories = getImages(imagesDir);
-
+    console.log(categories, 'from plugins');
     nuxtApp.provide('imageCategories', categories);
     nuxtApp.vueApp.provide('imageCategories', categories);
 
