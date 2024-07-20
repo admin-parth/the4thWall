@@ -1,22 +1,21 @@
 // ~/plugins/readImages.server.ts
 import { defineNuxtPlugin } from '#app';
+import { fileURLToPath } from 'url';
+import { dirname, resolve, join } from 'path';
 import fs from 'fs';
-import path from 'path';
-
-interface Category {
-  name: string;
-  images: string[];
-}
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const imagesDir = path.resolve(__dirname, '../public/image'); // Adjust path as needed
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
 
-  const getImages = (dir: string): Category[] => {
-    const categories: Category[] = [];
+  const imagesDir = resolve(__dirname, '../public/image'); // Adjust path as needed
+
+  const getImages = (dir) => {
+    const categories = [];
     const categoryFolders = fs.readdirSync(dir);
 
     categoryFolders.forEach((category) => {
-      const categoryPath = path.join(dir, category);
+      const categoryPath = join(dir, category);
       if (fs.statSync(categoryPath).isDirectory()) {
         const images = fs.readdirSync(categoryPath);
         categories.push({
@@ -30,12 +29,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   const categories = getImages(imagesDir);
-  console.log(categories, 'hello from plugins');
 
   nuxtApp.provide('imageCategories', categories);
-  nuxtApp.vueApp.provide('imageCategories', categories)
+  nuxtApp.vueApp.provide('imageCategories', categories);
 
   const imageCategoriesState = useState('imageCategories', () => categories);
   imageCategoriesState.value = categories;
-
 });
+
