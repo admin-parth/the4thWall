@@ -8,7 +8,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
-  const imagesDir = resolve(__dirname, '../public/image'); // Adjust path as needed
+  // Assuming the images are in the 'public/image' directory relative to the project root
+  const imagesDir = resolve(__dirname, '../public/image'); 
 
   const getImages = (dir) => {
     const categories = [];
@@ -28,12 +29,15 @@ export default defineNuxtPlugin((nuxtApp) => {
     return categories;
   };
 
-  const categories = getImages(imagesDir);
+  try {
+    const categories = getImages(imagesDir);
 
-  nuxtApp.provide('imageCategories', categories);
-  nuxtApp.vueApp.provide('imageCategories', categories);
+    nuxtApp.provide('imageCategories', categories);
+    nuxtApp.vueApp.provide('imageCategories', categories);
 
-  const imageCategoriesState = useState('imageCategories', () => categories);
-  imageCategoriesState.value = categories;
+    const imageCategoriesState = useState('imageCategories', () => categories);
+    imageCategoriesState.value = categories;
+  } catch (error) {
+    console.error(`Error reading images directory: ${error.message}`);
+  }
 });
-
