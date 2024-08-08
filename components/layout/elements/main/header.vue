@@ -20,7 +20,7 @@
                 to="/main/signup"
               >
                 <i class="fas fa-user-alt p-0" style="margin-right: 10px"></i>
-                <span class="font-roboto">Sign Up</span>
+                <span class="font-roboto">Book Your Session</span>
               </RouterLink>
             </div>
           </div>

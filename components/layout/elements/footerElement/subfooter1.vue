@@ -12,7 +12,7 @@
                                 <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram"></i></nuxt-link>
                             </li>
                             <li>
-                                <nuxt-link to="https://twitter.com/"><i class="fab fa-twitter"></i></nuxt-link>
+                                <nuxt-link to="https://youtube.com/"><i class="fab fa-youtube"></i></nuxt-link>
                             </li>
                             <li>
                                 <nuxt-link to="https://accounts.google.com/"><i class="fab fa-google"></i></nuxt-link>

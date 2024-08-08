@@ -32,7 +32,9 @@
             <div
               class="col-md-10 col-sm-12 d-flex flex-column gap-3 justify-content-center"
             >
-            <h3>360 & VR Experience</h3>
+            <div class="title-2 mb-4">
+              <h2>360 & VR Experience</h2>
+            </div>
               <iframe
                 width="100%"
                 height="414px"

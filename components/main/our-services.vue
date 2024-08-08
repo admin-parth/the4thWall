@@ -64,7 +64,7 @@ const Services_data = [
     img: "/svg/End To End Interior Services.svg",
   },
   {
-    title: "Interior Designing & PMC",
+    title: "Interior Designing & Project Management",
     desc: "Choose interiors designed with superior quality material, leaving no room for defects.",
     img: "/svg/Interior Designing & PMC.svg",
   },
@@ -84,7 +84,7 @@ const Services_data = [
     img: "/svg/Structure & Civil Consulting.svg",
   },
   {
-    title: "Art Curation & Construction",
+    title: "Art Curation & Consulting",
     desc: "",
     img: "/svg/Art Curation & Consulting.svg",
   },

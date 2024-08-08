@@ -24,18 +24,19 @@
                 <div class="flip-card-inner" tab-index="0">
                   <div class="flip-card-front">
                     <div class="service-box" style="padding: 40px">
-                      <div class="hover-line">
-                        <svg class="service-icon">
+                      <!-- <div class="hover-line">
+                         <svg class="service-icon">
                           <use :xlink:href="item.svg"></use>
-                        </svg>
+                        </svg> 
                         <div>
                           <svg class="icon-line-color">
                             <use :xlink:href="item.svg1"></use>
                           </svg>
-                        </div>
-                      </div>
+                        </div> 
+                      </div> -->
+                        <img :src="item.image" alt="" height="70"/>
                       <h3 style="font-size: medium; text-align: center">
-                        {{ index + 1 }}. {{ item.title }}
+                        {{ item.title }}
                       </h3>
                       <button class="btn btn-light-bg h-auto learn-more-btn">
                         Learn more
@@ -97,24 +98,28 @@ const Services_data = [
     svg1: "/svg/icons.svg#line-straight",
     title: "Meet with us and know us",
     details: t("ourDesignProcess.para1"),
+    image: "/svg/1.svg",
   },
   {
     svg: "/svg/icons.svg#customer-service",
     svg1: "/svg/icons.svg#line-straight",
     title: "Enroll for your free Realvisiom 3D",
     details: t("ourDesignProcess.para2"),
+    image: "/svg/2.svg",
   },
   {
     svg: "/svg/icons.svg#key",
     svg1: "/svg/icons.svg#line-straight",
     title: "Get exact estimate",
     details: t("ourDesignProcess.para3"),
+    image: "/svg/3.svg",
   },
   {
     svg: "/svg/icons.svg#shield",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Experience your home's Real vision 3D in our Experience center",
+    title: "Experience your home's Real vision 3D",
     details: t("ourDesignProcess.para4"),
+    image: "/svg/4.svg",
   },
 ];
 onMounted(() => {

@@ -119,11 +119,11 @@
                           </div>
                         </div>
                         <button
-                          class="btn btn-gradient color-4 col-6"
+                          class="btn btn-gradient color-4 col-8 mt-3"
                           id="create-account"
                           @click.prevent="createAccount"
                         >
-                          {{ "Create account" }}
+                        <i class="fas fa-user-alt p-0" style="margin-right: 10px"></i>Book your session
                         </button>
                         <div v-if="error" class="alert alert-danger">
                           {{ error }}

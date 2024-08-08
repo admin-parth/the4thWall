@@ -47,7 +47,7 @@ export default {
           completed: true,
           image:
             "/svg/3.svg",
-          description: "45% payment for starting work",
+          description: "45% payment before execeting work",
         },
         {
           completed: true,

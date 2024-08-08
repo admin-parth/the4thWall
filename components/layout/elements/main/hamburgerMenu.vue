@@ -43,8 +43,9 @@
     </li>
     <div class="social-card mt-auto mb-5">
       <nuxt-link to="https://www.facebook.com/"><i class="fab fa-facebook-f fa-lg"></i></nuxt-link>
-      <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></nuxt-link>
-      <nuxt-link to="https://x.com/"><img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19"></nuxt-link>
+      <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></nuxt-link> 
+      <nuxt-link to="https://www.youtube.com/"><i class="fab fa-youtube fa-lg"></i></nuxt-link> 
+      <!-- <nuxt-link to="https://x.com/"><img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19"></nuxt-link> -->
       <nuxt-link to="https://linkedin.com/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
     </div>
   </ul>

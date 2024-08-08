@@ -59,7 +59,7 @@ let breakpoints = {
 };
 const Services_data = [
   {
-    title: "RealVision 3D before booking",
+    title: "RealVision 3D",
     desc: "",
     img: "/svg/g.svg",
   },
@@ -69,7 +69,7 @@ const Services_data = [
     img: "/svg/b.svg",
   },
   {
-    title: "60 day delivery*",
+    title: "60 days delivery*",
     desc: "Get beautiful interiors for your new home in just 45 days. That’s our delivery guarantee.",
     img: "/svg/d.svg",
   },
