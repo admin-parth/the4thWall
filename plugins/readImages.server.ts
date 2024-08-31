@@ -8,11 +8,17 @@ export default defineNuxtPlugin((nuxtApp) => {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
 
-    const imagesDir = resolve(__dirname, '../public/image'); 
+    const imagesDir = resolve(__dirname, '../public/image');
+    const imagesDir1 = resolve(__dirname, '/image');
+    const imagesDir2 = resolve(__dirname, '/public/image');
+    const imagesDir3 = resolve(__dirname, '../image');
 
     const getImages = (dir) => {
       const categories = [];
-      console.log(imagesDir, dir, 'dir');
+      console.log(imagesDir, dir, 'imagesDir');
+      console.log(imagesDir1, dir, 'imagesDir1');
+      console.log(imagesDir2, dir, 'imagesDir2');
+      console.log(imagesDir3, dir, 'imagesDir3');
       const categoryFolders = fs.readdirSync(dir);
       console.log(categoryFolders,'categoryFolders');
 
