@@ -12,7 +12,9 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     const getImages = (dir) => {
       const categories = [];
+      console.log(imagesDir, dir, 'dir');
       const categoryFolders = fs.readdirSync(dir);
+      console.log(categoryFolders,'categoryFolders');
 
       categoryFolders.forEach((category) => {
         const categoryPath = join(dir, category);
