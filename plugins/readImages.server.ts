@@ -37,10 +37,10 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     try {
       // const categories = getImages(imagesDir);
-      const categories1 = getImages(imagesDir1);
-      // const categories2 = getImages(imagesDir2);
+      // const categories1 = getImages(imagesDir1);
+      const categories2 = getImages(imagesDir2);
       // const categories3 = getImages(imagesDir3);
-      console.log(categories1, categories2, categories3, 'try block');
+      console.log( categories2, 'try block');
       nuxtApp.provide('imageCategories', categories);
       nuxtApp.vueApp.provide('imageCategories', categories);
 
