@@ -177,7 +177,6 @@ const validatePhone = (phone: any) => {
 };
 
 const createAccount = () => {
-  console.log("Create account");
   if (!user.name || !user.email || !user.password) {
     error.value = "Please fill in all required fields.";
   } else if (user.name.length < 2) {

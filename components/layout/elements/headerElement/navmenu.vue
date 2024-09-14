@@ -58,7 +58,6 @@ import Header_Type from "~/static/data/types/header";
 import menulink from "~/static/data/headers/headers1/menu";
 import jump from "jump.js";
 
-console.log(menulink);
 let props = defineProps({
   header: String,
   color: String,

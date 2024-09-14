@@ -5,6 +5,7 @@ export const useUserStore = defineStore('user' , {
         email: '',
         password: '',
         getBuildingDetails: false,
+        verified: false,
     }),
     actions: {
         resetUser() {
@@ -13,9 +14,13 @@ export const useUserStore = defineStore('user' , {
             this.email =''
             this.password =''
             this.getBuildingDetails = false
+            this.verified = false
         },
         setBuildingDetails(val: boolean) {
             this.getBuildingDetails = val
+        },
+        setUserVerified(val: boolean) {
+            this.verified = val
         }
     }
 })

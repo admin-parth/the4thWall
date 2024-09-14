@@ -41,7 +41,6 @@ const data = recenetWork[props.content]
 let visible = ref(false)
 let index = ref(0)
 let imgs = ref([])
-console.log(props.content)
 let getdata = computed(() => {
     return data
 })

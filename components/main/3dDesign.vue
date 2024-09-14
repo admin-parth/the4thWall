@@ -71,7 +71,6 @@ const router = useRouter();
 
 const handleBookSession = (e: MouseEvent) => {
   e.preventDefault();
-  console.log("clicked");
   router.push({ path: "/main/signup" });
 };
 </script>

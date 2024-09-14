@@ -8,6 +8,7 @@
                 <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
             </div>
             <form-wizard
+              ref="wizard"
               @on-complete="onComplete"
               :start-index="activeStep"
               finish-button-text="Submit details"
@@ -18,6 +19,12 @@
                   :before-change="beforeTabSwitch"
                 >
                   <MainSignupWizardAccountInfo :classes="validationclass" />
+                </tab-content>
+                <tab-content
+                  title="Verification"
+                  :before-change="userVerification"
+                >
+                  <MainSignupWizardVerification />
                 </tab-content>
                 <tab-content
                   title="Property information"
@@ -46,11 +53,13 @@ import "vue3-form-wizard/dist/style.css";
 import { usewizaredStore } from "~/store/wizard";
 import { useUserStore } from "~/store/user";
 import { usePropertyStore } from "~/store/property";
+import { ref } from 'vue'
 // import loading from "../loading.vue";
 const showLoader = ref(false);
 const loading = ref(false);
 const supabase = inject("supabase");
 const validationclass = ref<string>("");
+const wizard = ref(null)
 let store = usewizaredStore();
 let user = useUserStore();
 let property = usePropertyStore();
@@ -64,12 +73,25 @@ function beforeTabSwitch() {
     user.email !== "" &&
     user.password !== ""
   ) {
+    if (user.verified) {
+      wizard.value.navigateToTab(2)
+    }
     validationclass.value = "was-validated";
     return true;
   } else {
     return false;
   }
 }
+
+function userVerification() {
+  if (user.verified) {
+    wizard.value.navigateToTab(2)
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function beforeTabSwitch2() {
   if (
     property.property_name !== "" &&
