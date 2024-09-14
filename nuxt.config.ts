@@ -74,6 +74,8 @@ export default defineNuxtConfig({
       src:'~/plugins/supabase.ts',
       mode:'client'
     },
-    { src: '~/plugins/readImages.server.ts' }
+    { src: '~/plugins/readImages.client.ts',
+      mode: 'client' 
+    }
   ]
 });
