@@ -35,7 +35,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (exists) {
           imageUrls.push(imageUrl);
         } else {
-          break; 
+          break;
         }
         i++;
       }
@@ -50,7 +50,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       return categoriesWithImages;
     };
 
+    const imageCategoriesState = useState('imageCategories', () => []);
+
     loadImages().then((categories) => {
+      imageCategoriesState.value = categories;
       nuxtApp.provide('imageCategories', categories);
       nuxtApp.vueApp.provide('imageCategories', categories);
     }).catch((error) => {

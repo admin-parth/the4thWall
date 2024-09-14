@@ -1,6 +1,5 @@
 <template>
-  <client-only>
-    <section class="portfolio-section portfolio-grid mb-5">
+    <section v-if="imageCategories" class="portfolio-section portfolio-grid mb-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -127,11 +126,9 @@
         @hide="handleHide"
       ></vue-easy-lightbox>
     </template>
-  </client-only>
 </template>
 
 <script setup lang="ts">
-import { useAsyncData } from '#app'; 
 let active = ref<string>("bedroom");
 let props = defineProps<MyProps>();
 let visible = ref<boolean>(false);
@@ -139,7 +136,6 @@ let is360 = ref<boolean>(false);
 let index = ref<number>(0);
 let imgs = ref<string[]>([]);
 
-// const imageCategories = useState('imageCategories');
 
 interface MyProps {
   classes: string;
@@ -149,29 +145,7 @@ interface img {
   src: string;
   type: string;
 }
-const { $imageCategories } = useNuxtApp();
 const imageCategories = useState('imageCategories', () => null);
-
-onMounted(() => {
-  if (process.client) {
-    const fetchImages = async () => {
-      if (!$imageCategories) {
-        console.error('No image categories available.');
-        return;
-      }
-      // Fetch the image categories when the client is mounted
-      imageCategories.value = await Promise.resolve($imageCategories);
-    };
-
-    // Fetch images on client side after the page is mounted
-    fetchImages();
-  }
-});
-
-console.log(imageCategories,'imageCategories');
-// const imageCategories = useState('imageCategories');
-
-// console.log(imageCategories, 'from client ');
 const filteredImages = computed(() => {
   const category = imageCategories.value.find(cat => cat.name === active.value);
   return category ? category.images : [];
