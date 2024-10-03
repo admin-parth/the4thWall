@@ -6,16 +6,13 @@
                     <div class="footer-social sub-footer-link">
                         <ul>
                             <li>
-                                <nuxt-link to="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></nuxt-link>
+                                <nuxt-link target="_blank" to="https://www.facebook.com/profile.php?id=61552522883538"><i class="fab fa-facebook-f fa-lg"></i></nuxt-link>
                             </li>
                             <li>
-                                <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram"></i></nuxt-link>
+                                <nuxt-link target="_blank" to="https://www.instagram.com/the4thwall.studio/"><i class="fab fa-instagram fa-lg"></i></nuxt-link>
                             </li>
                             <li>
-                                <nuxt-link to="https://youtube.com/"><i class="fab fa-youtube"></i></nuxt-link>
-                            </li>
-                            <li>
-                                <nuxt-link to="https://accounts.google.com/"><i class="fab fa-google"></i></nuxt-link>
+                                <nuxt-link target="_blank" to="https://youtube.com/@the4thwall.designs?si=TxelPfI7Np-_uaPA"><i class="fab fa-youtube fa-lg"></i></nuxt-link>
                             </li>
                         </ul>
                     </div>

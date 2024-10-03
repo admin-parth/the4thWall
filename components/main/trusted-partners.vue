@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col">
           <div class="title-2 mb-4">
-            <h2>Our Trusted Partner</h2>
+            <h2>Brands we trust</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
             </svg> -->

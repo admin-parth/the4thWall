@@ -72,9 +72,9 @@
                    </p>
                    <ul v-if="item.type == 'social-media'">
                        <div class="footer-social sub-footer-link social-card">
-                           <nuxt-link to="https://www.facebook.com/"><i class="fab fa-facebook-f fa-lg"></i></nuxt-link>
-                           <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></nuxt-link>
-                           <nuxt-link to="https://www.youtube.com/"><i class="fab fa-youtube fa-lg"></i></nuxt-link>
+                           <nuxt-link target="_blank" to="https://www.facebook.com/profile.php?id=61552522883538"><i class="fab fa-facebook-f fa-lg"></i></nuxt-link>
+                           <nuxt-link target="_blank" to="https://www.instagram.com/the4thwall.studio/"><i class="fab fa-instagram fa-lg"></i></nuxt-link>
+                           <nuxt-link target="_blank" to="https://youtube.com/@the4thwall.designs?si=TxelPfI7Np-_uaPA"><i class="fab fa-youtube fa-lg"></i></nuxt-link>
                            <!-- <nuxt-link to="https://x.com/">
                             <img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19">
                            </nuxt-link> -->
@@ -121,7 +121,7 @@ let contactData = [
    {
        icon:"octicon:location",
        title:"Where ?",
-       add:"Ahmedabad, Gujarat, India",
+       add:"609, Sharan Circle Business hub, Above Croma, Zundal cross Roads, S.P. Ring Road, Chandkheda, Ahmedabad - 382424",
        type: "location"
 
    }, {

@@ -103,7 +103,7 @@ const Services_data = [
   {
     svg: "/svg/icons.svg#customer-service",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Enroll for your free Realvisiom 3D",
+    title: "Enroll for your free RealVision 3D",
     details: t("ourDesignProcess.para2"),
     image: "/svg/2.svg",
   },
@@ -117,7 +117,7 @@ const Services_data = [
   {
     svg: "/svg/icons.svg#shield",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Experience your home's Real vision 3D",
+    title: "Experience your home's RealVision 3D",
     details: t("ourDesignProcess.para4"),
     image: "/svg/4.svg",
   },
