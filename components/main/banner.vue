@@ -27,7 +27,7 @@
                     </nuxt-link> -->
                     <div class="row mb-2 text-center">
                       <div class="col-12">
-                        <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
+                        <img src="/image/logo/logo.svg" alt="The 4th wall. " height="50" />
                       </div>
                       <div class="col">
                         <p class="mb-0 ">Inspiring Interiors, Unveiling Possibilities</p>

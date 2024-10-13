@@ -2,7 +2,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="position-relative">
             <div class="card p-2 text-center">
-                <!-- <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" class="my-3"/> -->
+                <!-- <img src="/image/logo/logo.svg" alt="The 4th wall. " height="50" class="my-3"/> -->
                 <h6>Please enter the one time password <br> to verify your account</h6>
                 <div> <span>A code has been sent to</span> <small>******{{ user.phone.substr(user.phone.length-4) }}</small> </div>
                 <div class="otp w-full flex justify-around" @input="handleOtpInput">

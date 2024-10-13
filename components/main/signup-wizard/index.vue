@@ -5,7 +5,7 @@
         <div class="col-lg-8 col-sm-10">
           <div class="theme-card">
             <div class="logo-flex">
-                <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="50" />
+                <img src="/image/logo/logo.svg" alt="The 4th wall. " height="50" />
             </div>
             <form-wizard
               ref="wizard"

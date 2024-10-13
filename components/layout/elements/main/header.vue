@@ -12,7 +12,7 @@
               </div>
             </nav>
             <RouterLink to="/" class="nav-link menu-title py-2">
-                <img src="/image/logo/temp-logo.png" alt="The 4th wall. " height="40" />
+                <img src="/image/logo/logo.svg" alt="The 4th wall. " height="40" />
             </RouterLink>
             <div class="webinfo-details">
               <RouterLink
