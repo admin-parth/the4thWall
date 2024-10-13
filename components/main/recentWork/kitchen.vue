@@ -1,5 +1,5 @@
 <template>
-    <section v-if="imageCategories" class="portfolio-section portfolio-grid mb-5">
+    <section class="portfolio-section portfolio-grid mb-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -55,11 +55,11 @@
                     <div class="portfolio-image">
                       <nuxt-link
                         to="javascript:void(0)"
-                        :style="{ backgroundImage: `url(${item})` }"
+                        :style="{ backgroundImage: `url(${item.src})` }"
                         class="bg-size background"
-                        @click="showsingle(index, 'simple')"
+                        @click="showsingle(index, 'simple', item.src)"
                       >
-                        <img :src={item} class="bg-img d-none" alt="" />
+                        <img :src="item.src" class="bg-img d-none" alt="" />
                       </nuxt-link>
                     </div>
                   </div>
@@ -79,11 +79,11 @@
                     <div class="portfolio-image">
                       <nuxt-link
                         to="javascript:void(0)"
-                        :style="{ backgroundImage: `url(${item})` }"
+                        :style="{ backgroundImage: `url(${item.src})` }"
                         class="bg-size background"
-                        @click="showsingle(index, '360')"
+                        @click="showsingle(index, '360', item.src)"
                       >
-                        <img :src={item} class="bg-img d-none" alt="" />
+                        <img :src="item.src" class="bg-img d-none" alt="" />
                       </nuxt-link>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
               box-shadow: 0px 10px 13px -7px #000000,
                 5px 5px 15px 5px rgba(0, 0, 0, 0);
             "
-            :src="imgs[0]"
+            :src="selected360"
           ></iframe>
         </div>
         <div class="vel-btns-wrapper">
@@ -129,12 +129,15 @@
 </template>
 
 <script setup lang="ts">
+import recentWork from '~/static/data/recentWork';
+
 let active = ref<string>("bedroom");
 let props = defineProps<MyProps>();
 let visible = ref<boolean>(false);
 let is360 = ref<boolean>(false);
 let index = ref<number>(0);
 let imgs = ref<string[]>([]);
+let selected360 = ref<string>("");
 
 
 interface MyProps {
@@ -145,31 +148,28 @@ interface img {
   src: string;
   type: string;
 }
-const imageCategories = useState('imageCategories', () => null);
+// const imageCategories = useState('imageCategories', () => null);
 const filteredImages = computed(() => {
-  const category = imageCategories.value.find(cat => cat.name === active.value);
-  return category ? category.images : [];
+  const category = recentWork.filter(cat => cat.type === active.value);
+  return category ? category : [];
 });
 const filtered360Images = computed(() => {
-  console.log(active.value);
-  console.log(imageCategories.value.find(cat => cat.name === `360-${active.value}`));
-  const category = imageCategories.value.find(cat => cat.name === `360-${active.value}`);
-  return category ? category.images : [];
+  const category = recentWork.filter(cat => cat.type === `360-${active.value}`);
+  return category ? category : [];
 });
 
-function showsingle(i: number, type: string) {
+function showsingle(i: number, type: string, item: string) {
+  console.log(item)
   index.value = i;
   imgs.value = [];
   if (type === "simple") {
     filteredImages.value.forEach((element: img) => {
-      console.log(element);
-      imgs.value.push(`${element}`);
+      imgs.value.push(element.src);
     });
     is360.value = false;
   } else {
-    imgs.value.push(
-      "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/XiWNDdQ.jpg&autoLoad=true&autoRotate=-2"
-    );
+    const val = filtered360Images.value.find((obj: { src: string; }) => obj.src === item)
+    selected360.value = `https://cdn.pannellum.org/2.5/pannellum.htm#panorama=${val.imgurUrl}&autoLoad=true&autoRotate=-2`
     is360.value = true;
   }
   visible.value = true;
