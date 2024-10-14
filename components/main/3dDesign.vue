@@ -37,14 +37,14 @@
             </div>
               <iframe
                 width="100%"
-                height="414px"
+                height="450px"
                 allowfullscreen
                 style="
                   border-radius: 10px;
                   box-shadow: 0px 10px 13px -7px #000000,
                     5px 5px 15px 5px rgba(0, 0, 0, 0);
                 "
-                src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Pr85CEZ.jpg&amp;autoLoad=true&amp;autoRotate=-2"
+                :src="src"
               ></iframe>
             </div>
           </div>
@@ -68,7 +68,14 @@
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
+const src = computed(() => {
+  const imgs = [
+    "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Pr85CEZ.jpg&autoLoad=true&autoRotate=-2",
+    "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Wn3bOrg.jpg&autoLoad=true&autoRotate=-2",
+    "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/3WkPS4s.jpg&autoLoad=true&autoRotate=-2&vaov=120",
+  ]
+  return imgs[Math.floor(Math.random() * imgs.length)];
+})
 const handleBookSession = (e: MouseEvent) => {
   e.preventDefault();
   router.push({ path: "/main/signup" });

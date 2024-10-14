@@ -41,49 +41,59 @@ export default {
       slides: [
         {
           id: 1,
-          title1: "Favicol",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image: "https://super.homelane.com/fev02.jpg",
+          image: "/image/4thWall/partners/asian-paints.webp",
         },
         {
           id: 2,
-          title1: "Jaguar",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://www.jaquar.com/Themes/Jaquar2022/Content/images/logo.svg",
+          image: "/image/4thWall/partners/astral.png",
         },
         {
           id: 3,
-          title1: "Asian Paints",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://static.asianpaints.com/content/dam/asianpaints/home-page/header-icons/asian-paint-logo.png",
+          image: "/image/4thWall/partners/centuryply.png",
         },
         {
-          id: 1,
-          title1: "Favicol",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image: "https://super.homelane.com/fev02.jpg",
+          id: 4,
+          image: "/image/4thWall/partners/fevicol.webp",
         },
         {
-          id: 2,
-          title1: "Jaguar",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://www.jaquar.com/Themes/Jaquar2022/Content/images/logo.svg",
+          id: 5,
+          image: "/image/4thWall/partners/greenply.svg",
         },
         {
-          id: 3,
-          title1: "Asian Paints",
-          link: "javascript:void(0)",
-          colSize: 6,
-          image:
-            "https://static.asianpaints.com/content/dam/asianpaints/home-page/header-icons/asian-paint-logo.png",
+          id: 6,
+          image: "/image/4thWall/partners/haefele.png",
+        },
+        {
+          id: 7,
+          image: "/image/4thWall/partners/hettich.svg",
+        },
+        {
+          id: 8,
+          image: "/image/4thWall/partners/jaquar.svg",
+        },
+        {
+          id: 9,
+          image: "/image/4thWall/partners/kitch.png",
+        },
+        {
+          id: 10,
+          image: "/image/4thWall/partners/nerolac.png",
+        },
+        {
+          id: 11,
+          image: "/image/4thWall/partners/philips.png",
+        },
+        {
+          id: 12,
+          image: "/image/4thWall/partners/rotolam.png",
+        },
+        {
+          id: 13,
+          image: "/image/4thWall/partners/royale-touche.png",
+        },
+        {
+          id: 14,
+          image: "/image/4thWall/partners/sintax.png",
         },
       ],
     };
@@ -135,7 +145,7 @@ export default {
 
 .logos-slide {
   display: inline-block;
-  animation: 35s slide infinite linear;
+  animation: 90s slide infinite linear;
 }
 
 .logos-slide img {

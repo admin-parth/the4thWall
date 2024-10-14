@@ -113,11 +113,7 @@ const data = [
   {
     src: "/image/main/recent-work/office-3.jpg",
     type: "trend",
-  },
-  // {
-  //   src: "/image/main/gallery/1.jpg",
-  //   type: "rent",
-  // },
+  }
 ];
 </script>
 
