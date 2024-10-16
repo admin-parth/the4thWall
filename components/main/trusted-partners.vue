@@ -73,7 +73,7 @@ export default {
         },
         {
           id: 9,
-          image: "/image/4thWall/partners/kitch.png",
+          image: "/image/4thWall/partners/kich.png",
         },
         {
           id: 10,

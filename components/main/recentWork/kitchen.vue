@@ -65,8 +65,8 @@
                   </div>
                 </div>
               </div>
-              <div class="title-2 mb-4">
-                <h2>RealVision 3D</h2>
+              <div class="title-2 mb-4" v-if="filtered360Images.length > 0">
+                <h2>360 & VR photos</h2>
               </div>
               <div
                 class="sale grid-item wow fadeInUp"
@@ -148,6 +148,7 @@ interface img {
   src: string;
   type: string;
 }
+const emit = defineEmits(["changeActive"]);
 // const imageCategories = useState('imageCategories', () => null);
 const filteredImages = computed(() => {
   const category = recentWork.filter(cat => cat.type === active.value);
@@ -159,7 +160,6 @@ const filtered360Images = computed(() => {
 });
 
 function showsingle(i: number, type: string, item: string) {
-  console.log(item)
   index.value = i;
   imgs.value = [];
   if (type === "simple") {
@@ -179,8 +179,10 @@ function handleHide() {
 }
 
 function getvalue(value: string) {
+  emit("changeActive", value);
   active.value = value;
 }
+
 </script>
 
 <style scoped>

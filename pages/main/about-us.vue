@@ -3,7 +3,7 @@
     <Title>About us | The 4th Wall</Title>
   </Head>
   <LayoutLayoutsLayout2>
-    <MainBannerBreadcrumb title="About us" first="Home" current="About us" />
+    <MainBannerBreadcrumb title="aboutus" first="Home" current="About us" />
     <MainAboutUs />
     <ElementTaptopTapTop3 />
   </LayoutLayoutsLayout2>
