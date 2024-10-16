@@ -72,7 +72,7 @@ const src = computed(() => {
   const imgs = [
     "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Pr85CEZ.jpg&autoLoad=true&autoRotate=-2",
     "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/Wn3bOrg.jpg&autoLoad=true&autoRotate=-2",
-    "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/3WkPS4s.jpg&autoLoad=true&autoRotate=-2&vaov=120",
+    "https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/gLOsxbo.jpg&autoLoad=true&autoRotate=-2",
   ]
   return imgs[Math.floor(Math.random() * imgs.length)];
 })

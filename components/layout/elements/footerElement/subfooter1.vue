@@ -14,6 +14,9 @@
                             <li>
                                 <nuxt-link target="_blank" to="https://youtube.com/@the4thwall.designs?si=TxelPfI7Np-_uaPA"><i class="fab fa-youtube fa-lg"></i></nuxt-link>
                             </li>
+                            <li>
+                                <nuxt-link target="_blank" to="https://linkedin.com/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
+                            </li>
                         </ul>
                     </div>
                 </div>

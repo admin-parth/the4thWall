@@ -69,7 +69,7 @@ const Services_data = [
     img: "/svg/Interior Designing & PMC.svg",
   },
   {
-    title: "Properly Buying Consultation",
+    title: "Property Buying Consultation",
     desc: "",
     img: "/svg/Property Buying Consultation.svg",
   },
