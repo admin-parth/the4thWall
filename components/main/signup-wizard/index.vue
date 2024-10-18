@@ -20,12 +20,12 @@
                 >
                   <MainSignupWizardAccountInfo :classes="validationclass" />
                 </tab-content>
-                <tab-content
+                <!-- <tab-content
                   title="Verification"
                   :before-change="userVerification"
                 >
                   <MainSignupWizardVerification />
-                </tab-content>
+                </tab-content> -->
                 <tab-content
                   title="Property information"
                   :before-change="beforeTabSwitch2"
@@ -165,13 +165,14 @@ async function onComplete() {
     floor_plan: uploadUrl?.data.publicUrl
   }
   const { data, error } = await supabase.from('query').insert(query_info)
-  const fileBase64 = await toBase64(property.floor_plan);
+
   let payload = {
     ...query_info,
     subject: 'New inquiry from website',
     type: 'Inquiry'
   }
   if(property.floor_plan) {
+    const fileBase64 = await toBase64(property.floor_plan);
     payload.attachments = [
         {
             content: fileBase64,
