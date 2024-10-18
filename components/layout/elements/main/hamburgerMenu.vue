@@ -32,7 +32,7 @@
       @click="toggle = false"
     >
       <a @click="navigate(item)" class="nav-link menu-title">
-        {{ $t(item.title) }}
+        {{ item.title }}
       </a>
       <LayoutElementsHeaderElementNavpagelink
         :data="item"
@@ -46,7 +46,7 @@
       <nuxt-link to="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></nuxt-link> 
       <nuxt-link to="https://www.youtube.com/"><i class="fab fa-youtube fa-lg"></i></nuxt-link> 
       <!-- <nuxt-link to="https://x.com/"><img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19"></nuxt-link> -->
-      <nuxt-link to="https://linkedin.com/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
+      <nuxt-link to="https://www.linkedin.com/company/the-4th-wall-studio/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
     </div>
   </ul>
 </template>
@@ -72,19 +72,26 @@ let childname = ref<string>("");
 let route = useRoute();
 let router = useRouter();
 
-const navigate = (item: object) => {
+const navigate = async (item: object) => {
   if(item.path == route.path) {
     if(Object.prototype.hasOwnProperty.call(item, 'section')) {
-      jumpTo(item.section)
+      jump(item.section)
     }
   } else {
-    router.push({ path: item.path})
+    // router.push({ path: item.path})
+    await navigateTo({ path: item.path })
+    if(Object.prototype.hasOwnProperty.call(item, 'section')) {
+      setTimeout(() => {
+        jump(item.section)
+      }, 2200)
+    }
   }
 }
 
-function jumpTo(element: string) {
+async function jumpTo(element: string) {
   if (route.path !== "/") {
-    router.push({ path: "/" });
+    // router.push({ path: "/" });
+    await navigateTo({ path: "/" })
   }
   jump(element);
 }

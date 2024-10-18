@@ -1,7 +1,7 @@
 <template>
     <section class="breadcrumb-section p-0 bg-size background">
         <!-- style="background-image:url('/image/4thWall/banner/aboutus.png')"> -->
-        <img :src="`/image/4thWall/banner/${title}.png`" class="bg-img img-fluid " alt="">
+        <img :src="`/image/4thWall/banner/${title}.svg`" class="bg-img img-fluid " alt="">
         <!-- <div class="container">
             <div class="breadcrumb-content">
                 <div class="text-dark">
@@ -29,5 +29,8 @@ defineProps({
 <style scoped>
 .background {
     height: fit-content;
+}
+.img-fluid {
+    width: 100vw;
 }
 </style>

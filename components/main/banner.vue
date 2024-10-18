@@ -10,9 +10,9 @@
           >
             <div class="video-size">
               <video width="100%" height="564px" loop muted autoplay>
-                <source src="/video/video2.mp4" type="video/mp4" />
-                <source src="/video/video2.mp4" type="video/mp4" />
-                <source src="/video/video2.mp4" type="video/mp4" />
+                <source :src="src" type="video/mp4" />
+                <source :src="src" type="video/mp4" />
+                <source :src="src" type="video/mp4" />
               </video>
             </div>
             <div class="home-main feature-section new-property video-bg">
@@ -175,6 +175,15 @@ const validatePhone = (phone: any) => {
   const phoneRegex = /^\d{10}$/;
   return phoneRegex.test(phone);
 };
+
+const src = computed(() => {
+  const imgs = [
+    "/video/4thWall/hero-bedroom.mp4",
+    "/video/4thWall/hero-living-1.mp4", 
+    "/video/4thWall/hero-living-2.mp4",
+  ]
+  return imgs[Math.floor(Math.random() * imgs.length)];
+})
 
 const createAccount = () => {
   if (!user.name || !user.email || !user.password) {

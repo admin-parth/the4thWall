@@ -157,6 +157,7 @@ const data = [
 }
 
 .pic-ctn > img {
+  object-fit: cover;
   width: 50vw;
   position: absolute;
   top: 0;

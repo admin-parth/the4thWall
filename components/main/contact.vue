@@ -79,7 +79,7 @@
                             <img src="/image/svg/twitter-x.svg" alt="Twitter link. " height="19">
                            </nuxt-link> -->
                             <!-- <i class="fab fa-twitter fa-lg"></i></nuxt-link> -->
-                           <nuxt-link to="https://linkedin.com/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
+                           <nuxt-link to="https://www.linkedin.com/company/the-4th-wall-studio/"><i class="fab fa-linkedin fa-lg"></i></nuxt-link>
                        </div>
                    </ul>
                    <ul v-if="item.type == 'contact'">
