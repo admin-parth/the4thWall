@@ -158,7 +158,7 @@ export default defineEventHandler(async (event) => {
     </html>`
     const options = {
         from: "support@globaluphire.com",
-        to: 'parthchauhan05@gmail.com',
+        to: 'the4thwall.inquiry@gmail.com',
         subject: body.subject,
         attachments: body.attachments,
         html: body.type == 'contact-us' ? message : inquiry,
