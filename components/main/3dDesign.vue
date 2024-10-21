@@ -22,7 +22,7 @@
             <div
               class="col-md-5 col-sm-12 d-flex flex-column gap-3 justify-content-center"
             >
-              <img src="/image/main/realvision-3d.jpg" alt="" />
+              <img class="img-fluid" src="/image/main/realvision-3d.jpg" alt="" />
               <h3>RealVision 3D</h3>
               <h6>Gives you the exact look & feel of materials which you will get after execution.</h6>
             </div>
@@ -89,8 +89,13 @@ img {
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   width: 100%;
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
 h3 {
   text-align: center;
+  margin-bottom: 0;
 }
 </style>

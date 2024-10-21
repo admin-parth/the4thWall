@@ -47,13 +47,13 @@ export default {
           completed: true,
           image:
             "/svg/3.svg",
-          description: "45% payment before execeting work",
+          description: "45% payment before executing work",
         },
         {
           completed: true,
           image:
             "/svg/4.svg",
-          description: "100% payment before installion",
+          description: "100% payment before Installation",
         },
         {
           completed: true,
