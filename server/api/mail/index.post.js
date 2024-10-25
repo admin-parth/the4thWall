@@ -1,7 +1,7 @@
 import sendgrid from '@sendgrid/mail'
 const config = useRuntimeConfig()
 
-// sendgrid.setApiKey()
+sendgrid.setApiKey(config.public.sendgridApiKey)
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const message = `<html>
@@ -157,7 +157,7 @@ export default defineEventHandler(async (event) => {
     </body>
     </html>`
     const options = {
-        from: "support@globaluphire.com",
+        from: "contact@the4thwall.in",
         to: 'the4thwall.inquiry@gmail.com',
         subject: body.subject,
         attachments: body.attachments,
