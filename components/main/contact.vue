@@ -152,7 +152,7 @@ const swalWithBootstrapButtons = Swal.mixin({
 
 const sendEmail = async () => {
     const payload = {
-        subject: 'New message from website',
+        subject: `New message from website at ${new Date().toString()}`,
         message: message,
         name: name,
         phonenumber: phonenumber,

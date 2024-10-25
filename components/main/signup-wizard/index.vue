@@ -168,7 +168,7 @@ async function onComplete() {
 
   let payload = {
     ...query_info,
-    subject: 'New inquiry from website',
+    subject: `New message from website at ${new Date().toString()}`,
     type: 'Inquiry'
   }
   if(property.floor_plan) {
