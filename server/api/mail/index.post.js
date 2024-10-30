@@ -4,156 +4,257 @@ const config = useRuntimeConfig()
 sendgrid.setApiKey(config.public.sendgridApiKey)
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-    const message = `<html>
-        <head>
-            <style>
-                a {
-                    color: unset;
-                    text-decoration: unset;
-                }
-                .body {
-                    padding: 100px;
-                    background-color: #ED1E2620;
-                }
-                .content {
-                    font-family: Helvetica;
-                    background-color: #fff;
-                    padding: 15px;
-                    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3) !important;
-                    border-radius: 5px;
-                    width: fit-content;
-                    margin: 0 auto;
-                }
-                h3 {
-                    color: #ED1E26;
-                    text-decoration: underline;
-                    font-weight: 900;
-                }
-                ul {
-                    list-style: none;
-                    gap: 15px;
-                }
-                button {
-                    width: 100%;
-                    background: linear-gradient(to bottom right, #1967d2, #222293);
-                    border: 0;
-                    border-radius: 12px;
-                    color: #FFFFFF;
-                    cursor: pointer;
-                    display: inline-block;
-                    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 2.5;
-                    outline: transparent;
-                    padding: 0 1rem;
-                    text-align: center;
-                    text-decoration: none;
-                    transition: box-shadow .2s ease-in-out;
-                    user-select: none;
-                    -webkit-user-select: none;
-                    touch-action: manipulation;
-                    white-space: nowrap;
-                }
-                button:not([disabled]):focus {
-                    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.1rem -.1rem .1rem rgba(25, 103, 210, 0.3), .1rem .1rem .1rem rgba(34, 34, 147, 0.3);
-                }
-                button:not([disabled]):hover {
-                    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.1rem -.1rem .1rem rgba(25, 103, 210, 0.3), .1rem .1rem .1rem rgba(34, 34, 147, 0.3);
-                }
-            </style>
-        </head>
-        <body>
-            <div class="body">
-                <div class="content" style="box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);">
-                    <h3>New Message Details:</h3>
-                    <ul>
-                        <li><strong>Name: </strong> ${ body.name } </li>
-                        <li><strong>Email: </strong> ${ body.email }</li>
-                        <li><strong>Phone number: </strong> ${ body.phonenumber }</li>
-                        <li><strong>message: </strong> ${ body.message }</li>
-                    </ul>
-                </div>
-        </div>
-        </body>
-    </html>`
-    const inquiry = `<html>
+    const message = `
+    <!doctype html>
+    <html lang="en-US">
     <head>
-        <style>
-            a {
-                color: unset;
-                text-decoration: unset;
-            }
-            .body {
-                padding: 100px;
-                background-color: #ED1E2620;
-            }
-            .content {
-                font-family: Helvetica;
-                background-color: #fff;
-                padding: 15px;
-                box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3) !important;
-                border-radius: 5px;
-                width: fit-content;
-                margin: 0 auto;
-            }
-            h3 {
-                color: #ED1E26;
-                text-decoration: underline;
-                font-weight: 900;
-            }
-            ul {
-                list-style: none;
-                gap: 15px;
-            }
-            button {
-                width: 100%;
-                background: linear-gradient(to bottom right, #1967d2, #222293);
-                border: 0;
-                border-radius: 12px;
-                color: #FFFFFF;
-                cursor: pointer;
-                display: inline-block;
-                font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 2.5;
-                outline: transparent;
-                padding: 0 1rem;
-                text-align: center;
-                text-decoration: none;
-                transition: box-shadow .2s ease-in-out;
-                user-select: none;
-                -webkit-user-select: none;
-                touch-action: manipulation;
-                white-space: nowrap;
-            }
-            button:not([disabled]):focus {
-                box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.1rem -.1rem .1rem rgba(25, 103, 210, 0.3), .1rem .1rem .1rem rgba(34, 34, 147, 0.3);
-            }
-            button:not([disabled]):hover {
-                box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.1rem -.1rem .1rem rgba(25, 103, 210, 0.3), .1rem .1rem .1rem rgba(34, 34, 147, 0.3);
-            }
-        </style>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>New message email - The 4th Wall</title>
+        <meta name="description" content="New mesasage email - The 4th Wall">
     </head>
-    <body>
-        <div class="body">
-            <div class="content" style="box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);">
-                <h3>New Inquiry Details:</h3>
-                <ul>
-                    <li><strong>Name: </strong> ${ body.name } </li>
-                    <li><strong>Email: </strong> ${ body.email }</li>
-                    <li><strong>Phone number: </strong> ${ body.phone }</li>
-                    <li><strong>Property Name: </strong> ${ body.property_name }</li>
-                    <li><strong>Property Type: </strong> ${ body.property_type }</li>
-                    <li><strong>Property BHK: </strong> ${ body.property_bhk }</li>
-                    <li><strong>Property Area: </strong> ${ body.property_area }</li>
-                    <li><strong>Property City: </strong> ${ body.property_city }</li>
-                    <li><strong>Property State: </strong> ${ body.property_state }</li>
-                    <li><strong>Property Pincode: </strong> ${ body.property_pincode }</li>
-                </ul>
-            </div>
-    </div>
+    <style>
+        a:hover {text-decoration: underline !important;}
+    </style>
+    <body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0">
+        <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
+            style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+            <tr>
+                <td>
+                    <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%" border="0"
+                        align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="height:80px;">&nbsp;</td>
+                        </tr>
+                        <!-- Logo -->
+                        <tr>
+                            <td style="text-align:center;">
+                              <a href="https://the4thwall.in" title="logo" target="_blank">
+                                <img width="150" src="https://i.imgur.com/UfAaSUK.png" title="logo" alt="logo">
+                              </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <!-- Email Content -->
+                        <tr>
+                            <td>
+                                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                                    style="max-width:670px; background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
+                                    <tr>
+                                        <td style="height:40px;">&nbsp;</td>
+                                    </tr>
+                                    <!-- Title -->
+                                    <tr>
+                                        <td style="padding:0 15px; text-align:center;">
+                                            <h1 style="color:#1e1e2d; font-weight:400; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">New Message</h1>
+                                            <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; 
+                                            width:100px;"></span>
+                                        </td>
+                                    </tr>
+                                    <!-- Details Table -->
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0"
+                                                style="width: 100%; border: 1px solid #ededed">
+                                                <tbody>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Name:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.name}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Email:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.email}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Phone number:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.phonenumber}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Message:</td>
+                                                        <td style="padding: 10px; color: #455056;">${body.message}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height:40px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                    <p style="font-size:14px; color:#455056bd; line-height:18px; margin:0 0 0;">&copy; <strong>the4thwall.in</strong></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+    
+    </html>`
+    const inquiry = `
+    <!doctype html>
+    <html lang="en-US">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>New message email - The 4th Wall</title>
+        <meta name="description" content="New mesasage email - The 4th Wall">
+    </head>
+    <style>
+        a:hover {text-decoration: underline !important;}
+    </style>
+    <body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0">
+        <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
+            style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+            <tr>
+                <td>
+                    <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%" border="0"
+                        align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="height:80px;">&nbsp;</td>
+                        </tr>
+                        <!-- Logo -->
+                        <tr>
+                            <td style="text-align:center;">
+                              <a href="https://the4thwall.in" title="logo" target="_blank">
+                                <img width="150" src="https://i.imgur.com/UfAaSUK.png" title="logo" alt="logo">
+                              </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <!-- Email Content -->
+                        <tr>
+                            <td>
+                                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                                    style="max-width:670px; background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
+                                    <tr>
+                                        <td style="height:40px;">&nbsp;</td>
+                                    </tr>
+                                    <!-- Title -->
+                                    <tr>
+                                        <td style="padding:0 15px; text-align:center;">
+                                            <h1 style="color:#1e1e2d; font-weight:400; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">New Inquiry for The 4th Wall</h1>
+                                            <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; 
+                                            width:100px;"></span>
+                                        </td>
+                                    </tr>
+                                    <!-- Details Table -->
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0"
+                                                style="width: 100%; border: 1px solid #ededed">
+                                                <tbody>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Name:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.name}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Email:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.email}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%; font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Phone number:</td>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
+                                                            ${body.phone}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property Name:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_name}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property Type:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_type}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property BHK:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_bhk}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property Area:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_area}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property City:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_city}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property State:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_state}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td
+                                                            style="padding: 10px; border-bottom: 1px solid #ededed; border-right: 1px solid #ededed; width: 35%;font-weight:500; color:rgba(0,0,0,.64)">
+                                                            Property Pincode:</td>
+                                                        <td style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">${body.property_pincode}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height:40px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                    <p style="font-size:14px; color:#455056bd; line-height:18px; margin:0 0 0;">&copy; <strong>the4thwall.in</strong></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </body>
     </html>`
     const options = {
@@ -163,7 +264,7 @@ export default defineEventHandler(async (event) => {
         attachments: body.attachments,
         html: body.type == 'contact-us' ? message : inquiry,
     }
-    
+
     await sendgrid.send(options)
     return { message: 'Email sent' }
 })
