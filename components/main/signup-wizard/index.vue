@@ -66,26 +66,43 @@ let property = usePropertyStore();
 let activeStep = user.getBuildingDetails ? 1 : 0;
 let router = useRouter();
 
-function beforeTabSwitch() {
+async function beforeTabSwitch() {
   if (
     user.name !== "" &&
     user.phone !== "" &&
     user.email !== "" &&
     user.password !== ""
   ) {
-    if (user.verified) {
-      wizard.value.navigateToTab(2)
+    loading.value = true;
+    const customerDetails = {
+      name: user.name,
+      email: user.email,
+      phonenumber: user.phone,
+      password: user.password
     }
+    await supabase.from('customer').insert(customerDetails).select()
+      .then(async (response: any) => {
+        if (response.data == null || response.error.code == "23505") {
+          // Check for user verification
+          let { data } = await supabase.from('customer').select('*').eq('phonenumber', customerDetails.phonenumber)
+          user.setUserId(data[0].id)
+          if (data[0].verified) {
+            user.setBuildingDetails(true);
+            navigateTo('/main/signup')    
+          }
+          else {
+            navigateTo("/main/validate");
+          }
+        } else {
+          navigateTo("/main/validate");
+        }
+      })
+      .catch((e: any) => console.log('err: ', e))
+    loading.value = false;
+    // if (user.verified) {
+    //   wizard.value.navigateToTab(2)
+    // }
     validationclass.value = "was-validated";
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function userVerification() {
-  if (user.verified) {
-    wizard.value.navigateToTab(2)
     return true;
   } else {
     return false;
@@ -151,10 +168,7 @@ async function onComplete() {
   }
 
   let query_info = {
-    name: user.name,
-    phone: user.phone,
-    email: user.email,
-    password: user.password,
+    user: user.id,
     property_name: property.property_name,
     property_type: property.property_type,
     property_bhk: property.property_bhk,
@@ -164,7 +178,7 @@ async function onComplete() {
     property_pincode: property.property_pincode,
     floor_plan: uploadUrl?.data.publicUrl
   }
-  const { data, error } = await supabase.from('query').insert(query_info)
+  const { data, error } = await supabase.from('inquiry').insert(query_info)
 
   let payload = {
     ...query_info,
@@ -186,6 +200,7 @@ async function onComplete() {
     method: 'post',
     body: payload
   })
+  user.resetUser();
 
   loading.value = false
   swalWithBootstrapButtons.fire({

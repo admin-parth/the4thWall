@@ -15,7 +15,8 @@ export default defineNuxtConfig({
       messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       appId: process.env.FIREBASE_APP_ID,
       measurementId: process.env.FIREBASE_MEASUREMENT_ID,
-      sendgridApiKey: process.env.SENDGRID_API_KEY
+      sendgridApiKey: process.env.SENDGRID_API_KEY,
+      msg91Auth: process.env.MSG91_AUTHKEY
     }
   },
   app: {

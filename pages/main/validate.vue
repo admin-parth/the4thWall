@@ -1,47 +1,99 @@
 <template>
-    <div class="container height-100 d-flex justify-content-center align-items-center">
+    <div class="container d-flex justify-content-center align-items-center">
         <div class="position-relative">
-            <div class="card p-2 text-center">
-                <img src="/image/logo/logo.svg" alt="The 4th wall. " height="50" class="my-3"/>
+            <div class="card p-4 text-center">
+                <img src="/image/logo/logo.svg" alt="The 4th wall. " height="50" class="mb-3"/>
                 <h6>Please enter the one time password <br> to verify your account</h6>
-                <div> <span>A code has been sent to</span> <small>******{{ user.phone.substr(user.phone.length-4) }}</small> </div>
-                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="first" data-next="second" data-position="0" maxlength="1" /> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" data-next="third" data-position="1"/> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" data-next="fourth" data-position="2"/> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" data-next="fifth" data-position="3"/> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" data-next="sixth" data-position="4"/> 
-                    <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" data-next="validate" data-position="5"/> 
+                <div class="my-2"> <span>A code has been sent to</span> <small>******{{ user.phone.substr(user.phone.length-4) }}</small> </div>
+                <div class="otp w-full flex justify-around" @input="handleOtpInput">
+                    <template v-for="field in 6" :key="field">
+                    <input
+                        v-model="data[field - 1]"
+                        ref="firstInputEl"
+                        type="text"
+                        maxlength="1"
+                        pattern="\d"
+                        class="border rounded w-10 h-10 text-center otp-input"
+                        @paste="handlePaste($event)"
+                    />
+                    </template>
                 </div>
                 <div class="mt-4"> 
                     <button id="validate" class="btn btn-danger px-4 mb-3 validate" @click="getOtp">Validate</button> 
                 </div>
+                <p v-if='showInvalidOTPError'>OTP you entered is not valid. Please try again...</p>
             </div>
         </div>
     </div>
 </template>
 <script setup>
 import { useUserStore } from "~/store/user";
+import { ref } from 'vue';
 
-    const user = useUserStore()
-    let otp_number = [null, null, null, null, null, null]
-    const setOtp = (val, place) =>  {
-        this.otp_number.splice(place, 1, val)
-    };
-    let getOtp = () => {
-        if(this.otp_number.some(item => item == null)) return false
-        else return this.otp_number.join('')
-    };
+const user = useUserStore();
+const supabase = inject("supabase");
+
+const data = ref([]);
+let otpValue = undefined;
+const showInvalidOTPError = ref(false);
+
+const handleOtpInput = (e) => {
+  if (e.data && e.target.nextElementSibling) {
+    e.target.nextElementSibling.focus();
+  } else if (e.data == null && e.target.previousElementSibling) {
+    e.target.previousElementSibling.focus();
+  }
+};
+
+const  handlePaste = (e) => {
+  const pasteData = e.clipboardData.getData('text');
+  let nextEl = firstInputEl.value[0].nextElementSibling;
+  for (let i = 1; i < pasteData.length; i++) {
+    if (nextEl) {
+      data.value[i] = pasteData[i];
+      nextEl = nextEl.nextElementSibling;
+    }
+  }
+};
+let getOtp = async () => {
+  const otp = data.value.join('')
+  // Check otp with actualy shared number.
+  if (otpValue == otp) {
+    user.setUserVerified(true);
+    await supabase.from('customer').update({verified: true}).eq('id', user.id).select()
+    // Continue to enter more information.
+    user.setBuildingDetails(true);
+    navigateTo('/main/signup')
+  } else {
+    showInvalidOTPError.value = true;
+  }
+  
+};
+
+let generateOtp = () => {
+  otpValue = Math.floor(Math.random() * 1000000)
+  if (user.phone) { sendOtp(); }
+}
+
+const sendOtp = async () => {
+  const payload = {
+    "template_id": "67436b4cd6fc057efd418672",
+    "realTimeResponse": "1",
+    "recipients": [
+      {
+        "mobiles": `91${user.phone}`,
+        "otp": otpValue.toString()
+      }
+    ]
+  }
+  await useFetch('/api/sendsms', {
+    method: 'post',
+    body: payload
+  })
+  
+}
     onMounted(() => {
-        document.querySelectorAll(".inputs > input").forEach(element => {
-            element.addEventListener('keyup', (e) => {
-                const val = e.target.value
-                if(val.match(/[0-9]/)) {
-                    this.setOtp(val, element.dataset.position)
-                    document.getElementById(element.dataset.next).focus()
-                }
-            })
-        })
+      generateOtp();
     });
 </script>
 <style scoped>
@@ -49,23 +101,29 @@ import { useUserStore } from "~/store/user";
     height: 100vh
 }
 
+.otp-input {
+    max-width: 50px;
+    padding: 5px;
+}
+
+.container {
+    height: 100vh;
+}
+
 .card {
-    width: 400px;
     border: none;
-    height: 300px;
-    box-shadow: 0px 5px 20px 0px #d2dae3;
     z-index: 1;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    box-shadow: 0px 0px 20px 5px #00000020;
 }
 
 .card h6 {
     color: #DE280F;
     font-size: 20px;
 }
-
-.inputs input {
+input {
     width: 40px;
     height: 40px;
 }
