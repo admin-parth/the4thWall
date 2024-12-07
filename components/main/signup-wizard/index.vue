@@ -82,19 +82,22 @@ async function beforeTabSwitch() {
     }
     await supabase.from('customer').insert(customerDetails).select()
       .then(async (response: any) => {
-        if (response.data == null || response.error.code == "23505") {
+        if (response.status == 201) {
+          user.setUserId(response.data[0].id)
+          navigateTo("/main/validate");
+        } else if (response.error.code == "23505") {
           // Check for user verification
           let { data } = await supabase.from('customer').select('*').eq('phonenumber', customerDetails.phonenumber)
           user.setUserId(data[0].id)
           if (data[0].verified) {
             user.setBuildingDetails(true);
-            navigateTo('/main/signup')    
+            navigateTo('/main/signup')
           }
           else {
             navigateTo("/main/validate");
           }
         } else {
-          navigateTo("/main/validate");
+          console.error('Supabase error')
         }
       })
       .catch((e: any) => console.log('err: ', e))
