@@ -71,7 +71,11 @@ let getOtp = async () => {
 };
 
 let generateOtp = () => {
-  otpValue = Math.floor(Math.random() * 1000000)
+  const random = Math.random()
+  otpValue = Math.floor(random * 1000000)
+  if (otpValue < 100000) {
+    otpValue = Math.floor(random * 10000000)
+  }
   if (user.phone) { sendOtp(); }
 }
 
