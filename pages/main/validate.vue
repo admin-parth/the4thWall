@@ -74,7 +74,7 @@ let generateOtp = () => {
   const random = Math.random()
   otpValue = Math.floor(random * 1000000)
   if (otpValue < 100000) {
-    otpValue = Math.floor(random * 10000000)
+    otpValue += 400000
   }
   if (user.phone) { sendOtp(); }
 }
