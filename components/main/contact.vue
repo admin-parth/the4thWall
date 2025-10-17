@@ -68,12 +68,12 @@
     <section class="small-section contact_section pt-0 contact_bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6" v-for="(item, index) in contactData" :key="index">
+                <div class="col-lg-4 col-sm-12 px-3 py-3" v-for="(item, index) in contactData" :key="index">
                     <div class="contact_wrap">
                         <Icon :name="item.icon" />
                         <h4>{{ item.title }}</h4>
-                        <p class="font-roboto" v-if="item.type == 'location'">
-                            {{ item.add }}
+                        <p class="font-roboto sub-footer-link" v-if="item.type == 'location'">
+                            <a class="color-red" target="_blank" href="https://www.google.com/maps/place/The+Fourth+Wall+Design+Studio/@23.1301147,72.5817699,17z/data=!3m1!4b1!4m6!3m5!1s0x395e836473a5853b:0x82c702e804d8f6b!8m2!3d23.1301098!4d72.5843448!16s%2Fg%2F11vxswr30b?entry=ttu&g_ep=EgoyMDI1MTAxNS4wIKXMDSoASAFQAw%3D%3D">{{ item.add }}</a>
                         </p>
                         <ul v-if="item.type == 'social-media'">
                             <div class="footer-social sub-footer-link social-card">
@@ -142,7 +142,7 @@ let contactData = [
         type: "location"
 
     }, {
-        icon: "octicon:file-media",
+        icon: "octicon:people-16",
         title: "Connect on social media",
         type: "social-media"
     }, {
@@ -197,3 +197,8 @@ const sendEmail = async () => {
 }
 
 </script>
+<style scoped>
+    .footer-custom-col .row > div:last-child {
+        margin-top: 0 !important;
+    }
+</style>

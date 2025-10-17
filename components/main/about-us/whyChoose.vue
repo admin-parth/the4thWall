@@ -13,7 +13,7 @@
               :key="index"
               class="fadeInUp d-flex flex-column p-2"
             >
-              <li class="title">
+              <li class="title color-red">
                 <b>{{ item.title }}</b>
               </li>
               <p class="text">{{ item.desc }}</p>

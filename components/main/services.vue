@@ -5,7 +5,7 @@
         <div class="col">
           <div class="title-2 mb-4 title-flex">
             <h2>{{ $t("ourDesignProcess.titlePart1") }}</h2>
-           <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="30" />          
+            <img src="/image/logo/plain-logo.png" alt="The 4th wall. " height="28" />          
             <h2>{{ $t("ourDesignProcess.titlePart2") }}</h2>
             <!-- <svg class="title-svg">
               <use xlink:href="/svg/icons.svg#title-line"></use>
@@ -103,7 +103,7 @@ const Services_data = [
   {
     svg: "/svg/icons.svg#customer-service",
     svg1: "/svg/icons.svg#line-straight",
-    title: "Enroll for your free RealVision 3D",
+    title: "Book and enroll your RealVision 3D",
     details: t("ourDesignProcess.para2"),
     image: "/svg/2.svg",
   },
@@ -304,7 +304,7 @@ onMounted(() => {
 .title-flex{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
 }
 </style>

@@ -51,7 +51,7 @@
                             v-model="user.email" required />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <div class="input-group-text height-38">
@@ -69,7 +69,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <div class="input-group">
                           <div class="input-group-prepend">

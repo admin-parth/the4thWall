@@ -34,14 +34,13 @@ export default {
           completed: true,
           image:
             "/svg/1.svg",
-          description: "Get your first 3Ds & quote",
-        },
-        {
-          completed: true,
-          image:
+            description:"5% payment & book your service",
+          },
+          {
+            completed: true,
+            image:
             "/svg/2.svg",
-          description:
-            "5% payment & book your service",
+            description: "Get your first 3Ds & quote",
         },
         {
           completed: true,
