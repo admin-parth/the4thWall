@@ -55,31 +55,6 @@
         />
       </div>
     </div>
-    <div class="form-group col-sm-12">
-      <div class="input-group">
-        <div class="input-group-text">
-          <Icon name="material-symbols:lock-outline" />
-        </div>
-        <input
-          :type="type"
-          v-model="store.password"
-          class="form-control"
-          placeholder="Password"
-          minlength="8"
-          required
-        />
-        <div class="input-group-text">
-          <i
-            id="pwd-icon"
-            :class="showpassword ? ' far fa-eye' : 'far fa-eye-slash'"
-            @click="show()"
-          ></i>
-        </div>
-      </div>
-      <div class="important-note mb-4">
-        password should be a minimum of 8 characters and should contains letters
-        and numbers
-      </div>
       <!-- <div class="text-end">
         <p>
           Alerady have an account ?
@@ -90,7 +65,6 @@
           >
         </p>
       </div> -->
-    </div>
   </form>
 </template>
 
@@ -100,16 +74,6 @@ defineProps({
   classes: String,
 });
 let store = useUserStore();
-let showpassword = ref<boolean>(false);
-let type = ref<string>("password");
-function show() {
-  showpassword.value = !showpassword.value;
-  if (showpassword.value == true) {
-    type.value = "text";
-  } else {
-    type.value = "password";
-  }
-}
 </script>
 
 <style scoped></style>

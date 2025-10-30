@@ -149,7 +149,7 @@ const src = computed(() => {
 })
 
 const createAccount = async () => {
-  if (!user.name || !user.email || !user.password) {
+  if (!user.name || !user.email) {
     error.value = "Please fill in all required fields.";
   } else if (user.name.length < 2) {
     error.value = "Name should be more then 1 character";
@@ -157,8 +157,6 @@ const createAccount = async () => {
     error.value = "Please enter a valid email address.";
   } else if (!validatePhone(user.phone)) {
     error.value = "Please enter a valid 10 digit number";
-  } else if (user.password.length < 8) {
-    error.value = "Password length should be 8 or more than that";
   } else {
     loading.value = true
     const customerDetails = {

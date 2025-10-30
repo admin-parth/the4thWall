@@ -70,15 +70,13 @@ async function beforeTabSwitch() {
   if (
     user.name !== "" &&
     user.phone !== "" &&
-    user.email !== "" &&
-    user.password !== ""
+    user.email !== "" 
   ) {
     loading.value = true;
     const customerDetails = {
       name: user.name,
       email: user.email,
-      phonenumber: user.phone,
-      password: user.password
+      phonenumber: user.phone
     }
     await supabase.from('customer').insert(customerDetails).select()
       .then(async (response: any) => {

@@ -83,7 +83,7 @@ export default {
     height: 40px;
     top: -40px;
     left: 49%;
-    display: block;
+    display: none;
   }
   .order-tracking:first-child:after {
     display: none;
