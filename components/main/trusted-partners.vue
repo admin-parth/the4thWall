@@ -41,58 +41,86 @@ export default {
       slides: [
         {
           id: 1,
-          image: "/image/4thWall/partners/asian-paints.webp",
+          image: "/image/4thWall/partners/advanced-acrylics.png",
         },
         {
           id: 2,
-          image: "/image/4thWall/partners/astral.png",
+          image: "/image/4thWall/partners/asian-paints.webp",
         },
         {
           id: 3,
-          image: "/image/4thWall/partners/centuryply.png",
+          image: "/image/4thWall/partners/astral.png",
         },
         {
           id: 4,
-          image: "/image/4thWall/partners/fevicol.webp",
+          image: "/image/4thWall/partners/birla-opus.png",
         },
         {
           id: 5,
-          image: "/image/4thWall/partners/greenply.svg",
+          image: "/image/4thWall/partners/bloom.png",
         },
         {
           id: 6,
-          image: "/image/4thWall/partners/haefele.png",
+          image: "/image/4thWall/partners/centuryply.png",
         },
         {
           id: 7,
-          image: "/image/4thWall/partners/hettich.svg",
+          image: "/image/4thWall/partners/dulux.png",
         },
         {
           id: 8,
-          image: "/image/4thWall/partners/jaquar.svg",
+          image: "/image/4thWall/partners/fevicol.webp",
         },
         {
           id: 9,
-          image: "/image/4thWall/partners/kich.png",
+          image: "/image/4thWall/partners/finetouch.png",
         },
         {
           id: 10,
-          image: "/image/4thWall/partners/nerolac.png",
+          image: "/image/4thWall/partners/greenlam.png",
         },
         {
           id: 11,
-          image: "/image/4thWall/partners/philips.png",
+          image: "/image/4thWall/partners/greenply.svg",
         },
         {
           id: 12,
-          image: "/image/4thWall/partners/rotolam.png",
+          image: "/image/4thWall/partners/haefele.png",
         },
         {
           id: 13,
-          image: "/image/4thWall/partners/royale-touche.png",
+          image: "/image/4thWall/partners/hettich.svg",
         },
         {
           id: 14,
+          image: "/image/4thWall/partners/jaquar.svg",
+        },
+        {
+          id: 15,
+          image: "/image/4thWall/partners/kich.png",
+        },
+        {
+          id: 16,
+          image: "/image/4thWall/partners/nerolac.png",
+        },
+        {
+          id: 17,
+          image: "/image/4thWall/partners/olive.png",
+        },
+        {
+          id: 18,
+          image: "/image/4thWall/partners/philips.png",
+        },
+        {
+          id: 19,
+          image: "/image/4thWall/partners/rotolam.png",
+        },
+        {
+          id: 20,
+          image: "/image/4thWall/partners/royale-touche.png",
+        },
+        {
+          id: 21,
           image: "/image/4thWall/partners/sintax.png",
         },
       ],

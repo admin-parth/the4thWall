@@ -11,6 +11,7 @@
     <MainHowItWorks />
     <MainOurServices />
     <MainTrustedPartners />
+    <MainPricing />
     <ElementTaptopTapTop3 />
   </LayoutLayoutsLayout2>
 </template>
