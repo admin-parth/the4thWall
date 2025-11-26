@@ -1,0 +1,192 @@
+
+[0;34m========================================[0m
+[0;34mDEAD CODE CLEANUP SCRIPT[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Project: the4thWall
+[0;32m[23:30:34][0m Log file: cleanup-log-20251125-233034.txt
+
+[0;34m========================================[0m
+[0;34mCURRENT STATE[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Components: 304 files
+[0;32m[23:30:34][0m Pages: 28 files
+[0;32m[23:30:34][0m Store modules: 7 files
+[0;32m[23:30:34][0m Layouts: 10 files
+
+[0;34m========================================[0m
+[0;34mSTEP 0: CREATE BACKUP BRANCH[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Creating backup branch: backup-cleanup-20251125-233034
+Switched to a new branch 'backup-cleanup-20251125-233034'
+Switched to branch 'cleanup-dead-code'
+Your branch is up to date with 'origin/cleanup-dead-code'.
+[0;32m[23:30:34][0m ✓ Backup branch created: backup-cleanup-20251125-233034
+[0;32m[23:30:34][0m   You can restore with: git checkout backup-cleanup-20251125-233034
+[0;32m[23:30:34][0m Creating cleanup branch: cleanup-dead-code-20251125-233034
+Switched to a new branch 'cleanup-dead-code-20251125-233034'
+[0;32m[23:30:34][0m ✓ Working on branch: cleanup-dead-code-20251125-233034
+
+[0;34m========================================[0m
+[0;34mPRIORITY 1: REMOVE UNUSED LAYOUTS[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Removing 9 unused layout files (keeping only layout2.vue)
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout1.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout3.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout4.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout5.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout6.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout8.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout10.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout11.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout12.vue
+[0;32m[23:30:34][0m ✓ Removed 9 layout files
+[cleanup-dead-code-20251125-233034 f47b71b] Remove unused layouts (Priority 1)
+ 14 files changed, 1272 insertions(+), 229 deletions(-)
+ create mode 100644 CLEANUP_SCRIPT_GUIDE.md
+ create mode 100644 DEAD_CODE_ANALYSIS_UPDATED.md
+ create mode 100755 cleanup-dead-code.sh
+ create mode 100644 cleanup-log-20251125-233034.txt
+ delete mode 100644 components/layout/layouts/layout1.vue
+ delete mode 100644 components/layout/layouts/layout10.vue
+ delete mode 100644 components/layout/layouts/layout11.vue
+ delete mode 100644 components/layout/layouts/layout12.vue
+ delete mode 100644 components/layout/layouts/layout3.vue
+ delete mode 100644 components/layout/layouts/layout4.vue
+ delete mode 100644 components/layout/layouts/layout5.vue
+ delete mode 100644 components/layout/layouts/layout6.vue
+ delete mode 100644 components/layout/layouts/layout8.vue
+ create mode 100644 dead_code_summary_updated.txt
+
+[0;34m========================================[0m
+[0;34mPRIORITY 2: REMOVE DEMO PAGES[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:39][0m Removing pages/page/* directory (14 demo pages)
+[0;32m[23:30:39][0m Found 14 files in pages/page/
+[0;32m[23:30:39][0m ✓ Removed pages/page/ directory
+[cleanup-dead-code-20251125-233034 2cca40e] Remove demo pages (Priority 2)
+ 15 files changed, 24 insertions(+), 231 deletions(-)
+ delete mode 100644 pages/page/otherpages/404.vue
+ delete mode 100644 pages/page/otherpages/aboutus1.vue
+ delete mode 100644 pages/page/otherpages/aboutus2.vue
+ delete mode 100644 pages/page/otherpages/coming-soon1.vue
+ delete mode 100644 pages/page/otherpages/coming-soon2.vue
+ delete mode 100644 pages/page/otherpages/coming-soon3.vue
+ delete mode 100644 pages/page/otherpages/faq.vue
+ delete mode 100644 pages/page/otherpages/forgot-password.vue
+ delete mode 100644 pages/page/otherpages/login.vue
+ delete mode 100644 pages/page/otherpages/pricing.vue
+ delete mode 100644 pages/page/otherpages/privacy-policy.vue
+ delete mode 100644 pages/page/otherpages/services.vue
+ delete mode 100644 pages/page/otherpages/signup-wizard.vue
+ delete mode 100644 pages/page/otherpages/terms-condition.vue
+
+[0;34m========================================[0m
+[0;34mPRIORITY 3: REMOVE UNUSED ELEMENT COMPONENTS[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:44][0m Removing unused element component variations
+[0;32m[23:30:44][0m Removing unused testimonial variations...
+[0;32m[23:30:44][0m Removing: components/element/happy_clinet/testimonial1.vue
+[0;32m[23:30:44][0m Removing: components/element/happy_clinet/testimonial2.vue
+[0;32m[23:30:44][0m Removing: components/element/happy_clinet/testimonial4.vue
+[0;32m[23:30:44][0m Removing: components/element/happy_clinet/testimonial_3.vue
+[0;32m[23:30:44][0m Removing: components/element/listing/listing4/
+[0;32m[23:30:44][0m Removing: components/element/listing/listing10.vue
+[0;32m[23:30:44][0m Removing unused filter options...
+[0;32m[23:30:44][0m Removing: components/element/filteroption/city.vue
+[0;32m[23:30:44][0m Removing: components/element/filteroption/country.vue
+[0;32m[23:30:44][0m Removing: components/element/filteroption/filtercities.vue
+[0;32m[23:30:44][0m Removing: components/element/filteroption/filtercountry.vue
+[0;32m[23:30:44][0m Removing: components/element/filteroption/filtertype.vue
+[0;32m[23:30:44][0m Removing: components/element/filteroption/index.vue
+[0;32m[23:30:44][0m Removing unused feature property variations...
+[0;32m[23:30:44][0m Removing: components/element/featureproperty/property4.vue
+[0;32m[23:30:44][0m Removing: components/element/featureproperty/property7.vue
+[0;32m[23:30:44][0m Removing other unused elements...
+[0;32m[23:30:44][0m Removing: components/element/customizer.vue
+[0;32m[23:30:44][0m Removing: components/element/dropdownfilter.vue
+[0;32m[23:30:44][0m Removing: components/element/emptydata/emptycomper.vue
+[0;32m[23:30:44][0m Removing empty directory: components/element/emptydata/
+[0;32m[23:30:44][0m ✓ Removed unused element components
+[cleanup-dead-code-20251125-233034 fb9c8af] Remove unused element components (Priority 3)
+ 21 files changed, 45 insertions(+), 1272 deletions(-)
+ delete mode 100644 components/element/customizer.vue
+ delete mode 100644 components/element/dropdownfilter.vue
+ delete mode 100644 components/element/emptydata/emptycomper.vue
+ delete mode 100644 components/element/featureproperty/property4.vue
+ delete mode 100644 components/element/featureproperty/property7.vue
+ delete mode 100644 components/element/filteroption/city.vue
+ delete mode 100644 components/element/filteroption/country.vue
+ delete mode 100644 components/element/filteroption/filtercities.vue
+ delete mode 100644 components/element/filteroption/filtercountry.vue
+ delete mode 100644 components/element/filteroption/filtertype.vue
+ delete mode 100644 components/element/filteroption/index.vue
+ delete mode 100644 components/element/happy_clinet/testimonial1.vue
+ delete mode 100644 components/element/happy_clinet/testimonial2.vue
+ delete mode 100644 components/element/happy_clinet/testimonial4.vue
+ delete mode 100644 components/element/happy_clinet/testimonial_3.vue
+ delete mode 100644 components/element/listing/listing10.vue
+ delete mode 100644 components/element/listing/listing4/first_tab.vue
+ delete mode 100644 components/element/listing/listing4/index.vue
+ delete mode 100644 components/element/listing/listing4/second_tab.vue
+ delete mode 100644 components/element/listing/listing4/third_tab.vue
+
+[0;34m========================================[0m
+[0;34mPRIORITY 4: REMOVE ALTERNATIVE HOME PAGE[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:52][0m Removing pages/home/* if it exists
+[0;32m[23:30:52][0m Found 1 files in pages/home/
+[0;32m[23:30:52][0m ✓ Removed pages/home/ directory
+[cleanup-dead-code-20251125-233034 2a5cfa8] Remove alternative home page (Priority 4)
+ 2 files changed, 30 insertions(+), 29 deletions(-)
+ delete mode 100644 pages/home/the4th_wall/index.vue
+
+[0;34m========================================[0m
+[0;34mCLEANUP COMPLETE[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:52][0m BEFORE:
+[0;32m[23:30:52][0m   Components: 304 files
+[0;32m[23:30:52][0m   Pages: 28 files
+[0;32m[23:30:52][0m   Layouts: 10 files
+[0;32m[23:30:52][0m 
+[0;32m[23:30:52][0m AFTER:
+[0;32m[23:30:52][0m   Components: 275 files
+[0;32m[23:30:53][0m   Pages: 13 files
+[0;32m[23:30:53][0m   Layouts: 1 files
+[0;32m[23:30:53][0m 
+[0;32m[23:30:53][0m REMOVED:
+[0;32m[23:30:53][0m   Components: 29 files
+[0;32m[23:30:53][0m   Pages: 15 files
+[0;32m[23:30:53][0m   Layouts: 9 files
+
+[0;34m========================================[0m
+[0;34mFINAL STEPS[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:53][0m 1. Test the application thoroughly:
+[0;32m[23:30:53][0m    npm run dev
+[0;32m[23:30:53][0m 
+[0;32m[23:30:53][0m 2. If everything works, merge the cleanup branch:
+[0;32m[23:30:53][0m    git checkout main
+[0;32m[23:30:53][0m    git merge cleanup-dead-code-20251125-233034
+[0;32m[23:30:53][0m 
+[0;32m[23:30:53][0m 3. If there are issues, rollback:
+[0;32m[23:30:53][0m    git checkout backup-cleanup-20251125-233034
+[0;32m[23:30:53][0m 
+[0;32m[23:30:53][0m 4. View all changes:
+[0;32m[23:30:53][0m    git log --oneline
+[0;32m[23:30:53][0m 
+[0;32m[23:30:53][0m Cleanup log saved to: cleanup-log-20251125-233034.txt
+[0;32m[23:30:53][0m 
+
+[0;34m========================================[0m
+[0;34m✓ CLEANUP SCRIPT COMPLETED SUCCESSFULLY[0m
+[0;34m========================================[0m
+
