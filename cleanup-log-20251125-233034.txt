@@ -1,0 +1,46 @@
+
+[0;34m========================================[0m
+[0;34mDEAD CODE CLEANUP SCRIPT[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Project: the4thWall
+[0;32m[23:30:34][0m Log file: cleanup-log-20251125-233034.txt
+
+[0;34m========================================[0m
+[0;34mCURRENT STATE[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Components: 304 files
+[0;32m[23:30:34][0m Pages: 28 files
+[0;32m[23:30:34][0m Store modules: 7 files
+[0;32m[23:30:34][0m Layouts: 10 files
+
+[0;34m========================================[0m
+[0;34mSTEP 0: CREATE BACKUP BRANCH[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Creating backup branch: backup-cleanup-20251125-233034
+Switched to a new branch 'backup-cleanup-20251125-233034'
+Switched to branch 'cleanup-dead-code'
+Your branch is up to date with 'origin/cleanup-dead-code'.
+[0;32m[23:30:34][0m ✓ Backup branch created: backup-cleanup-20251125-233034
+[0;32m[23:30:34][0m   You can restore with: git checkout backup-cleanup-20251125-233034
+[0;32m[23:30:34][0m Creating cleanup branch: cleanup-dead-code-20251125-233034
+Switched to a new branch 'cleanup-dead-code-20251125-233034'
+[0;32m[23:30:34][0m ✓ Working on branch: cleanup-dead-code-20251125-233034
+
+[0;34m========================================[0m
+[0;34mPRIORITY 1: REMOVE UNUSED LAYOUTS[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:34][0m Removing 9 unused layout files (keeping only layout2.vue)
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout1.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout3.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout4.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout5.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout6.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout8.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout10.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout11.vue
+[0;32m[23:30:34][0m Removing: components/layout/layouts/layout12.vue
+[0;32m[23:30:34][0m ✓ Removed 9 layout files
