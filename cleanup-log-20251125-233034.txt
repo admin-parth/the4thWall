@@ -44,3 +44,27 @@ Switched to a new branch 'cleanup-dead-code-20251125-233034'
 [0;32m[23:30:34][0m Removing: components/layout/layouts/layout11.vue
 [0;32m[23:30:34][0m Removing: components/layout/layouts/layout12.vue
 [0;32m[23:30:34][0m ✓ Removed 9 layout files
+[cleanup-dead-code-20251125-233034 f47b71b] Remove unused layouts (Priority 1)
+ 14 files changed, 1272 insertions(+), 229 deletions(-)
+ create mode 100644 CLEANUP_SCRIPT_GUIDE.md
+ create mode 100644 DEAD_CODE_ANALYSIS_UPDATED.md
+ create mode 100755 cleanup-dead-code.sh
+ create mode 100644 cleanup-log-20251125-233034.txt
+ delete mode 100644 components/layout/layouts/layout1.vue
+ delete mode 100644 components/layout/layouts/layout10.vue
+ delete mode 100644 components/layout/layouts/layout11.vue
+ delete mode 100644 components/layout/layouts/layout12.vue
+ delete mode 100644 components/layout/layouts/layout3.vue
+ delete mode 100644 components/layout/layouts/layout4.vue
+ delete mode 100644 components/layout/layouts/layout5.vue
+ delete mode 100644 components/layout/layouts/layout6.vue
+ delete mode 100644 components/layout/layouts/layout8.vue
+ create mode 100644 dead_code_summary_updated.txt
+
+[0;34m========================================[0m
+[0;34mPRIORITY 2: REMOVE DEMO PAGES[0m
+[0;34m========================================[0m
+
+[0;32m[23:30:39][0m Removing pages/page/* directory (14 demo pages)
+[0;32m[23:30:39][0m Found 14 files in pages/page/
+[0;32m[23:30:39][0m ✓ Removed pages/page/ directory
